@@ -135,10 +135,10 @@ public class Login extends javax.swing.JFrame {
                 }
             }
             if (found){
-                this.setVisible(false);
+                dispose();
                 new Game(user, idxLog).setVisible(true);
             }else{
-                this.setVisible(false);
+                dispose();
                 user.add(new User(curNama));
                 new Game(user, user.size()-1).setVisible(true);
             }
