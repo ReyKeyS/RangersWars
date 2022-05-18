@@ -9,5 +9,5 @@ package projectpbo;
  * @author Grady
  */
 public class coba {
-    private String a;
+    private int c;
 }
