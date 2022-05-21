@@ -61,6 +61,7 @@ public class Login extends javax.swing.JFrame {
         tfNama = new javax.swing.JTextField();
         btPlay = new javax.swing.JButton();
         btLeader = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
@@ -100,6 +101,10 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btLeader);
         btLeader.setBounds(440, 500, 320, 70);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectpbo/mute.png"))); // NOI18N
+        getContentPane().add(jButton2);
+        jButton2.setBounds(30, 30, 160, 160);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,6 +178,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Username;
     private javax.swing.JButton btLeader;
     private javax.swing.JButton btPlay;
+    private javax.swing.JButton jButton2;
     private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }
