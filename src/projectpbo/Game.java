@@ -72,7 +72,7 @@ public class Game extends javax.swing.JFrame {
 
         judul.setText("Welcome");
         getContentPane().add(judul);
-        judul.setBounds(490, 190, 100, 30);
+        judul.setBounds(490, 190, 300, 30);
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
@@ -82,7 +82,7 @@ public class Game extends javax.swing.JFrame {
 
         Level.setText("jLabel1");
         getContentPane().add(Level);
-        Level.setBounds(37, 36, 70, 30);
+        Level.setBounds(37, 36, 260, 30);
 
         pilihRanger.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         pilihRanger.setText("Choose Your Rangers");

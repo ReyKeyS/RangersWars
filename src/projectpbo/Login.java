@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     private ArrayList<User> user;
     
+    static boolean keplay = false;
     static Music player = Music.getInstance();
     
     /**
@@ -42,9 +44,13 @@ public class Login extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "failed");
         }
-        player.loadMusic();
-        player.clip.setMicrosecondPosition(17800000);
-        player.clip.start();
+        if (!keplay){
+            keplay = true;
+            player.loadMusic();
+            player.clip.setMicrosecondPosition(17800000);
+            player.clip.start();
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
     }
     
     /**
