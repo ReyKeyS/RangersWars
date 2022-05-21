@@ -17,7 +17,9 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
     private ArrayList<User> user;
-
+    
+    static Music player = Music.getInstance();
+    
     /**
      * Creates new form Login
      */
@@ -40,6 +42,9 @@ public class Login extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "failed");
         }
+        player.loadMusic();
+        player.clip.setMicrosecondPosition(17800000);
+        player.clip.start();
     }
     
     /**
