@@ -56,9 +56,10 @@ public class Game extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setPreferredSize(new java.awt.Dimension(852, 480));
+        setPreferredSize(new java.awt.Dimension(1200, 720));
+        getContentPane().setLayout(null);
 
-        btLogout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setText("Log Out");
         btLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -66,16 +67,24 @@ public class Game extends javax.swing.JFrame {
                 btLogoutActionPerformed(evt);
             }
         });
+        getContentPane().add(btLogout);
+        btLogout.setBounds(500, 590, 180, 50);
 
         judul.setText("Welcome");
+        getContentPane().add(judul);
+        judul.setBounds(490, 190, 100, 30);
 
-        btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
         btLaunch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(btLaunch);
+        btLaunch.setBounds(480, 520, 230, 50);
 
         Level.setText("jLabel1");
+        getContentPane().add(Level);
+        Level.setBounds(37, 36, 70, 30);
 
-        pilihRanger.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        pilihRanger.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         pilihRanger.setText("Choose Your Rangers");
         pilihRanger.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pilihRanger.addActionListener(new java.awt.event.ActionListener() {
@@ -83,46 +92,8 @@ public class Game extends javax.swing.JFrame {
                 pilihRangerActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(Level))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(364, 364, 364)
-                        .addComponent(judul))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btLaunch, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23))
-                            .addComponent(pilihRanger, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(321, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(Level)
-                .addGap(30, 30, 30)
-                .addComponent(judul)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addComponent(pilihRanger, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btLaunch)
-                .addGap(18, 18, 18)
-                .addComponent(btLogout)
-                .addGap(45, 45, 45))
-        );
+        getContentPane().add(pilihRanger);
+        pilihRanger.setBounds(450, 450, 290, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
