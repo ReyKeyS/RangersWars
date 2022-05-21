@@ -5,6 +5,7 @@
 package projectpbo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -17,6 +18,28 @@ public class Leaderboard extends javax.swing.JFrame {
      */
     public Leaderboard() {
         initComponents();
+    }
+    
+    public Leaderboard(ArrayList<User> player) {
+        this.user = player;
+        Collections.sort(user, new SortLeader());
+        initComponents();
+        
+        if (user.get(0) != null){
+            nomor1.setText(user.get(0).getNama() + " - " + user.get(0).getLevel());
+        }else{
+            nomor1.setText("-");
+        }
+        if (user.get(1) != null){
+            nomor2.setText(user.get(1).getNama() + " - " + user.get(1).getLevel());
+        }else{
+            nomor2.setText("-");
+        }
+        if (user.get(0) != null){
+            nomor3.setText(user.get(2).getNama() + " - " + user.get(2).getLevel());
+        }else{
+            nomor3.setText("-");
+        }
     }
 
     /**
@@ -35,56 +58,38 @@ public class Leaderboard extends javax.swing.JFrame {
         Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(852, 480));
+        setPreferredSize(new java.awt.Dimension(1200, 720));
+        getContentPane().setLayout(null);
 
-        Leaderboard.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Leaderboard.setFont(new java.awt.Font("Segoe UI", 0, 72)); // NOI18N
         Leaderboard.setText("Leaderboard");
+        getContentPane().add(Leaderboard);
+        Leaderboard.setBounds(400, 120, 402, 97);
 
+        nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor1.setText("Player 1");
+        getContentPane().add(nomor1);
+        nomor1.setBounds(490, 280, 230, 40);
 
+        nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor2.setText("Player 2");
+        getContentPane().add(nomor2);
+        nomor2.setBounds(490, 340, 230, 40);
 
+        nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor3.setText("Player 3");
+        getContentPane().add(nomor3);
+        nomor3.setBounds(490, 400, 230, 40);
 
+        Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(295, 295, 295)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Leaderboard)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomor3)
-                            .addComponent(nomor2)
-                            .addComponent(nomor1)
-                            .addComponent(Back))))
-                .addContainerGap(329, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(Leaderboard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomor1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomor2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomor3)
-                .addGap(54, 54, 54)
-                .addComponent(Back)
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
+        getContentPane().add(Back);
+        Back.setBounds(510, 550, 175, 54);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

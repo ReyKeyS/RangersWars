@@ -59,66 +59,42 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setPreferredSize(new java.awt.Dimension(852, 480));
+        setPreferredSize(new java.awt.Dimension(1200, 720));
+        getContentPane().setLayout(null);
 
-        Username.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Username.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         Username.setText("Name : ");
+        getContentPane().add(Username);
+        Username.setBounds(390, 290, 70, 24);
 
-        Judul.setFont(new java.awt.Font("Maiandra GD", 1, 60)); // NOI18N
+        Judul.setFont(new java.awt.Font("Maiandra GD", 1, 72)); // NOI18N
         Judul.setText("Rangers Wars");
+        getContentPane().add(Judul);
+        Judul.setBounds(380, 110, 450, 90);
 
-        btPlay.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(tfNama);
+        tfNama.setBounds(490, 280, 330, 40);
+
+        btPlay.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btPlay.setText("Play");
         btPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btPlayActionPerformed(evt);
             }
         });
+        getContentPane().add(btPlay);
+        btPlay.setBounds(490, 400, 230, 60);
 
-        btLeader.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btLeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btLeader.setText("Leaderboard");
         btLeader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLeaderActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
-                .addComponent(Judul)
-                .addGap(232, 232, 232))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(268, 268, 268)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Username)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))
-                    .addComponent(btLeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(Judul)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Username))
-                .addGap(45, 45, 45)
-                .addComponent(btPlay)
-                .addGap(27, 27, 27)
-                .addComponent(btLeader)
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
+        getContentPane().add(btLeader);
+        btLeader.setBounds(440, 500, 320, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,8 +123,8 @@ public class Login extends javax.swing.JFrame {
 
     private void btLeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLeaderActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        new Leaderboard().setVisible(true);
+        dispose();
+        new Leaderboard(user).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
 
     /**
