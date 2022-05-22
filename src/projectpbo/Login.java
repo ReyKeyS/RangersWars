@@ -80,15 +80,16 @@ public class Login extends javax.swing.JFrame {
         btPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Play.png"))); // NOI18N
         btPlay.setBorderPainted(false);
         btPlay.setContentAreaFilled(false);
+        btPlay.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Play hovered.png"))); // NOI18N
         btPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btPlayActionPerformed(evt);
             }
         });
-        getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 429, 110, 110));
+        getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 424, 120, 120));
 
         tfNama.setBackground(new java.awt.Color(255, 255, 255));
-        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNama.setBorder(null);
         getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 338, 460, 60));
@@ -97,22 +98,24 @@ public class Login extends javax.swing.JFrame {
         btLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard button.png"))); // NOI18N
         btLeader.setBorderPainted(false);
         btLeader.setContentAreaFilled(false);
+        btLeader.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard button hovered.png"))); // NOI18N
         btLeader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLeaderActionPerformed(evt);
             }
         });
-        getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(718, 429, 110, 110));
+        getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(712, 424, 120, 120));
 
         btMute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Music button.png"))); // NOI18N
         btMute.setBorderPainted(false);
         btMute.setContentAreaFilled(false);
+        btMute.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Music button hovered.png"))); // NOI18N
         btMute.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btMuteMouseClicked(evt);
             }
         });
-        getContentPane().add(btMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 429, 110, 110));
+        getContentPane().add(btMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 424, 120, 120));
 
         BgLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Halaman login.jpg"))); // NOI18N
         getContentPane().add(BgLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
