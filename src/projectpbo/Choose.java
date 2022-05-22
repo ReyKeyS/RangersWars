@@ -52,23 +52,23 @@ public class Choose extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(380, 260, 37, 15);
+        jLabel1.setBounds(380, 260, 37, 16);
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(460, 280, 37, 15);
+        jLabel2.setBounds(460, 280, 37, 16);
 
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(560, 280, 37, 15);
+        jLabel3.setBounds(560, 280, 37, 16);
 
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(650, 280, 37, 15);
+        jLabel4.setBounds(650, 280, 37, 16);
 
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(750, 280, 37, 15);
+        jLabel5.setBounds(750, 280, 37, 16);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton1.setText("Save");
@@ -95,14 +95,14 @@ public class Choose extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        dispose();
         new Game(user, idx).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         user.get(idx).setLevel(user.get(idx).getLevel()+1);
-        this.setVisible(false);
+        dispose();
         new Game(user, idx).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -127,6 +127,8 @@ public class Login extends javax.swing.JFrame {
                 user.add(new User(curNama));
                 new Game(user, user.size()-1).setVisible(true);
             }
+        }else{
+            JOptionPane.showMessageDialog(this, "Wajib Input Nama");
         }
     }//GEN-LAST:event_btPlayActionPerformed
 

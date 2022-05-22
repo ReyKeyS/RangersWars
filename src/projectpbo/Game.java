@@ -110,7 +110,7 @@ public class Game extends javax.swing.JFrame {
         }catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "failed");
         }
-        this.setVisible(false);
+        dispose();
         new Login(user).setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
 

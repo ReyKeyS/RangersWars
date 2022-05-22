@@ -89,14 +89,14 @@ public class Leaderboard extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Back);
-        Back.setBounds(510, 550, 175, 58);
+        Back.setBounds(510, 550, 175, 54);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
