@@ -56,9 +56,11 @@ public class Game extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
+        setLocation(new java.awt.Point(325, 180));
         setPreferredSize(new java.awt.Dimension(1200, 720));
+        setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setText("Log Out");
@@ -68,22 +70,18 @@ public class Game extends javax.swing.JFrame {
                 btLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btLogout);
-        btLogout.setBounds(500, 590, 180, 50);
+        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 600, 180, 50));
 
         judul.setText("Welcome");
-        getContentPane().add(judul);
-        judul.setBounds(490, 190, 300, 30);
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 300, 30));
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
         btLaunch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(btLaunch);
-        btLaunch.setBounds(480, 520, 230, 50);
+        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 230, 50));
 
         Level.setText("jLabel1");
-        getContentPane().add(Level);
-        Level.setBounds(37, 36, 260, 30);
+        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 260, 30));
 
         pilihRanger.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         pilihRanger.setText("Choose Your Rangers");
@@ -93,8 +91,7 @@ public class Game extends javax.swing.JFrame {
                 pilihRangerActionPerformed(evt);
             }
         });
-        getContentPane().add(pilihRanger);
-        pilihRanger.setBounds(450, 450, 290, 50);
+        getContentPane().add(pilihRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 290, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

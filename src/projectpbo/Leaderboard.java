@@ -58,28 +58,25 @@ public class Leaderboard extends javax.swing.JFrame {
         Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(325, 180));
         setPreferredSize(new java.awt.Dimension(1200, 720));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Leaderboard.setFont(new java.awt.Font("Segoe UI", 0, 72)); // NOI18N
         Leaderboard.setText("Leaderboard");
-        getContentPane().add(Leaderboard);
-        Leaderboard.setBounds(400, 120, 402, 97);
+        getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
 
         nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor1.setText("Player 1");
-        getContentPane().add(nomor1);
-        nomor1.setBounds(490, 280, 230, 40);
+        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 230, 40));
 
         nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor2.setText("Player 2");
-        getContentPane().add(nomor2);
-        nomor2.setBounds(490, 340, 230, 40);
+        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, 230, 40));
 
         nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor3.setText("Player 3");
-        getContentPane().add(nomor3);
-        nomor3.setBounds(490, 400, 230, 40);
+        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 230, 40));
 
         Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Back.setText("Back");
@@ -88,8 +85,7 @@ public class Leaderboard extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back);
-        Back.setBounds(510, 550, 175, 54);
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 550, 175, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
