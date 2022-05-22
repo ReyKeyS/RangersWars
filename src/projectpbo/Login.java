@@ -10,7 +10,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.JOptionPane;
+import static projectpbo.Music.clip;
 
 /**
  *
@@ -43,6 +45,8 @@ public class Login extends javax.swing.JFrame {
             keplay = true;
             player.loadMusic();
             player.clip.setMicrosecondPosition(17800000);
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-10f);
             player.clip.start();
             player.clip.loop(Clip.LOOP_CONTINUOUSLY);
         }
