@@ -87,9 +87,11 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 429, 110, 110));
 
-        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tfNama.setBackground(new java.awt.Color(255, 255, 255));
+        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNama.setBorder(null);
-        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 338, 480, 60));
+        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 338, 460, 60));
 
         btLeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard button.png"))); // NOI18N
