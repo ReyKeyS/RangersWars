@@ -28,7 +28,7 @@ public class Music {
     
     public static void loadMusic(){
         try{
-            File musicPath = new File("bgmusic.wav");
+            File musicPath = new File("src/music/bgmusic.wav");
             AudioInputStream audioinput = AudioSystem.getAudioInputStream(musicPath);
             clip = AudioSystem.getClip();
             clip.open(audioinput);

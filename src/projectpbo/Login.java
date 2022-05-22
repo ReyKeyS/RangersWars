@@ -67,26 +67,24 @@ public class Login extends javax.swing.JFrame {
         tfNama = new javax.swing.JTextField();
         btPlay = new javax.swing.JButton();
         btLeader = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setPreferredSize(new java.awt.Dimension(1200, 720));
-        getContentPane().setLayout(null);
+        setLocation(new java.awt.Point(350, 350));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Username.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         Username.setText("Name : ");
-        getContentPane().add(Username);
-        Username.setBounds(390, 290, 70, 24);
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 70, -1));
 
         Judul.setFont(new java.awt.Font("Maiandra GD", 1, 72)); // NOI18N
         Judul.setText("Rangers Wars");
-        getContentPane().add(Judul);
-        Judul.setBounds(380, 110, 450, 90);
+        getContentPane().add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 100, -1, 90));
 
         tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(tfNama);
-        tfNama.setBounds(490, 280, 330, 40);
+        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 330, 40));
 
         btPlay.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btPlay.setText("Play");
@@ -95,8 +93,7 @@ public class Login extends javax.swing.JFrame {
                 btPlayActionPerformed(evt);
             }
         });
-        getContentPane().add(btPlay);
-        btPlay.setBounds(490, 400, 230, 60);
+        getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 230, 60));
 
         btLeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btLeader.setText("Leaderboard");
@@ -105,12 +102,7 @@ public class Login extends javax.swing.JFrame {
                 btLeaderActionPerformed(evt);
             }
         });
-        getContentPane().add(btLeader);
-        btLeader.setBounds(440, 500, 320, 70);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectpbo/mute.png"))); // NOI18N
-        getContentPane().add(jButton2);
-        jButton2.setBounds(30, 30, 160, 160);
+        getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 320, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,7 +176,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Username;
     private javax.swing.JButton btLeader;
     private javax.swing.JButton btPlay;
-    private javax.swing.JButton jButton2;
     private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }
