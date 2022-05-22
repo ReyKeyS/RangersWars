@@ -89,7 +89,7 @@ public class Leaderboard extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Back);
-        Back.setBounds(510, 550, 175, 54);
+        Back.setBounds(510, 550, 175, 58);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
