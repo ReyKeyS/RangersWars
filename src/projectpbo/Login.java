@@ -22,6 +22,7 @@ public class Login extends javax.swing.JFrame {
     private ArrayList<User> user;
     
     static boolean keplay = false;
+    static boolean kemute = false;
     static Music player = Music.getInstance();
     
     /**
@@ -66,6 +67,7 @@ public class Login extends javax.swing.JFrame {
         tfNama = new javax.swing.JTextField();
         btPlay = new javax.swing.JButton();
         btLeader = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
@@ -104,6 +106,14 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 320, 70));
 
+        jButton1.setText("Mute");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -136,6 +146,17 @@ public class Login extends javax.swing.JFrame {
         dispose();
         new Leaderboard(user).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+        if(!kemute){
+            volume.setValue(-80f);
+            kemute = true;
+        }else{
+            volume.setValue(-10f);
+            kemute = false;
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,6 +199,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Username;
     private javax.swing.JButton btLeader;
     private javax.swing.JButton btPlay;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }
