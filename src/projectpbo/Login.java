@@ -89,7 +89,7 @@ public class Login extends javax.swing.JFrame {
 
         tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfNama.setBorder(null);
-        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 328, 500, 80));
+        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 338, 480, 60));
 
         btLeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard button.png"))); // NOI18N
