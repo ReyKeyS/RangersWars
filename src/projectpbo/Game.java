@@ -111,7 +111,7 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "failed");
         }
         dispose();
-        new Login(user).setVisible(true);
+        new Login().setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void pilihRangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihRangerActionPerformed

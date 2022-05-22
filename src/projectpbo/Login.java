@@ -25,12 +25,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    
-    public Login(ArrayList<User> user) {
-        initComponents();
-        this.user = user;
-    }
-    
+        
     public Login() {
         initComponents();
         this.user = new ArrayList<>();
@@ -70,7 +65,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setLocation(new java.awt.Point(200, 200));
+        setLocation(new java.awt.Point(325, 180));
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
