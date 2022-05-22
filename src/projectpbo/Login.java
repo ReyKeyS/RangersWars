@@ -62,12 +62,11 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Username = new javax.swing.JLabel();
-        Judul = new javax.swing.JLabel();
-        tfNama = new javax.swing.JTextField();
         btPlay = new javax.swing.JButton();
+        tfNama = new javax.swing.JTextField();
         btLeader = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btMute = new javax.swing.JButton();
+        BgLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
@@ -77,42 +76,44 @@ public class Login extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Username.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        Username.setText("Name : ");
-        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 70, -1));
-
-        Judul.setFont(new java.awt.Font("Maiandra GD", 1, 72)); // NOI18N
-        Judul.setText("Rangers Wars");
-        getContentPane().add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 100, -1, 90));
-
-        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 330, 40));
-
         btPlay.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        btPlay.setText("Play");
+        btPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Play.png"))); // NOI18N
+        btPlay.setBorderPainted(false);
+        btPlay.setContentAreaFilled(false);
         btPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btPlayActionPerformed(evt);
             }
         });
-        getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 230, 60));
+        getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 429, 110, 110));
+
+        tfNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tfNama.setBorder(null);
+        getContentPane().add(tfNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 328, 500, 80));
 
         btLeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        btLeader.setText("Leaderboard");
+        btLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard button.png"))); // NOI18N
+        btLeader.setBorderPainted(false);
+        btLeader.setContentAreaFilled(false);
         btLeader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLeaderActionPerformed(evt);
             }
         });
-        getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 320, 70));
+        getContentPane().add(btLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(718, 429, 110, 110));
 
-        jButton1.setText("Mute");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btMute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Music button.png"))); // NOI18N
+        btMute.setBorderPainted(false);
+        btMute.setContentAreaFilled(false);
+        btMute.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btMuteMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        getContentPane().add(btMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 429, 110, 110));
+
+        BgLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Halaman login.jpg"))); // NOI18N
+        getContentPane().add(BgLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,7 +148,7 @@ public class Login extends javax.swing.JFrame {
         new Leaderboard(user).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void btMuteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btMuteMouseClicked
         FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
         if(!kemute){
             volume.setValue(-80f);
@@ -156,7 +157,7 @@ public class Login extends javax.swing.JFrame {
             volume.setValue(-10f);
             kemute = false;
         }
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btMuteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -195,11 +196,10 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Judul;
-    private javax.swing.JLabel Username;
+    private javax.swing.JLabel BgLogin;
     private javax.swing.JButton btLeader;
+    private javax.swing.JButton btMute;
     private javax.swing.JButton btPlay;
-    private javax.swing.JButton jButton1;
     private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }
