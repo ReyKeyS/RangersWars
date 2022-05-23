@@ -52,7 +52,6 @@ public class Game extends javax.swing.JFrame {
         judul = new JLabel("Welcome", SwingConstants.CENTER);
         btLaunch = new javax.swing.JButton();
         Level = new javax.swing.JLabel();
-        pilihRanger = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
@@ -70,7 +69,7 @@ public class Game extends javax.swing.JFrame {
                 btLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 600, 180, 50));
+        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 180, 50));
 
         judul.setText("Welcome");
         getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 300, 30));
@@ -78,20 +77,10 @@ public class Game extends javax.swing.JFrame {
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
         btLaunch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 230, 50));
+        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 640, 230, 50));
 
         Level.setText("jLabel1");
         getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 260, 30));
-
-        pilihRanger.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        pilihRanger.setText("Choose Your Rangers");
-        pilihRanger.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        pilihRanger.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pilihRangerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(pilihRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 290, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,11 +99,6 @@ public class Game extends javax.swing.JFrame {
         dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
-
-    private void pilihRangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihRangerActionPerformed
-        this.setVisible(false);
-        new Choose(user, idx).setVisible(true);
-    }//GEN-LAST:event_pilihRangerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +140,5 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
     private javax.swing.JLabel judul;
-    private javax.swing.JButton pilihRanger;
     // End of variables declaration//GEN-END:variables
 }
