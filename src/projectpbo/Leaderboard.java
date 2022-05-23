@@ -6,6 +6,7 @@ package projectpbo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,10 +22,12 @@ public class Leaderboard extends javax.swing.JFrame {
     }
     
     public Leaderboard(ArrayList<User> player) {
+        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
+        
         this.user = player;
         Collections.sort(user, new SortLeader());
         initComponents();
-        
+        BGLeaderboard.setIcon(bg);
         nomor1.setText("-----");
         nomor2.setText("-----");
         nomor3.setText("-----");
@@ -60,6 +63,7 @@ public class Leaderboard extends javax.swing.JFrame {
         nomor2 = new javax.swing.JLabel();
         nomor3 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
+        BGLeaderboard = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 180));
@@ -74,20 +78,26 @@ public class Leaderboard extends javax.swing.JFrame {
         Leaderboard.setText("Leaderboard");
         getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
 
+        nomor1.setBackground(new java.awt.Color(255, 255, 51));
         nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor1.setText("Player 1");
-        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 230, 40));
+        nomor1.setOpaque(true);
+        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 230, 40));
 
+        nomor2.setBackground(new java.awt.Color(255, 255, 51));
         nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor2.setText("Player 2");
-        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 230, 40));
+        nomor2.setOpaque(true);
+        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 230, 40));
 
+        nomor3.setBackground(new java.awt.Color(255, 255, 51));
         nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor3.setText("Player 3");
-        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 230, 40));
+        nomor3.setOpaque(true);
+        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 230, 40));
 
         Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Back.setText("Back");
@@ -96,7 +106,10 @@ public class Leaderboard extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 175, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 175, -1));
+
+        BGLeaderboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard_page.jpg"))); // NOI18N
+        getContentPane().add(BGLeaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -143,6 +156,7 @@ public class Leaderboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BGLeaderboard;
     private javax.swing.JButton Back;
     private javax.swing.JLabel Leaderboard;
     private javax.swing.JLabel nomor1;
