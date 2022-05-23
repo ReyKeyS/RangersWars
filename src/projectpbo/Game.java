@@ -73,7 +73,7 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, 180, 50));
 
         judul.setText("Welcome");
-        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 300, 30));
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 300, 30));
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
