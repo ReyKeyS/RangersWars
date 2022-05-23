@@ -52,6 +52,7 @@ public class Game extends javax.swing.JFrame {
         judul = new JLabel("Welcome", SwingConstants.CENTER);
         btLaunch = new javax.swing.JButton();
         Level = new javax.swing.JLabel();
+        BgGame = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
@@ -69,18 +70,21 @@ public class Game extends javax.swing.JFrame {
                 btLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 180, 50));
+        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, 180, 50));
 
         judul.setText("Welcome");
-        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 300, 30));
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 300, 30));
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setText("Launch Game");
         btLaunch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 640, 230, 50));
+        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 230, 50));
 
         Level.setText("jLabel1");
-        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 260, 30));
+        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 30));
+
+        BgGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
+        getContentPane().add(BgGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,6 +140,7 @@ public class Game extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BgGame;
     private javax.swing.JLabel Level;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
