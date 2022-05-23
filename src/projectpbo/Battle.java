@@ -39,7 +39,7 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(eris, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris_Attack.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

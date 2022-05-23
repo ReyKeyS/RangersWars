@@ -135,15 +135,19 @@ public class Login extends javax.swing.JFrame {
                 }
             }
             if (found){
+                JOptionPane.showMessageDialog(null, "Berhasil Login!", "Message", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 new Game(user, idxLog).setVisible(true);
             }else{
-                dispose();
-                user.add(new User(curNama));
-                new Game(user, user.size()-1).setVisible(true);
+                int confirm = JOptionPane.showConfirmDialog(null, "Yakin Membuat Akun Baru?", "Message", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (confirm == 0){
+                    dispose();
+                    user.add(new User(curNama));
+                    new Game(user, user.size()-1).setVisible(true);
+                }
             }
         }else{
-            JOptionPane.showMessageDialog(this, "Wajib Input Nama");
+            JOptionPane.showMessageDialog(this, "Wajib Input Nama","Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btPlayActionPerformed
 
