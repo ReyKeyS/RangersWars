@@ -48,7 +48,6 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         btLogout = new javax.swing.JButton();
         judul = new JLabel("Welcome", SwingConstants.CENTER);
         btLaunch = new javax.swing.JButton();
@@ -61,9 +60,6 @@ public class Game extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Start Hovered.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button.png"))); // NOI18N
@@ -92,7 +88,7 @@ public class Game extends javax.swing.JFrame {
                 btLaunchActionPerformed(evt);
             }
         });
-        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 330, 370, 350));
+        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 500, 190, 180));
 
         Level.setText("jLabel1");
         getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 30));
@@ -162,7 +158,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel Level;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
 }
