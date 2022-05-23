@@ -48,6 +48,7 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         btLogout = new javax.swing.JButton();
         judul = new JLabel("Welcome", SwingConstants.CENTER);
         btLaunch = new javax.swing.JButton();
@@ -57,28 +58,41 @@ public class Game extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
         setLocation(new java.awt.Point(325, 180));
-        setPreferredSize(new java.awt.Dimension(1200, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Start Hovered.png"))); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
+
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btLogout.setText("Log Out");
+        btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button.png"))); // NOI18N
+        btLogout.setBorderPainted(false);
+        btLogout.setContentAreaFilled(false);
         btLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btLogout.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button hovered.png"))); // NOI18N
         btLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, 180, 50));
+        getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 140, 140));
 
         judul.setText("Welcome");
         getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 300, 30));
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btLaunch.setText("Launch Game");
+        btLaunch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Start.png"))); // NOI18N
+        btLaunch.setBorderPainted(false);
+        btLaunch.setContentAreaFilled(false);
         btLaunch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 230, 50));
+        btLaunch.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Start Hovered.png"))); // NOI18N
+        btLaunch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLaunchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 330, 370, 350));
 
         Level.setText("jLabel1");
         getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 30));
@@ -103,6 +117,10 @@ public class Game extends javax.swing.JFrame {
         dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
+
+    private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btLaunchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +162,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel Level;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
 }
