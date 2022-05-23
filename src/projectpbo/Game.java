@@ -29,10 +29,9 @@ public class Game extends javax.swing.JFrame {
         initComponents();
         this.idx = idx;
         this.user = player;
-        judul.setText("Welcome, " + user.get(idx).getNama());
-        judul.setFont(new Font("Times New Roman", Font.BOLD, 24));
-        Level.setText("Level : " + user.get(idx).getLevel());
-        Level.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+        judul.setText(user.get(idx).getNama());
+        Level.setText(""+user.get(idx).getLevel());
+        Gold.setText("Gold : " + user.get(idx).getGold());
     }
     
     public Game(){
@@ -52,6 +51,9 @@ public class Game extends javax.swing.JFrame {
         judul = new JLabel("Welcome", SwingConstants.CENTER);
         btLaunch = new javax.swing.JButton();
         Level = new javax.swing.JLabel();
+        Gold = new javax.swing.JLabel();
+        WelcomeLB = new javax.swing.JLabel();
+        LevelLB = new javax.swing.JLabel();
         BgGame = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,8 +76,12 @@ public class Game extends javax.swing.JFrame {
         });
         getContentPane().add(btLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 140, 140));
 
-        judul.setText("Welcome");
-        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 300, 30));
+        judul.setBackground(new java.awt.Color(0, 0, 0));
+        judul.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        judul.setForeground(new java.awt.Color(255, 255, 255));
+        judul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul.setOpaque(true);
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 220, 40));
 
         btLaunch.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLaunch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Start.png"))); // NOI18N
@@ -90,8 +96,24 @@ public class Game extends javax.swing.JFrame {
         });
         getContentPane().add(btLaunch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 500, 190, 180));
 
-        Level.setText("jLabel1");
-        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 30));
+        Level.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        Level.setForeground(new java.awt.Color(0, 102, 255));
+        Level.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Level.setText("Level");
+        Level.setToolTipText("");
+        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 150, 40));
+
+        Gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        Gold.setForeground(new java.awt.Color(255, 255, 0));
+        Gold.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Gold.setText("Gold");
+        getContentPane().add(Gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 170, 30));
+
+        WelcomeLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Welcome_label.png"))); // NOI18N
+        getContentPane().add(WelcomeLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+
+        LevelLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Level _ label.png"))); // NOI18N
+        getContentPane().add(LevelLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         BgGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
         getContentPane().add(BgGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -155,7 +177,10 @@ public class Game extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BgGame;
+    private javax.swing.JLabel Gold;
     private javax.swing.JLabel Level;
+    private javax.swing.JLabel LevelLB;
+    private javax.swing.JLabel WelcomeLB;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
     private javax.swing.JLabel judul;

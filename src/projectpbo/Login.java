@@ -71,7 +71,6 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
         setLocation(new java.awt.Point(325, 180));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +87,6 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 424, 120, 120));
 
-        tfNama.setBackground(new java.awt.Color(255, 255, 255));
         tfNama.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNama.setBorder(null);
