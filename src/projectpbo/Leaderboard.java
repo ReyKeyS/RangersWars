@@ -25,20 +25,24 @@ public class Leaderboard extends javax.swing.JFrame {
         Collections.sort(user, new SortLeader());
         initComponents();
         
-        if (user.get(0) != null){
-            nomor1.setText(user.get(0).getNama() + " - " + user.get(0).getLevel());
-        }else{
-            nomor1.setText("-");
-        }
-        if (user.get(1) != null){
-            nomor2.setText(user.get(1).getNama() + " - " + user.get(1).getLevel());
-        }else{
-            nomor2.setText("-");
-        }
-        if (user.get(0) != null){
-            nomor3.setText(user.get(2).getNama() + " - " + user.get(2).getLevel());
-        }else{
-            nomor3.setText("-");
+        nomor1.setText("-----");
+        nomor2.setText("-----");
+        nomor3.setText("-----");
+        
+        if (user.size() > 0){
+            if (user.get(0) != null){
+                nomor1.setText(user.get(0).getNama() + " - " + user.get(0).getLevel());
+            }
+            if (user.size() > 1){
+                if (user.get(1) != null){
+                    nomor2.setText(user.get(1).getNama() + " - " + user.get(1).getLevel());
+                }
+                if (user.size() > 2){
+                    if (user.get(2) != null){
+                        nomor3.setText(user.get(2).getNama() + " - " + user.get(2).getLevel());
+                    }
+                }
+            }
         }
     }
 
@@ -59,24 +63,31 @@ public class Leaderboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 180));
-        setPreferredSize(new java.awt.Dimension(1200, 720));
+        setMaximumSize(new java.awt.Dimension(1280, 720));
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Leaderboard.setFont(new java.awt.Font("Segoe UI", 0, 72)); // NOI18N
         Leaderboard.setText("Leaderboard");
-        getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
+        getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
 
         nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        nomor1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor1.setText("Player 1");
-        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 230, 40));
+        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 230, 40));
 
         nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        nomor2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor2.setText("Player 2");
-        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 230, 40));
+        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 230, 40));
 
         nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        nomor3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor3.setText("Player 3");
-        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 230, 40));
+        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 230, 40));
 
         Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Back.setText("Back");
@@ -85,7 +96,7 @@ public class Leaderboard extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, 175, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 175, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

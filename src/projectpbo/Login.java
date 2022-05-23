@@ -40,7 +40,7 @@ public class Login extends javax.swing.JFrame {
             in.close();
             load.close();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "failed");
+            
         }
         if (!keplay){
             keplay = true;
