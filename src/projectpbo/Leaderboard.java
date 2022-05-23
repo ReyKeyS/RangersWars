@@ -69,7 +69,6 @@ public class Leaderboard extends javax.swing.JFrame {
         setLocation(new java.awt.Point(325, 180));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,31 +81,37 @@ public class Leaderboard extends javax.swing.JFrame {
         nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor1.setText("Player 1");
+        nomor1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor1.setOpaque(true);
-        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 230, 40));
+        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 230, 40));
 
         nomor2.setBackground(new java.awt.Color(255, 255, 51));
         nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor2.setText("Player 2");
+        nomor2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor2.setOpaque(true);
-        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 230, 40));
+        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 230, 40));
 
         nomor3.setBackground(new java.awt.Color(255, 255, 51));
         nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nomor3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nomor3.setText("Player 3");
+        nomor3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor3.setOpaque(true);
         getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 230, 40));
 
         Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        Back.setText("Back");
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back button.png"))); // NOI18N
+        Back.setBorderPainted(false);
+        Back.setContentAreaFilled(false);
+        Back.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back button hovered.png"))); // NOI18N
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 175, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 150));
 
         BGLeaderboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard_page.jpg"))); // NOI18N
         getContentPane().add(BGLeaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
