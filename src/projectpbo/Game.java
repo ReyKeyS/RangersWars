@@ -120,23 +120,25 @@ public class Game extends javax.swing.JFrame {
         LevelLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Level _ label.png"))); // NOI18N
         getContentPane().add(LevelLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        Level.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        Level.setBackground(new java.awt.Color(0, 0, 0));
+        Level.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 52)); // NOI18N
         Level.setForeground(new java.awt.Color(0, 102, 255));
         Level.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Level.setText("Level");
         Level.setToolTipText("");
         Level.setOpaque(true);
-        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 50, 50));
+        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 25, 170, 50));
 
-        Gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        Gold.setBackground(new java.awt.Color(0, 0, 0));
+        Gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 52)); // NOI18N
         Gold.setForeground(new java.awt.Color(255, 255, 0));
         Gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Gold.setText("Gold");
         Gold.setOpaque(true);
-        getContentPane().add(Gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 50, 50));
+        getContentPane().add(Gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 86, 170, 50));
 
         WelcomeLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Welcome_label.png"))); // NOI18N
-        getContentPane().add(WelcomeLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+        getContentPane().add(WelcomeLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, -1));
 
         HeroStand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Bawahe Rangers.png"))); // NOI18N
         getContentPane().add(HeroStand, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
