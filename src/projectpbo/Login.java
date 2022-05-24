@@ -87,6 +87,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 424, 120, 120));
 
+        tfNama.setBackground(new java.awt.Color(255, 255, 255));
         tfNama.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNama.setBorder(null);

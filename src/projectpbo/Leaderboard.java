@@ -22,11 +22,10 @@ public class Leaderboard extends javax.swing.JFrame {
     }
     
     public Leaderboard(ArrayList<User> player) {
-        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
-        
         this.user = player;
         Collections.sort(user, new SortLeader());
         initComponents();
+        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
         BGLeaderboard.setIcon(bg);
         nomor1.setText("-----");
         nomor2.setText("-----");
@@ -91,7 +90,7 @@ public class Leaderboard extends javax.swing.JFrame {
         nomor2.setText("Player 2");
         nomor2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor2.setOpaque(true);
-        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 230, 40));
+        getContentPane().add(nomor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 290, 230, 40));
 
         nomor3.setBackground(new java.awt.Color(255, 255, 51));
         nomor3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -99,7 +98,7 @@ public class Leaderboard extends javax.swing.JFrame {
         nomor3.setText("Player 3");
         nomor3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor3.setOpaque(true);
-        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 230, 40));
+        getContentPane().add(nomor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 345, 230, 40));
 
         Back.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back button.png"))); // NOI18N
