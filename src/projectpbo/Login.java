@@ -87,7 +87,6 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 424, 120, 120));
 
-        tfNama.setBackground(new java.awt.Color(255, 255, 255));
         tfNama.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         tfNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNama.setBorder(null);
@@ -112,6 +111,11 @@ public class Login extends javax.swing.JFrame {
         btMute.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btMuteMouseClicked(evt);
+            }
+        });
+        btMute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMuteActionPerformed(evt);
             }
         });
         getContentPane().add(btMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 424, 120, 120));
@@ -166,6 +170,10 @@ public class Login extends javax.swing.JFrame {
             kemute = false;
         }
     }//GEN-LAST:event_btMuteMouseClicked
+
+    private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btMuteActionPerformed
 
     /**
      * @param args the command line arguments
