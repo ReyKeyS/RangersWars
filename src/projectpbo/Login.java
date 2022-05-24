@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static projectpbo.Music.clip;
 
@@ -160,9 +161,17 @@ public class Login extends javax.swing.JFrame {
         if(!kemute){
             volume.setValue(-80f);
             kemute = true;
+            ImageIcon img = new ImageIcon("src\\images\\Music button muted.png");
+            ImageIcon imghover = new ImageIcon("src\\images\\Music button hovered mutted.png");
+            btMute.setIcon(img);
+            btMute.setRolloverIcon(imghover);
         }else{
             volume.setValue(-10f);
             kemute = false;
+            ImageIcon img = new ImageIcon("src\\images\\Music button.png");
+            ImageIcon imghover = new ImageIcon("src\\images\\Music button hovered.png");
+            btMute.setIcon(img);
+            btMute.setRolloverIcon(imghover);
         }
     }//GEN-LAST:event_btMuteActionPerformed
 

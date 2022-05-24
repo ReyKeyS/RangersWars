@@ -58,6 +58,11 @@ public class Game extends javax.swing.JFrame {
         Level = new javax.swing.JLabel();
         Gold = new javax.swing.JLabel();
         WelcomeLB = new javax.swing.JLabel();
+        merah1 = new javax.swing.JLabel();
+        merah2 = new javax.swing.JLabel();
+        merah3 = new javax.swing.JLabel();
+        merah4 = new javax.swing.JLabel();
+        merah5 = new javax.swing.JLabel();
         HeroStand = new javax.swing.JLabel();
         BgGame = new javax.swing.JLabel();
 
@@ -140,6 +145,21 @@ public class Game extends javax.swing.JFrame {
         WelcomeLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Welcome_label.png"))); // NOI18N
         getContentPane().add(WelcomeLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, -1));
 
+        merah1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tombol merah.png"))); // NOI18N
+        getContentPane().add(merah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, -1, -1));
+
+        merah2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tombol merah.png"))); // NOI18N
+        getContentPane().add(merah2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, -1, -1));
+
+        merah3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tombol merah.png"))); // NOI18N
+        getContentPane().add(merah3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, -1, -1));
+
+        merah4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tombol merah.png"))); // NOI18N
+        getContentPane().add(merah4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, -1, -1));
+
+        merah5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tombol merah.png"))); // NOI18N
+        getContentPane().add(merah5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 490, -1, -1));
+
         HeroStand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Bawahe Rangers.png"))); // NOI18N
         getContentPane().add(HeroStand, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
 
@@ -217,5 +237,10 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton btLogout;
     private javax.swing.JButton btUpgrade;
     private javax.swing.JLabel judul;
+    private javax.swing.JLabel merah1;
+    private javax.swing.JLabel merah2;
+    private javax.swing.JLabel merah3;
+    private javax.swing.JLabel merah4;
+    private javax.swing.JLabel merah5;
     // End of variables declaration//GEN-END:variables
 }

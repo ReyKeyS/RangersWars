@@ -25,8 +25,8 @@ public class Leaderboard extends javax.swing.JFrame {
         this.user = player;
         Collections.sort(user, new SortLeader());
         initComponents();
-//        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
-//        BgLeader.setIcon(bg);
+        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
+        BgLeader.setIcon(bg);
         nomor1.setText("-----");
         nomor2.setText("-----");
         nomor3.setText("-----");
