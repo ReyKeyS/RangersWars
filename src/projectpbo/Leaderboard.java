@@ -25,8 +25,8 @@ public class Leaderboard extends javax.swing.JFrame {
         this.user = player;
         Collections.sort(user, new SortLeader());
         initComponents();
-        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
-        BGLeaderboard.setIcon(bg);
+//        ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
+//        BgLeader.setIcon(bg);
         nomor1.setText("-----");
         nomor2.setText("-----");
         nomor3.setText("-----");
@@ -57,12 +57,11 @@ public class Leaderboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Leaderboard = new javax.swing.JLabel();
         nomor1 = new javax.swing.JLabel();
         nomor2 = new javax.swing.JLabel();
         nomor3 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
-        BGLeaderboard = new javax.swing.JLabel();
+        BgLeader = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 180));
@@ -71,10 +70,6 @@ public class Leaderboard extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Leaderboard.setFont(new java.awt.Font("Segoe UI", 0, 72)); // NOI18N
-        Leaderboard.setText("Leaderboard");
-        getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
 
         nomor1.setBackground(new java.awt.Color(255, 255, 51));
         nomor1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -112,8 +107,8 @@ public class Leaderboard extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 150));
 
-        BGLeaderboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard_page.jpg"))); // NOI18N
-        getContentPane().add(BGLeaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        BgLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard_page.jpg"))); // NOI18N
+        getContentPane().add(BgLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,9 +155,8 @@ public class Leaderboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BGLeaderboard;
     private javax.swing.JButton Back;
-    private javax.swing.JLabel Leaderboard;
+    private javax.swing.JLabel BgLeader;
     private javax.swing.JLabel nomor1;
     private javax.swing.JLabel nomor2;
     private javax.swing.JLabel nomor3;

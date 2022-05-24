@@ -47,10 +47,11 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btUpgrade = new javax.swing.JButton();
+        IdleEris = new javax.swing.JLabel();
+        IdleYoimiya = new javax.swing.JLabel();
         btLogout = new javax.swing.JButton();
-        judul = new JLabel("Welcome", SwingConstants.CENTER);
+        judul = new javax.swing.JLabel();
         btLaunch = new javax.swing.JButton();
         GoldLB = new javax.swing.JLabel();
         LevelLB = new javax.swing.JLabel();
@@ -67,11 +68,17 @@ public class Game extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris Jalan.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, 290));
+        btUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade.png"))); // NOI18N
+        btUpgrade.setBorderPainted(false);
+        btUpgrade.setContentAreaFilled(false);
+        btUpgrade.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade Hovered.png"))); // NOI18N
+        getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, 140, 140));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Yoimiya Jalan.gif"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
+        IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris Jalan.gif"))); // NOI18N
+        getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, 290));
+
+        IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Yoimiya Jalan.gif"))); // NOI18N
+        getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button.png"))); // NOI18N
@@ -115,18 +122,18 @@ public class Game extends javax.swing.JFrame {
 
         Level.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
         Level.setForeground(new java.awt.Color(0, 102, 255));
-        Level.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Level.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Level.setText("Level");
         Level.setToolTipText("");
         Level.setOpaque(true);
-        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 60, 40));
+        getContentPane().add(Level, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 50, 50));
 
         Gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
         Gold.setForeground(new java.awt.Color(255, 255, 0));
-        Gold.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Gold.setText("Gold");
         Gold.setOpaque(true);
-        getContentPane().add(Gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 60, 50));
+        getContentPane().add(Gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 50, 50));
 
         WelcomeLB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Welcome_label.png"))); // NOI18N
         getContentPane().add(WelcomeLB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
@@ -199,13 +206,14 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel Gold;
     private javax.swing.JLabel GoldLB;
     private javax.swing.JLabel HeroStand;
+    private javax.swing.JLabel IdleEris;
+    private javax.swing.JLabel IdleYoimiya;
     private javax.swing.JLabel Level;
     private javax.swing.JLabel LevelLB;
     private javax.swing.JLabel WelcomeLB;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btUpgrade;
     private javax.swing.JLabel judul;
     // End of variables declaration//GEN-END:variables
 }
