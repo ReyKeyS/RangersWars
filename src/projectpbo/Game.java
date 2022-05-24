@@ -72,7 +72,7 @@ public class Game extends javax.swing.JFrame {
         btUpgrade.setBorderPainted(false);
         btUpgrade.setContentAreaFilled(false);
         btUpgrade.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade Hovered.png"))); // NOI18N
-        getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, 140, 140));
+        getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
 
         IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris Jalan.gif"))); // NOI18N
         getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, 290));

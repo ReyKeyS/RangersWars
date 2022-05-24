@@ -108,11 +108,6 @@ public class Login extends javax.swing.JFrame {
         btMute.setBorderPainted(false);
         btMute.setContentAreaFilled(false);
         btMute.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Music button hovered.png"))); // NOI18N
-        btMute.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btMuteMouseClicked(evt);
-            }
-        });
         btMute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btMuteActionPerformed(evt);
@@ -160,7 +155,7 @@ public class Login extends javax.swing.JFrame {
         new Leaderboard(user).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
 
-    private void btMuteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btMuteMouseClicked
+    private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed
         FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
         if(!kemute){
             volume.setValue(-80f);
@@ -169,10 +164,6 @@ public class Login extends javax.swing.JFrame {
             volume.setValue(-10f);
             kemute = false;
         }
-    }//GEN-LAST:event_btMuteMouseClicked
-
-    private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btMuteActionPerformed
 
     /**

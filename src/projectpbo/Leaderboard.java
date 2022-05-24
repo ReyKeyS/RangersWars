@@ -77,7 +77,7 @@ public class Leaderboard extends javax.swing.JFrame {
         nomor1.setText("Player 1");
         nomor1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nomor1.setOpaque(true);
-        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 230, 40));
+        getContentPane().add(nomor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 225, 230, 40));
 
         nomor2.setBackground(new java.awt.Color(255, 255, 51));
         nomor2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -105,7 +105,7 @@ public class Leaderboard extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 170, 150));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 150, 150));
 
         BgLeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Leaderboard_page.jpg"))); // NOI18N
         getContentPane().add(BgLeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
