@@ -15,6 +15,7 @@ public class Battle extends javax.swing.JFrame {
      */
     public Battle() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -19,12 +19,14 @@ public class Leaderboard extends javax.swing.JFrame {
      */
     public Leaderboard() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public Leaderboard(ArrayList<User> player) {
         this.user = player;
         Collections.sort(user, new SortLeader());
         initComponents();
+        this.setLocationRelativeTo(null);
         ImageIcon bg = new ImageIcon("src\\images\\Background Leaderboard.gif");
         BgLeader.setIcon(bg);
         nomor1.setText("-----");

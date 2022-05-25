@@ -27,6 +27,7 @@ public class Game extends javax.swing.JFrame {
      */
     public Game(ArrayList<User> player, int idx) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.idx = idx;
         this.user = player;
         judul.setText(user.get(idx).getNama());
@@ -36,6 +37,7 @@ public class Game extends javax.swing.JFrame {
     
     public Game(){
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     /**

@@ -5,15 +5,12 @@
 package projectpbo;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static projectpbo.Music.clip;
 
 /**
  *
@@ -32,6 +29,7 @@ public class Login extends javax.swing.JFrame {
         
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.user = new ArrayList<>();
         // Load
         try {
@@ -71,7 +69,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setLocation(new java.awt.Point(325, 180));
+        setLocation(new java.awt.Point(0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
