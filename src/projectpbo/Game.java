@@ -4,13 +4,10 @@
  */
 package projectpbo;
 
-import java.awt.Font;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 
 
 /**
@@ -70,7 +67,7 @@ public class Game extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
-        setLocation(new java.awt.Point(325, 180));
+        setLocation(new java.awt.Point(0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,7 +184,8 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new Battle(user, idx).setVisible(true);
     }//GEN-LAST:event_btLaunchActionPerformed
 
     /**

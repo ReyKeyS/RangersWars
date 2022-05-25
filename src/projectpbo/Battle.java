@@ -4,12 +4,21 @@
  */
 package projectpbo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.*;
+
 /**
  *
  * @author RyanK
  */
 public class Battle extends javax.swing.JFrame {
-
+    private ArrayList<User> u = new ArrayList<>();
+    private int idx;
+    
+    private ArrayList<JLabel> ranger = new ArrayList<>();
+    private Timer t;
     /**
      * Creates new form Battle
      */
@@ -17,7 +26,14 @@ public class Battle extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    
+    public Battle(ArrayList<User> player, int idx) {
+        this.u = player;
+        this.idx = idx;
+        initComponents();
+        this.setLocationRelativeTo(null);       
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,8 +43,11 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        eris = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btEris = new javax.swing.JButton();
+        TowerEnemy = new javax.swing.JLabel();
+        TowerPlayer = new javax.swing.JLabel();
+        BgBattle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 180));
@@ -36,14 +55,59 @@ public class Battle extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        eris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ErisJalan.gif"))); // NOI18N
-        getContentPane().add(eris, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris_Attack.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, -50, -1, -1));
+
+        btEris.setText("Eris");
+        btEris.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btErisActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, 80, 70));
+
+        TowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Musuh.png"))); // NOI18N
+        getContentPane().add(TowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, -1, -1));
+
+        TowerPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Rangers.png"))); // NOI18N
+        getContentPane().add(TowerPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+
+        BgBattle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
+        getContentPane().add(BgBattle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btErisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btErisActionPerformed
+        ranger.add(new JLabel());
+        ImageIcon troop = new ImageIcon("src\\images\\ErisJalan.gif");
+        ranger.get(ranger.size()-1).setIcon(troop);
+        ranger.get(ranger.size()-1).setBounds(210, 310, 200, 270);
+        getContentPane().add(ranger.get(ranger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+        
+        ActionListener act = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for (int i = 0; i < ranger.size(); i++) {
+                    int posx = ranger.get(i).getLocation().x;
+                    int posy = ranger.get(i).getLocation().y;
+                    if (posx+200 < 1030){
+                        ranger.get(i).setLocation(posx+1, posy);
+                    }else if (posx+200 == 1030){
+                        ImageIcon att = new ImageIcon("src\\images\\Eris_Attack.gif");
+                        ranger.get(i).setIcon(att);
+                        ranger.get(i).setBounds(730, 170, 491, 449);
+                        getContentPane().add(ranger.get(i), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+                        t.stop();
+                    }
+                }
+            }
+        };
+        
+        if (t == null){
+            t = new Timer(10, act);
+            t.start();
+        }
+    }//GEN-LAST:event_btErisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,7 +145,10 @@ public class Battle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel eris;
+    private javax.swing.JLabel BgBattle;
+    private javax.swing.JLabel TowerEnemy;
+    private javax.swing.JLabel TowerPlayer;
+    private javax.swing.JButton btEris;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

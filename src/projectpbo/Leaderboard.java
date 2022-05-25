@@ -66,7 +66,7 @@ public class Leaderboard extends javax.swing.JFrame {
         BgLeader = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(325, 180));
+        setLocation(new java.awt.Point(0, 0));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
