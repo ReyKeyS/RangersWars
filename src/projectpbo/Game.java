@@ -82,7 +82,7 @@ public class Game extends javax.swing.JFrame {
         IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris Jalan.gif"))); // NOI18N
         getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, 290));
 
-        IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Yoimiya Jalan.gif"))); // NOI18N
+        IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Yoimiya Jalan Revisi.gif"))); // NOI18N
         getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N

@@ -46,7 +46,7 @@ public class Login extends javax.swing.JFrame {
         if (!keplay){
             keplay = true;
             player.loadMusic();
-            player.clip.setMicrosecondPosition(17800000);
+            player.clip.setMicrosecondPosition(0);
             FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
             player.clip.start();
