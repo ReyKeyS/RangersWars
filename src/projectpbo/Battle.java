@@ -96,7 +96,6 @@ public class Battle extends javax.swing.JFrame {
                         ImageIcon att = new ImageIcon("src\\images\\Eris_Attack.gif");
                         ranger.get(i).setIcon(att);
                         ranger.get(i).setBounds(730, 170, 491, 449);
-                        getContentPane().add(ranger.get(i), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
                         t.stop();
                     }
                 }
