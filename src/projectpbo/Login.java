@@ -42,6 +42,9 @@ public class Login extends javax.swing.JFrame {
             
         }
         if (!keplay){
+            btMute.setIcon(new ImageIcon("src\\images\\Music button.png"));
+            btMute.setRolloverIcon(new ImageIcon("src\\images\\Music button hovered.png"));
+            
             keplay = true;
             player.loadMusic();
             player.clip.setMicrosecondPosition(0);
@@ -49,6 +52,9 @@ public class Login extends javax.swing.JFrame {
             volume.setValue(-10f);
             player.clip.start();
             player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }else{
+            btMute.setIcon(new ImageIcon("src\\images\\Music button muted.png"));
+            btMute.setRolloverIcon(new ImageIcon("src\\images\\Music button hovered mutted.png"));
         }
     }
     
