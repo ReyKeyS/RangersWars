@@ -4,11 +4,13 @@
  */
 package projectpbo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author RyanK
  */
-public class Yoimiya extends Ranger{
+public class Yoimiya extends Ranger implements Serializable{
 
     public Yoimiya(String nama, int hp, int dmg, int range, int movement, int mineral) {
         super(nama, hp, dmg, range, movement, mineral);

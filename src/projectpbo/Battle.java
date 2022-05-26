@@ -50,6 +50,7 @@ public class Battle extends javax.swing.JFrame {
         BgBattle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Rangers Wars");
         setLocation(new java.awt.Point(325, 180));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));

@@ -69,8 +69,8 @@ public class User implements Serializable{
         return choose;
     }
 
-    public void setChoose(boolean[] choose) {
-        this.choose = choose;
+    public void setChoose(int idx, boolean ganti) {
+        this.choose[idx] = ganti;
     }
     
 }

@@ -7,6 +7,7 @@ package projectpbo;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -19,6 +20,9 @@ public class Game extends javax.swing.JFrame {
     private ArrayList<User> user = new ArrayList<>();
     private int idx;
     
+    private ImageIcon btMerah = new ImageIcon("src\\images\\tombol merah.png");
+    private ImageIcon btHijau = new ImageIcon("src\\images\\tombol ijo.png");
+    
     /**
      * Creates new form Game
      */
@@ -30,6 +34,17 @@ public class Game extends javax.swing.JFrame {
         judul.setText(user.get(idx).getNama());
         Level.setText(""+user.get(idx).getLevel());
         Gold.setText("" + user.get(idx).getGold());
+        
+        if (user.get(idx).getChoose()[0])
+            merah1.setIcon(btHijau);
+        if (user.get(idx).getChoose()[1])
+            merah2.setIcon(btHijau);
+        if (user.get(idx).getChoose()[2])
+            merah3.setIcon(btHijau);
+        if (user.get(idx).getChoose()[3])
+            merah4.setIcon(btHijau);
+        if (user.get(idx).getChoose()[4])
+            merah5.setIcon(btHijau);
     }
     
     public Game(){
@@ -63,6 +78,11 @@ public class Game extends javax.swing.JFrame {
         merah4 = new javax.swing.JLabel();
         merah5 = new javax.swing.JLabel();
         HeroStand = new javax.swing.JLabel();
+        pilih5 = new javax.swing.JButton();
+        pilih4 = new javax.swing.JButton();
+        pilih3 = new javax.swing.JButton();
+        pilih2 = new javax.swing.JButton();
+        pilih1 = new javax.swing.JButton();
         BgGame = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,6 +182,51 @@ public class Game extends javax.swing.JFrame {
         HeroStand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Bawahe Rangers.png"))); // NOI18N
         getContentPane().add(HeroStand, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
 
+        pilih5.setBorderPainted(false);
+        pilih5.setContentAreaFilled(false);
+        pilih5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilih5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pilih5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1005, 170, 180, 360));
+
+        pilih4.setBorderPainted(false);
+        pilih4.setContentAreaFilled(false);
+        pilih4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilih4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pilih4, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 170, 180, 360));
+
+        pilih3.setBorderPainted(false);
+        pilih3.setContentAreaFilled(false);
+        pilih3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilih3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pilih3, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 170, 180, 360));
+
+        pilih2.setBorderPainted(false);
+        pilih2.setContentAreaFilled(false);
+        pilih2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilih2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pilih2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 170, 180, 360));
+
+        pilih1.setBorderPainted(false);
+        pilih1.setContentAreaFilled(false);
+        pilih1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilih1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pilih1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 180, 360));
+
         BgGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
         getContentPane().add(BgGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -187,6 +252,111 @@ public class Game extends javax.swing.JFrame {
         dispose();
         new Battle(user, idx).setVisible(true);
     }//GEN-LAST:event_btLaunchActionPerformed
+
+    private void pilih1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih1ActionPerformed
+        if (user.get(idx).getChoose()[0]){
+            user.get(idx).setChoose(0, false);
+            merah1.setIcon(btMerah);
+        }else{
+            boolean sementara[] = user.get(idx).getChoose();
+            int Choice = 0;
+            for (int i = 0; i < sementara.length; i++) {
+                if (sementara[i]){
+                    Choice++;
+                }
+            }
+            if (Choice == 3){
+                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+            }else{
+                user.get(idx).setChoose(0, true);
+            merah1.setIcon(btHijau);
+            }
+        }
+    }//GEN-LAST:event_pilih1ActionPerformed
+
+    private void pilih2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih2ActionPerformed
+        if (user.get(idx).getChoose()[1]){
+            user.get(idx).setChoose(1, false);
+            merah2.setIcon(btMerah);
+        }else{
+            boolean sementara[] = user.get(idx).getChoose();
+            int Choice = 0;
+            for (int i = 0; i < sementara.length; i++) {
+                if (sementara[i]){
+                    Choice++;
+                }
+            }
+            if (Choice == 3){
+                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+            }else{
+                user.get(idx).setChoose(1, true);
+            merah2.setIcon(btHijau);
+            }
+        }
+    }//GEN-LAST:event_pilih2ActionPerformed
+
+    private void pilih3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih3ActionPerformed
+        if (user.get(idx).getChoose()[2]){
+            user.get(idx).setChoose(2, false);
+            merah3.setIcon(btMerah);
+        }else{
+            boolean sementara[] = user.get(idx).getChoose();
+            int Choice = 0;
+            for (int i = 0; i < sementara.length; i++) {
+                if (sementara[i]){
+                    Choice++;
+                }
+            }
+            if (Choice == 3){
+                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+            }else{
+                user.get(idx).setChoose(2, true);
+            merah3.setIcon(btHijau);
+            }
+        }
+    }//GEN-LAST:event_pilih3ActionPerformed
+
+    private void pilih4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih4ActionPerformed
+        if (user.get(idx).getChoose()[3]){
+            user.get(idx).setChoose(3, false);
+            merah4.setIcon(btMerah);
+        }else{
+            boolean sementara[] = user.get(idx).getChoose();
+            int Choice = 0;
+            for (int i = 0; i < sementara.length; i++) {
+                if (sementara[i]){
+                    Choice++;
+                }
+            }
+            if (Choice == 3){
+                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+            }else{
+                user.get(idx).setChoose(3, true);
+            merah4.setIcon(btHijau);
+            }
+        }
+    }//GEN-LAST:event_pilih4ActionPerformed
+
+    private void pilih5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih5ActionPerformed
+        if (user.get(idx).getChoose()[4]){
+            user.get(idx).setChoose(4, false);
+            merah5.setIcon(btMerah);
+        }else{
+            boolean sementara[] = user.get(idx).getChoose();
+            int Choice = 0;
+            for (int i = 0; i < sementara.length; i++) {
+                if (sementara[i]){
+                    Choice++;
+                }
+            }
+            if (Choice == 3){
+                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+            }else{
+                user.get(idx).setChoose(4, true);
+            merah5.setIcon(btHijau);
+            }
+        }
+    }//GEN-LAST:event_pilih5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,5 +412,10 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel merah3;
     private javax.swing.JLabel merah4;
     private javax.swing.JLabel merah5;
+    private javax.swing.JButton pilih1;
+    private javax.swing.JButton pilih2;
+    private javax.swing.JButton pilih3;
+    private javax.swing.JButton pilih4;
+    private javax.swing.JButton pilih5;
     // End of variables declaration//GEN-END:variables
 }

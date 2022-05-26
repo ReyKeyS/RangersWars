@@ -4,11 +4,13 @@
  */
 package projectpbo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author RyanK
  */
-public class Eris extends Ranger{
+public class Eris extends Ranger implements Serializable{
     // Nama      : "Eris";
     // HP        : 500
     // DMG       : 50
