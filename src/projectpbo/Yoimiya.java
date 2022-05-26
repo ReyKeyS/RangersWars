@@ -8,15 +8,9 @@ package projectpbo;
  *
  * @author RyanK
  */
-public class Eris extends Ranger{
-    // Nama      : "Eris";
-    // HP        : 500
-    // DMG       : 50
-    // Range     : Deket (sesuaino)
-    // Movement  : -
-    // Mineral   : -
-    
-    public Eris(String nama, int hp, int dmg, int range, int movement, int mineral) {
+public class Yoimiya extends Ranger{
+
+    public Yoimiya(String nama, int hp, int dmg, int range, int movement, int mineral) {
         super(nama, hp, dmg, range, movement, mineral);
     }
     
