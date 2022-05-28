@@ -43,8 +43,16 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         btEris = new javax.swing.JButton();
+        btPause = new javax.swing.JButton();
+        BoxMineral = new javax.swing.JLabel();
+        Ranger3 = new javax.swing.JButton();
+        Ranger2 = new javax.swing.JButton();
+        Ranger1 = new javax.swing.JButton();
+        BoxRangers = new javax.swing.JLabel();
+        HPTowerEnemy = new javax.swing.JLabel();
+        HPTowerRanger = new javax.swing.JLabel();
+        btTowerAtt = new javax.swing.JButton();
         TowerEnemy = new javax.swing.JLabel();
         TowerPlayer = new javax.swing.JLabel();
         BgBattle = new javax.swing.JLabel();
@@ -52,12 +60,11 @@ public class Battle extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
         setLocation(new java.awt.Point(325, 180));
+        setMaximumSize(new java.awt.Dimension(1280, 720));
+        setMinimumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris_Attack.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, -50, -1, -1));
 
         btEris.setText("Eris");
         btEris.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +72,51 @@ public class Battle extends javax.swing.JFrame {
                 btErisActionPerformed(evt);
             }
         });
-        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, 80, 70));
+        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 80, 70));
+
+        btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
+        btPause.setBorderPainted(false);
+        btPause.setContentAreaFilled(false);
+        btPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btPause.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPauseActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
+
+        BoxMineral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mineral box.png"))); // NOI18N
+        getContentPane().add(BoxMineral, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 590, -1, -1));
+
+        Ranger3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
+        Ranger3.setBorderPainted(false);
+        Ranger3.setContentAreaFilled(false);
+        getContentPane().add(Ranger3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 600, -1, -1));
+
+        Ranger2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
+        Ranger2.setBorderPainted(false);
+        Ranger2.setContentAreaFilled(false);
+        getContentPane().add(Ranger2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
+
+        Ranger1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
+        Ranger1.setBorderPainted(false);
+        Ranger1.setContentAreaFilled(false);
+        getContentPane().add(Ranger1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, -1, -1));
+
+        BoxRangers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box untuk rangers 3.png"))); // NOI18N
+        BoxRangers.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(BoxRangers, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 140));
+
+        HPTowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa Tower Musuh.png"))); // NOI18N
+        getContentPane().add(HPTowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, -1, -1));
+
+        HPTowerRanger.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa tower rangers.png"))); // NOI18N
+        getContentPane().add(HPTowerRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
+
+        btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
+        btTowerAtt.setBorderPainted(false);
+        btTowerAtt.setContentAreaFilled(false);
+        getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 590, -1, -1));
 
         TowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Musuh.png"))); // NOI18N
         getContentPane().add(TowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, -1, -1));
@@ -109,6 +160,11 @@ public class Battle extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btErisActionPerformed
 
+    private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
+        dispose();
+        new Game(u, idx).setVisible(true);
+    }//GEN-LAST:event_btPauseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -146,9 +202,17 @@ public class Battle extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BgBattle;
+    private javax.swing.JLabel BoxMineral;
+    private javax.swing.JLabel BoxRangers;
+    private javax.swing.JLabel HPTowerEnemy;
+    private javax.swing.JLabel HPTowerRanger;
+    private javax.swing.JButton Ranger1;
+    private javax.swing.JButton Ranger2;
+    private javax.swing.JButton Ranger3;
     private javax.swing.JLabel TowerEnemy;
     private javax.swing.JLabel TowerPlayer;
     private javax.swing.JButton btEris;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btPause;
+    private javax.swing.JButton btTowerAtt;
     // End of variables declaration//GEN-END:variables
 }
