@@ -43,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         }
         if (!keplay){
             keplay = true;
-            player.loadMusic();
+            player.loadMusic("src/music/bg.wav");
             player.clip.setMicrosecondPosition(0);
             FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);

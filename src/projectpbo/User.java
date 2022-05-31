@@ -15,6 +15,7 @@ public class User implements Serializable{
     private int level,gold;
     private Ranger[] ranger;
     private boolean[] choose = new boolean[5];
+    private Tower tower;
     
     public User(String nama) {
         this.nama = nama;
@@ -31,6 +32,7 @@ public class User implements Serializable{
         choose[3] = false;
         ranger[4] = new NewCastle("NewCastle", 1000, 10, 1, 10, 20);
         choose[4] = false;
+        this.tower = new Tower(1000, 1, false);
     }
 
     public String getNama() {
@@ -72,5 +74,13 @@ public class User implements Serializable{
     public void setChoose(int idx, boolean ganti) {
         this.choose[idx] = ganti;
     }
-    
+
+    public Tower getTower() {
+        return tower;
+    }
+
+    public void setTower(Tower tower) {
+        this.tower = tower;
+    }
+        
 }

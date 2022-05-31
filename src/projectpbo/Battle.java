@@ -30,8 +30,21 @@ public class Battle extends javax.swing.JFrame {
     public Battle(ArrayList<User> player, int idx) {
         this.u = player;
         this.idx = idx;
+        int hpTower = u.get(idx).getTower().getHp();
+        Ranger[] ranger = new Ranger[3];
+        ranger[0] = u.get(idx).getRanger()[0];
+        ranger[1] = u.get(idx).getRanger()[1];
+        ranger[2] = u.get(idx).getRanger()[2];
+        
         initComponents();
-        this.setLocationRelativeTo(null);       
+        this.setLocationRelativeTo(null);
+        
+        // Ranger Config
+        HpTowerRanger.setText(Integer.toString(hpTower));
+        
+        
+        // Enemy Config
+        HpTowerEnemy.setText("1000");
     }
     
     /**
@@ -45,13 +58,17 @@ public class Battle extends javax.swing.JFrame {
 
         btEris = new javax.swing.JButton();
         btPause = new javax.swing.JButton();
+        CurMineral = new javax.swing.JLabel();
+        MaxMineral = new javax.swing.JLabel();
         BoxMineral = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
         Ranger2 = new javax.swing.JButton();
         Ranger1 = new javax.swing.JButton();
         BoxRangers = new javax.swing.JLabel();
-        HPTowerEnemy = new javax.swing.JLabel();
-        HPTowerRanger = new javax.swing.JLabel();
+        HpTowerEnemy = new javax.swing.JLabel();
+        HPTEnemyBorder = new javax.swing.JLabel();
+        HpTowerRanger = new javax.swing.JLabel();
+        HPTRangerBorder = new javax.swing.JLabel();
         btTowerAtt = new javax.swing.JButton();
         TowerEnemy = new javax.swing.JLabel();
         TowerPlayer = new javax.swing.JLabel();
@@ -72,7 +89,7 @@ public class Battle extends javax.swing.JFrame {
                 btErisActionPerformed(evt);
             }
         });
-        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 80, 70));
+        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 80, 70));
 
         btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
         btPause.setBorderPainted(false);
@@ -85,38 +102,64 @@ public class Battle extends javax.swing.JFrame {
         });
         getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
 
+        CurMineral.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 28)); // NOI18N
+        CurMineral.setForeground(new java.awt.Color(255, 255, 255));
+        CurMineral.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CurMineral.setText("000");
+        getContentPane().add(CurMineral, new org.netbeans.lib.awtextra.AbsoluteConstraints(956, 607, 90, -1));
+
+        MaxMineral.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 28)); // NOI18N
+        MaxMineral.setForeground(new java.awt.Color(0, 255, 255));
+        MaxMineral.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MaxMineral.setText("000");
+        getContentPane().add(MaxMineral, new org.netbeans.lib.awtextra.AbsoluteConstraints(956, 655, 90, 30));
+
         BoxMineral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mineral box.png"))); // NOI18N
         getContentPane().add(BoxMineral, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 590, -1, -1));
 
         Ranger3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger3.setBorderPainted(false);
         Ranger3.setContentAreaFilled(false);
-        getContentPane().add(Ranger3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 600, -1, -1));
+        getContentPane().add(Ranger3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, -1, -1));
 
         Ranger2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger2.setBorderPainted(false);
         Ranger2.setContentAreaFilled(false);
-        getContentPane().add(Ranger2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
+        getContentPane().add(Ranger2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, -1, -1));
 
         Ranger1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger1.setBorderPainted(false);
         Ranger1.setContentAreaFilled(false);
-        getContentPane().add(Ranger1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, -1, -1));
+        Ranger1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Ranger1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, -1, -1));
 
+        BoxRangers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BoxRangers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box untuk rangers 3.png"))); // NOI18N
         BoxRangers.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(BoxRangers, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 140));
 
-        HPTowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa Tower Musuh.png"))); // NOI18N
-        getContentPane().add(HPTowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, -1, -1));
+        HpTowerEnemy.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        HpTowerEnemy.setForeground(new java.awt.Color(0, 0, 0));
+        HpTowerEnemy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HpTowerEnemy.setText("000");
+        getContentPane().add(HpTowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1145, 615, 80, -1));
 
-        HPTowerRanger.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa tower rangers.png"))); // NOI18N
-        getContentPane().add(HPTowerRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
+        HPTEnemyBorder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa Tower Musuh.png"))); // NOI18N
+        getContentPane().add(HPTEnemyBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, -1, -1));
+
+        HpTowerRanger.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        HpTowerRanger.setForeground(new java.awt.Color(0, 0, 0));
+        HpTowerRanger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HpTowerRanger.setText("000");
+        getContentPane().add(HpTowerRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 615, 80, -1));
+
+        HPTRangerBorder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa tower rangers.png"))); // NOI18N
+        getContentPane().add(HPTRangerBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
         btTowerAtt.setBorderPainted(false);
         btTowerAtt.setContentAreaFilled(false);
-        getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 590, -1, -1));
+        getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, -1, -1));
 
         TowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Musuh.png"))); // NOI18N
         getContentPane().add(TowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, -1, -1));
@@ -204,8 +247,12 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel BgBattle;
     private javax.swing.JLabel BoxMineral;
     private javax.swing.JLabel BoxRangers;
-    private javax.swing.JLabel HPTowerEnemy;
-    private javax.swing.JLabel HPTowerRanger;
+    private javax.swing.JLabel CurMineral;
+    private javax.swing.JLabel HPTEnemyBorder;
+    private javax.swing.JLabel HPTRangerBorder;
+    private javax.swing.JLabel HpTowerEnemy;
+    private javax.swing.JLabel HpTowerRanger;
+    private javax.swing.JLabel MaxMineral;
     private javax.swing.JButton Ranger1;
     private javax.swing.JButton Ranger2;
     private javax.swing.JButton Ranger3;
