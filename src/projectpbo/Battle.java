@@ -51,6 +51,8 @@ public class Battle extends javax.swing.JFrame {
         R1Icon.setIcon(ranger[0].iconKartu);
         R2Cost.setText(Integer.toString(ranger[1].getMineral()));
         R2Icon.setIcon(ranger[1].iconKartu);
+        R3Cost.setText(Integer.toString(ranger[2].getMineral()));
+        R3Icon.setIcon(ranger[2].iconKartu);
         
         // Enemy Config
         int hpTowerEnemy = 5000;
@@ -67,6 +69,7 @@ public class Battle extends javax.swing.JFrame {
     private void initComponents() {
 
         btPause = new javax.swing.JButton();
+        R3Icon = new javax.swing.JLabel();
         R3Cost = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
         R2Icon = new javax.swing.JLabel();
@@ -106,6 +109,7 @@ public class Battle extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
+        getContentPane().add(R3Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 610, 65, 70));
 
         R3Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         R3Cost.setForeground(new java.awt.Color(255, 255, 255));
@@ -337,6 +341,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel R2Cost;
     private javax.swing.JLabel R2Icon;
     private javax.swing.JLabel R3Cost;
+    private javax.swing.JLabel R3Icon;
     private javax.swing.JButton Ranger1;
     private javax.swing.JButton Ranger2;
     private javax.swing.JButton Ranger3;
