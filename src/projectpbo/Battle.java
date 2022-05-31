@@ -45,6 +45,9 @@ public class Battle extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
+        //mana config
+        int maxMana=100;
+        MaxMineral.setText(Integer.toString(maxMana));
         // Ranger Config
         HpTowerRanger.setText(Integer.toString(hpTower));
         R1Cost.setText(Integer.toString(ranger[0].getMineral()));
