@@ -249,8 +249,19 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
-        dispose();
-        new Battle(user, idx).setVisible(true);
+        boolean sementara[] = user.get(idx).getChoose();
+        int Choice = 0;
+        for (int i = 0; i < sementara.length; i++) {
+            if (sementara[i]){
+                Choice++;
+            }
+        }
+        if (Choice == 3){
+            dispose();
+            new Battle(user, idx).setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btLaunchActionPerformed
 
     private void pilih1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih1ActionPerformed
@@ -266,7 +277,7 @@ public class Game extends javax.swing.JFrame {
                 }
             }
             if (Choice == 3){
-                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(0, true);
             merah1.setIcon(btHijau);
@@ -287,7 +298,7 @@ public class Game extends javax.swing.JFrame {
                 }
             }
             if (Choice == 3){
-                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(1, true);
             merah2.setIcon(btHijau);
@@ -308,7 +319,7 @@ public class Game extends javax.swing.JFrame {
                 }
             }
             if (Choice == 3){
-                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(2, true);
             merah3.setIcon(btHijau);
@@ -329,7 +340,7 @@ public class Game extends javax.swing.JFrame {
                 }
             }
             if (Choice == 3){
-                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(3, true);
             merah4.setIcon(btHijau);
@@ -350,7 +361,7 @@ public class Game extends javax.swing.JFrame {
                 }
             }
             if (Choice == 3){
-                JOptionPane.showMessageDialog(null, "Maksimal 3 Rangers yang dipilih", "Warning", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(4, true);
             merah5.setIcon(btHijau);
