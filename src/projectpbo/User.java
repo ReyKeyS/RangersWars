@@ -22,17 +22,17 @@ public class User implements Serializable{
         this.level = 1;
         this.gold = 0;
         this.ranger = new Ranger[5];
-        ranger[0] = new Eris("Eris", 500, 50, 1, 10, 20);
+        ranger[0] = new Eris("Eris", 1);
         choose[0] = true;
-        ranger[1] = new Yoimiya("Yoimiya", 350, 100, 5, 10, 20);
+        ranger[1] = new Yoimiya("Yoimiya", 1);
         choose[1] = true;
-        ranger[2] = new RaidenShogun("RaidenShogun", 600, 40, 3, 10, 20);
+        ranger[2] = new RaidenShogun("RaidenShogun", 1);
         choose[2] = true;
-        ranger[3] = new Mars("Mars", 750, 25, 1, 10, 20);
+        ranger[3] = new Mars("Mars", 1);
         choose[3] = false;
-        ranger[4] = new NewCastle("NewCastle", 1000, 10, 1, 10, 20);
+        ranger[4] = new NewCastle("NewCastle", 1);
         choose[4] = false;
-        this.tower = new Tower(1000, 1, false);
+        this.tower = new Tower(2000, 1, false);
     }
 
     public String getNama() {

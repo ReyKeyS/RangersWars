@@ -5,6 +5,7 @@
 package projectpbo;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -12,8 +13,11 @@ import java.io.Serializable;
  */
 public class Mars extends Ranger implements Serializable{
 
-    public Mars(String nama, int hp, int dmg, int range, int movement, int mineral) {
-        super(nama, hp, dmg, range, movement, mineral);
+    public Mars(String nama, int level) {
+        super(nama, level, 740, 63, 1, 10, 20,
+                new ImageIcon("src\\images\\Yoimiya kecil utk blok.png"),
+                new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif"),
+                new ImageIcon("src\\images\\Yoimiya Attack Resize.gif"));
     }
     
 }

@@ -5,6 +5,7 @@
 package projectpbo;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -12,8 +13,11 @@ import java.io.Serializable;
  */
 public class RaidenShogun extends Ranger implements Serializable{
 
-    public RaidenShogun(String nama, int hp, int dmg, int range, int movement, int mineral) {
-        super(nama, hp, dmg, range, movement, mineral);
+    public RaidenShogun(String nama, int level) {
+        super(nama, level, 680, 41, 1, 10, 20,
+                new ImageIcon("src\\images\\Yoimiya kecil utk blok.png"),
+                new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif"),
+                new ImageIcon("src\\images\\Yoimiya Attack Resize.gif"));
     }
-    
+   
 }

@@ -5,21 +5,19 @@
 package projectpbo;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author RyanK
  */
 public class Eris extends Ranger implements Serializable{
-    // Nama      : "Eris";
-    // HP        : 500
-    // DMG       : 50
-    // Range     : Deket (sesuaino)
-    // Movement  : -
-    // Mineral   : -
     
-    public Eris(String nama, int hp, int dmg, int range, int movement, int mineral) {
-        super(nama, hp, dmg, range, movement, mineral);
+    public Eris(String nama, int level) {
+        super(nama, level, 620, 55, 1, 10, 20,
+                new ImageIcon("src\\images\\Eris kecil utk blok.png"),
+                new ImageIcon("src\\images\\ErisJalan.gif"),
+                new ImageIcon("src\\images\\Eris_Attack.gif"));
     }
     
 }

@@ -18,6 +18,7 @@ public class Battle extends javax.swing.JFrame {
     private int idx;
     
     private ArrayList<JLabel> ranger = new ArrayList<>();
+    private ArrayList<Integer> koor = new ArrayList<>();
     private Timer t;
     /**
      * Creates new form Battle
@@ -32,19 +33,27 @@ public class Battle extends javax.swing.JFrame {
         this.idx = idx;
         int hpTower = u.get(idx).getTower().getHp();
         Ranger[] ranger = new Ranger[3];
-        ranger[0] = u.get(idx).getRanger()[0];
-        ranger[1] = u.get(idx).getRanger()[1];
-        ranger[2] = u.get(idx).getRanger()[2];
+        int keisi = 0;
+        // Cek Boolean
+        for (int i = 0; i < 5; i++) {
+            if (u.get(idx).getChoose()[i]){
+                ranger[keisi] = u.get(idx).getRanger()[i];
+                keisi++;
+            }
+        }
         
         initComponents();
         this.setLocationRelativeTo(null);
         
         // Ranger Config
         HpTowerRanger.setText(Integer.toString(hpTower));
+        R1Cost.setText(Integer.toString(ranger[0].getMineral()));
+        R1Icon.setIcon(ranger[0].iconKartu);
         
         
         // Enemy Config
-        HpTowerEnemy.setText("1000");
+        int hpTowerEnemy = 5000;
+        HpTowerEnemy.setText(Integer.toString(hpTowerEnemy));
     }
     
     /**
@@ -56,12 +65,12 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btEris = new javax.swing.JButton();
         btPause = new javax.swing.JButton();
         R3Cost = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
         R2Cost = new javax.swing.JLabel();
         Ranger2 = new javax.swing.JButton();
+        R1Icon = new javax.swing.JLabel();
         R1Cost = new javax.swing.JLabel();
         Ranger1 = new javax.swing.JButton();
         CurMineral = new javax.swing.JLabel();
@@ -86,14 +95,6 @@ public class Battle extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btEris.setText("Eris");
-        btEris.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btErisActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 80, 70));
-
         btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
         btPause.setBorderPainted(false);
         btPause.setContentAreaFilled(false);
@@ -106,9 +107,10 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
 
         R3Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        R3Cost.setForeground(new java.awt.Color(255, 255, 255));
         R3Cost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        R3Cost.setText("000");
-        getContentPane().add(R3Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 690, -1, -1));
+        R3Cost.setText("0000");
+        getContentPane().add(R3Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 690, -1, -1));
 
         Ranger3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger3.setBorderPainted(false);
@@ -116,24 +118,36 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(Ranger3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, -1, -1));
 
         R2Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        R2Cost.setForeground(new java.awt.Color(255, 255, 255));
         R2Cost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        R2Cost.setText("000");
-        getContentPane().add(R2Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 690, -1, -1));
+        R2Cost.setText("0000");
+        getContentPane().add(R2Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 690, -1, -1));
 
         Ranger2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger2.setBorderPainted(false);
         Ranger2.setContentAreaFilled(false);
         getContentPane().add(Ranger2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, -1, -1));
 
+        R1Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        R1Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(R1Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 611, 65, 70));
+
         R1Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        R1Cost.setForeground(new java.awt.Color(255, 255, 255));
         R1Cost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        R1Cost.setText("000");
-        getContentPane().add(R1Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 690, -1, -1));
+        R1Cost.setText("0000");
+        R1Cost.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(R1Cost, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 690, -1, -1));
 
         Ranger1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger1.setBorderPainted(false);
         Ranger1.setContentAreaFilled(false);
         Ranger1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Ranger1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ranger1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Ranger1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, -1, -1));
 
         CurMineral.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 28)); // NOI18N
@@ -191,25 +205,35 @@ public class Battle extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btErisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btErisActionPerformed
+    private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
+        dispose();
+        new Game(u, idx).setVisible(true);
+    }//GEN-LAST:event_btPauseActionPerformed
+
+    private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed
         ranger.add(new JLabel());
         ImageIcon troop = new ImageIcon("src\\images\\ErisJalan.gif");
         ranger.get(ranger.size()-1).setIcon(troop);
         ranger.get(ranger.size()-1).setBounds(210, 310, 200, 270);
         getContentPane().add(ranger.get(ranger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
-        
+        koor.add(0);
+                
         ActionListener act = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 for (int i = 0; i < ranger.size(); i++) {
                     int posx = ranger.get(i).getLocation().x;
                     int posy = ranger.get(i).getLocation().y;
+                    System.out.println(posx);
                     if (posx+200 < 1030){
                         ranger.get(i).setLocation(posx+1, posy);
                     }else if (posx+200 == 1030){
                         ImageIcon att = new ImageIcon("src\\images\\Eris_Attack.gif");
                         ranger.get(i).setIcon(att);
-                        ranger.get(i).setBounds(730, 170, 491, 449);
-                        t.stop();
+                    }
+                    if (posx != 0){
+                        koor.set(i, posx);
+                    }else{
+                        ranger.get(i).setLocation(koor.get(i), 310);
                     }
                 }
             }
@@ -219,12 +243,7 @@ public class Battle extends javax.swing.JFrame {
             t = new Timer(10, act);
             t.start();
         }
-    }//GEN-LAST:event_btErisActionPerformed
-
-    private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
-        dispose();
-        new Game(u, idx).setVisible(true);
-    }//GEN-LAST:event_btPauseActionPerformed
+    }//GEN-LAST:event_Ranger1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,6 +291,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel HpTowerRanger;
     private javax.swing.JLabel MaxMineral;
     private javax.swing.JLabel R1Cost;
+    private javax.swing.JLabel R1Icon;
     private javax.swing.JLabel R2Cost;
     private javax.swing.JLabel R3Cost;
     private javax.swing.JButton Ranger1;
@@ -279,7 +299,6 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JButton Ranger3;
     private javax.swing.JLabel TowerEnemy;
     private javax.swing.JLabel TowerPlayer;
-    private javax.swing.JButton btEris;
     private javax.swing.JButton btPause;
     private javax.swing.JButton btTowerAtt;
     // End of variables declaration//GEN-END:variables
