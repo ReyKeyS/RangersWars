@@ -56,7 +56,7 @@ public class Battle extends javax.swing.JFrame {
         // Mana config
         int maxMana=100;
         MaxMineral.setText(Integer.toString(maxMana));
-        ActionListener act = new ActionListener() {
+        ActionListener actMana = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (curManas < maxMana){
                     curManas+=1;
@@ -65,7 +65,7 @@ public class Battle extends javax.swing.JFrame {
             }
         };
         if (tMana == null){
-            tMana = new Timer(75, act);
+            tMana = new Timer(75, actMana);
             tMana.start();
         }
         
