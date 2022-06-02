@@ -17,6 +17,7 @@ import javax.swing.*;
 public class Battle extends javax.swing.JFrame {
     private Music player = null;
     private boolean kemute = false;
+    private boolean keplay = false;
     
     private ArrayList<User> u = new ArrayList<>();
     private int idx;
@@ -61,18 +62,18 @@ public class Battle extends javax.swing.JFrame {
         setLayout(null);
     }
     
-    public Battle(ArrayList<User> players, int idx, Music player, boolean kemute) {
+    public Battle(ArrayList<User> players, int idx, Music player, boolean kemute, boolean keplay) {
         this.player = player;
         this.kemute = kemute;
+        this.keplay = keplay;
         // Ganti Music
         if (!kemute){
             player.clip.stop();
             player.loadMusic("src/music/battlemusic.wav");
-            player.clip.setMicrosecondPosition(10000);
+            player.clip.setMicrosecondPosition(0);
             player.clip.start();
             player.clip.loop(Clip.LOOP_CONTINUOUSLY);
-        }
-        
+        }       
         
         this.u = players;
         this.idx = idx;
@@ -357,7 +358,7 @@ public class Battle extends javax.swing.JFrame {
 
     private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
         dispose();
-        new Game(u, idx, player, kemute).setVisible(true);
+        new Game(u, idx, player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btPauseActionPerformed
 
     private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed

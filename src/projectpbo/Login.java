@@ -26,8 +26,44 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-
-    public Login() {
+    
+    public Login(){
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.user = new ArrayList<>();
+        // Load
+        try {
+            FileInputStream load = new FileInputStream(System.getProperty("user.dir") + "\\users.ser");
+            ObjectInputStream in = new ObjectInputStream(load);
+            this.user = (ArrayList<User>) in.readObject();
+            in.close();
+            load.close();
+        } catch (Exception ex) {
+            
+        }
+        if (!keplay){
+            keplay = true;
+            player.loadMusic("src/music/bg.wav");
+            player.clip.setMicrosecondPosition(0);
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-10f);
+            player.clip.start();
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+        if (!kemute){
+            btMute.setIcon(new ImageIcon("src\\images\\Music button.png"));
+            btMute.setRolloverIcon(new ImageIcon("src\\images\\Music button hovered.png"));
+        }else{
+            btMute.setIcon(new ImageIcon("src\\images\\Music button muted.png"));
+            btMute.setRolloverIcon(new ImageIcon("src\\images\\Music button hovered mutted.png"));
+        }
+    }
+    
+    public Login(Music player, boolean kemute, boolean keplay) {
+        this.player = player;
+        this.kemute = kemute;
+        this.keplay = keplay;
+        
         initComponents();
         this.setLocationRelativeTo(null);
         this.user = new ArrayList<>();
@@ -141,13 +177,13 @@ public class Login extends javax.swing.JFrame {
             if (found){
                 JOptionPane.showMessageDialog(null, "Berhasil Login!", "Message", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new Game(user, idxLog, player, kemute).setVisible(true);
+                new Game(user, idxLog, player, kemute, keplay).setVisible(true);
             }else{
                 int confirm = JOptionPane.showConfirmDialog(null, "Yakin Membuat Akun Baru?", "Message", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (confirm == 0){
                     dispose();
                     user.add(new User(curNama));
-                    new Game(user, user.size()-1, player, kemute).setVisible(true);
+                    new Game(user, user.size()-1, player, kemute, keplay).setVisible(true);
                 }
             }
         }else{
@@ -158,7 +194,7 @@ public class Login extends javax.swing.JFrame {
     private void btLeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLeaderActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Leaderboard(user).setVisible(true);
+        new Leaderboard(user, player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
 
     private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed

@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class Game extends javax.swing.JFrame {
     private Music player = null;
-    private boolean kemute = true;
+    private boolean kemute = false;
+    private boolean keplay = false;
     
     private ArrayList<User> user = new ArrayList<>();
     private int idx;
@@ -34,9 +35,10 @@ public class Game extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public Game(ArrayList<User> players, int idx, Music player, boolean kemute) {
+    public Game(ArrayList<User> players, int idx, Music player, boolean kemute, boolean keplay) {
         this.player = player;
         this.kemute = kemute;
+        this.keplay = keplay;
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -251,7 +253,7 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "failed");
         }
         dispose();
-        new Login().setVisible(true);
+        new Login(player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
@@ -264,7 +266,7 @@ public class Game extends javax.swing.JFrame {
         }
         if (Choice == 3){
             dispose();
-            new Battle(user, idx, player, kemute).setVisible(true);
+            new Battle(user, idx, player, kemute, keplay).setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
         }

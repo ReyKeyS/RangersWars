@@ -13,6 +13,10 @@ import javax.swing.ImageIcon;
  * @author Grady
  */
 public class Leaderboard extends javax.swing.JFrame {
+    private Music player = null;
+    private boolean kemute = false;
+    private boolean keplay = false;
+    
     private ArrayList<User> user;
     /**
      * Creates new form Leaderboard
@@ -22,8 +26,12 @@ public class Leaderboard extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public Leaderboard(ArrayList<User> player) {
-        this.user = player;
+    public Leaderboard(ArrayList<User> players, Music player, boolean kemute, boolean keplay) {
+        this.player = player;
+        this.kemute = kemute;
+        this.keplay = keplay;
+        
+        this.user = players;
         Collections.sort(user, new SortLeader());
         initComponents();
         this.setLocationRelativeTo(null);
@@ -118,7 +126,7 @@ public class Leaderboard extends javax.swing.JFrame {
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Login().setVisible(true);
+        new Login(player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
     /**
