@@ -360,6 +360,15 @@ public class Battle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
+        if (!kemute){
+            player.clip.stop();
+            player.loadMusic("src/music/bg.wav");
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-10f);
+            player.clip.setMicrosecondPosition(0);
+            player.clip.start();
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
         dispose();
         new Game(u, idx, player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btPauseActionPerformed
