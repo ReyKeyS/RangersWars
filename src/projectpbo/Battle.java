@@ -26,6 +26,7 @@ public class Battle extends javax.swing.JFrame {
     public Battle() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setLayout(null);
     }
     
     public Battle(ArrayList<User> player, int idx) {
@@ -44,6 +45,7 @@ public class Battle extends javax.swing.JFrame {
         
         initComponents();
         this.setLocationRelativeTo(null);
+        setLayout(null);
         
         //mana config
         int maxMana=100;
@@ -203,7 +205,7 @@ public class Battle extends javax.swing.JFrame {
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
         btTowerAtt.setBorderPainted(false);
         btTowerAtt.setContentAreaFilled(false);
-        getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, -1, -1));
+        getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, -1, -1));
 
         TowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Musuh.png"))); // NOI18N
         getContentPane().add(TowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, -1, -1));
