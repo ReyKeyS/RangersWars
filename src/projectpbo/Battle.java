@@ -17,9 +17,15 @@ public class Battle extends javax.swing.JFrame {
     private ArrayList<User> u = new ArrayList<>();
     private int idx;
     
+    // Declaration
     private ArrayList<JLabel> ranger = new ArrayList<>();
     private ArrayList<Integer> koor = new ArrayList<>();
     private Timer t;
+    
+    // Mineral
+    private int curManas = 0;
+    private Timer tMana = null;
+    
     /**
      * Creates new form Battle
      */
@@ -47,9 +53,23 @@ public class Battle extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setLayout(null);
         
-        //mana config
+        // Mana config
         int maxMana=100;
         MaxMineral.setText(Integer.toString(maxMana));
+        ActionListener act = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (curManas < maxMana){
+                    curManas+=1;
+                    CurMineral.setText(Integer.toString(curManas));
+                }
+            }
+        };
+        if (tMana == null){
+            tMana = new Timer(75, act);
+            tMana.start();
+        }
+        
+        
         // Ranger Config
         HpTowerRanger.setText(Integer.toString(hpTower));
         R1Cost.setText(Integer.toString(ranger[0].getMineral()));
