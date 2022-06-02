@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class Game extends javax.swing.JFrame {
+    private Music player = null;
+    private boolean kemute = true;
     
     private ArrayList<User> user = new ArrayList<>();
     private int idx;
@@ -26,11 +28,20 @@ public class Game extends javax.swing.JFrame {
     /**
      * Creates new form Game
      */
-    public Game(ArrayList<User> player, int idx) {
+    
+    public Game(){
+        initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public Game(ArrayList<User> players, int idx, Music player, boolean kemute) {
+        this.player = player;
+        this.kemute = kemute;
+        
         initComponents();
         this.setLocationRelativeTo(null);
         this.idx = idx;
-        this.user = player;
+        this.user = players;
         judul.setText(user.get(idx).getNama());
         Level.setText(""+user.get(idx).getLevel());
         Gold.setText("" + user.get(idx).getGold());
@@ -45,11 +56,6 @@ public class Game extends javax.swing.JFrame {
             merah4.setIcon(btHijau);
         if (user.get(idx).getChoose()[4])
             merah5.setIcon(btHijau);
-    }
-    
-    public Game(){
-        initComponents();
-        this.setLocationRelativeTo(null);
     }
     
     /**
@@ -258,7 +264,7 @@ public class Game extends javax.swing.JFrame {
         }
         if (Choice == 3){
             dispose();
-            new Battle(user, idx).setVisible(true);
+            new Battle(user, idx, player, kemute).setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
         }

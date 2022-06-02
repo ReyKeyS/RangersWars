@@ -19,11 +19,8 @@ public abstract class Ranger implements Serializable{
     protected int range;
     protected int movement;
     protected int mineral;
-    protected ImageIcon iconKartu;
-    protected ImageIcon iconJalan;
-    protected ImageIcon iconAttack;
 
-    public Ranger(String nama, int level, int hp, int dmg, int range, int movement, int mineral, ImageIcon iconKartu, ImageIcon iconJalan, ImageIcon iconAttack) {
+    public Ranger(String nama, int level, int hp, int dmg, int range, int movement, int mineral) {
         this.nama = nama;
         this.level = level;
         this.hp = hp;
@@ -31,9 +28,6 @@ public abstract class Ranger implements Serializable{
         this.range = range;
         this.movement = movement;
         this.mineral = mineral;
-        this.iconKartu = iconKartu;
-        this.iconJalan = iconJalan;
-        this.iconAttack = iconAttack;
     }
     
     public String getNama() {
@@ -90,30 +84,6 @@ public abstract class Ranger implements Serializable{
 
     public void setMineral(int mineral) {
         this.mineral = mineral;
-    }
-
-    public ImageIcon getIconKartu() {
-        return iconKartu;
-    }
-
-    public void setIconKartu(ImageIcon iconKartu) {
-        this.iconKartu = iconKartu;
-    }
-
-    public ImageIcon getIconJalan() {
-        return iconJalan;
-    }
-
-    public void setIconJalan(ImageIcon iconJalan) {
-        this.iconJalan = iconJalan;
-    }
-
-    public ImageIcon getIconAttack() {
-        return iconAttack;
-    }
-
-    public void setIconAttack(ImageIcon iconAttack) {
-        this.iconAttack = iconAttack;
     }
 
 }

@@ -7,6 +7,7 @@ package projectpbo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 /**
@@ -14,16 +15,41 @@ import javax.swing.*;
  * @author RyanK
  */
 public class Battle extends javax.swing.JFrame {
+    private Music player = null;
+    private boolean kemute = false;
+    
     private ArrayList<User> u = new ArrayList<>();
     private int idx;
     
     // Declaration
-    private ArrayList<JLabel> ranger = new ArrayList<>();
+    private ImageIcon erisBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon erisJalan = new ImageIcon("src\\images\\ErisJalan.gif");
+    private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris_Attack.gif");
+    
+    private ImageIcon yoimiyaBox = new ImageIcon("src\\images\\Yoimiya box.png");
+    private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif");
+    private ImageIcon yoimiyaAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
+    
+    private ImageIcon shogunBox = new ImageIcon("src\\images\\Yoimiya box.png");
+    private ImageIcon shogunJalan = new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif");
+    private ImageIcon shogunAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
+    
+    private ImageIcon marsBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon marsJalan = new ImageIcon("src\\images\\Eris box.gif");
+    private ImageIcon marsAttack = new ImageIcon("src\\images\\Eris box.gif");
+    
+    private ImageIcon newcastleBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon newcastleJalan = new ImageIcon("src\\images\\Eris box.gif");
+    private ImageIcon newcastleAttack = new ImageIcon("src\\images\\Eris box.gif");
+    
+    private Ranger[] ranger = new Ranger[3];
+    
+    private ArrayList<JLabel> lblRanger = new ArrayList<>();
     private ArrayList<Integer> koor = new ArrayList<>();
     private Timer t;
     
     // Mineral
-    private int curManas = 0;
+    private int curMana = 0;
     private Timer tMana = null;
     
     /**
@@ -35,11 +61,22 @@ public class Battle extends javax.swing.JFrame {
         setLayout(null);
     }
     
-    public Battle(ArrayList<User> player, int idx) {
-        this.u = player;
+    public Battle(ArrayList<User> players, int idx, Music player, boolean kemute) {
+        this.player = player;
+        this.kemute = kemute;
+        // Ganti Music
+        if (!kemute){
+            player.clip.stop();
+            player.loadMusic("src/music/battlemusic.wav");
+            player.clip.setMicrosecondPosition(10000);
+            player.clip.start();
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+        
+        
+        this.u = players;
         this.idx = idx;
         int hpTower = u.get(idx).getTower().getHp();
-        Ranger[] ranger = new Ranger[3];
         int keisi = 0;
         // Cek Boolean
         for (int i = 0; i < 5; i++) {
@@ -58,9 +95,9 @@ public class Battle extends javax.swing.JFrame {
         MaxMineral.setText(Integer.toString(maxMana));
         ActionListener actMana = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (curManas < maxMana){
-                    curManas+=1;
-                    CurMineral.setText(Integer.toString(curManas));
+                if (curMana < maxMana){
+                    curMana+=1;
+                    CurMineral.setText(Integer.toString(curMana));
                 }
             }
         };
@@ -73,15 +110,98 @@ public class Battle extends javax.swing.JFrame {
         // Ranger Config
         HpTowerRanger.setText(Integer.toString(hpTower));
         R1Cost.setText(Integer.toString(ranger[0].getMineral()));
-        R1Icon.setIcon(ranger[0].iconKartu);
+        if (ranger[0] instanceof Eris)
+            Ranger1.setIcon(erisBox);
+        else if (ranger[0] instanceof Yoimiya)
+            Ranger1.setIcon(yoimiyaBox);
+        else if (ranger[0] instanceof RaidenShogun)
+            Ranger1.setIcon(shogunBox);
+        else if (ranger[0] instanceof Mars)
+            Ranger1.setIcon(marsBox);
+        else if (ranger[0] instanceof NewCastle)
+            Ranger1.setIcon(newcastleBox);
+        
         R2Cost.setText(Integer.toString(ranger[1].getMineral()));
-        R2Icon.setIcon(ranger[1].iconKartu);
+        if (ranger[1] instanceof Eris)
+            Ranger2.setIcon(erisBox);
+        else if (ranger[1] instanceof Yoimiya)
+            Ranger2.setIcon(yoimiyaBox);
+        else if (ranger[1] instanceof RaidenShogun)
+            Ranger2.setIcon(shogunBox);
+        else if (ranger[1] instanceof Mars)
+            Ranger2.setIcon(marsBox);
+        else if (ranger[1] instanceof NewCastle)
+            Ranger2.setIcon(newcastleBox);
+        
         R3Cost.setText(Integer.toString(ranger[2].getMineral()));
-        R3Icon.setIcon(ranger[2].iconKartu);
+        if (ranger[2] instanceof Eris)
+            Ranger3.setIcon(erisBox);
+        else if (ranger[2] instanceof Yoimiya)
+            Ranger3.setIcon(yoimiyaBox);
+        else if (ranger[2] instanceof RaidenShogun)
+            Ranger3.setIcon(shogunBox);
+        else if (ranger[2] instanceof Mars)
+            Ranger3.setIcon(marsBox);
+        else if (ranger[2] instanceof NewCastle)
+            Ranger3.setIcon(newcastleBox);
+        
+        
         
         // Enemy Config
         int hpTowerEnemy = 5000;
         HpTowerEnemy.setText(Integer.toString(hpTowerEnemy));
+        
+        
+        // Game
+        ActionListener act = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for (int i = 0; i < lblRanger.size(); i++) {
+                    int posx = lblRanger.get(i).getLocation().x;
+                    int posy = lblRanger.get(i).getLocation().y;
+                    if (lblRanger.get(i).getIcon().equals(erisJalan)){
+                        if (posx+200 < 1030){
+                            lblRanger.get(i).setLocation(posx+1, posy);
+                        }else if (posx+200 == 1030){
+                            lblRanger.get(i).setIcon(erisAttack);
+                        }
+                    }else if (lblRanger.get(i).getIcon().equals(yoimiyaJalan)){
+                        if (posx+200 < 1030){
+                            lblRanger.get(i).setLocation(posx+1, posy);
+                        }else if (posx+200 == 1030){
+                            lblRanger.get(i).setIcon(yoimiyaAttack);
+                        }
+                    }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
+                        if (posx+200 < 1030){
+                            lblRanger.get(i).setLocation(posx+1, posy);
+                        }else if (posx+200 == 1030){
+                            lblRanger.get(i).setIcon(shogunAttack);
+                        }
+                    }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
+                        if (posx+200 < 1030){
+                            lblRanger.get(i).setLocation(posx+1, posy);
+                        }else if (posx+200 == 1030){
+                            lblRanger.get(i).setIcon(marsAttack);
+                        }
+                    }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
+                        if (posx+200 < 1030){
+                            lblRanger.get(i).setLocation(posx+1, posy);
+                        }else if (posx+200 == 1030){
+                            lblRanger.get(i).setIcon(newcastleAttack);
+                        }
+                    }
+                    if (posx != 0){
+                        koor.set(i, posx);
+                    }else{
+                        lblRanger.get(i).setLocation(koor.get(i), 310);
+                    }
+                }
+            }
+        };
+        
+        if (t == null){
+            t = new Timer(10, act);
+            t.start();
+        }
     }
     
     /**
@@ -94,13 +214,10 @@ public class Battle extends javax.swing.JFrame {
     private void initComponents() {
 
         btPause = new javax.swing.JButton();
-        R3Icon = new javax.swing.JLabel();
         R3Cost = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
-        R2Icon = new javax.swing.JLabel();
         R2Cost = new javax.swing.JLabel();
         Ranger2 = new javax.swing.JButton();
-        R1Icon = new javax.swing.JLabel();
         R1Cost = new javax.swing.JLabel();
         Ranger1 = new javax.swing.JButton();
         CurMineral = new javax.swing.JLabel();
@@ -134,7 +251,6 @@ public class Battle extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
-        getContentPane().add(R3Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 610, 65, 70));
 
         R3Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         R3Cost.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,8 +261,12 @@ public class Battle extends javax.swing.JFrame {
         Ranger3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Box rangers.png"))); // NOI18N
         Ranger3.setBorderPainted(false);
         Ranger3.setContentAreaFilled(false);
+        Ranger3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ranger3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Ranger3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, -1, -1));
-        getContentPane().add(R2Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 611, 65, 70));
 
         R2Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         R2Cost.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,10 +283,6 @@ public class Battle extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Ranger2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, -1, -1));
-
-        R1Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        R1Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(R1Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 611, 65, 70));
 
         R1Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         R1Cost.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,80 +357,89 @@ public class Battle extends javax.swing.JFrame {
 
     private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
         dispose();
-        new Game(u, idx).setVisible(true);
+        new Game(u, idx, player, kemute).setVisible(true);
     }//GEN-LAST:event_btPauseActionPerformed
 
     private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed
-        ranger.add(new JLabel());
-        ImageIcon troop = new ImageIcon("src\\images\\ErisJalan.gif");
-        ranger.get(ranger.size()-1).setIcon(troop);
-        ranger.get(ranger.size()-1).setBounds(210, 310, 200, 270);
-        getContentPane().add(ranger.get(ranger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
-        koor.add(0);
-                
-        ActionListener act = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < ranger.size(); i++) {
-                    int posx = ranger.get(i).getLocation().x;
-                    int posy = ranger.get(i).getLocation().y;
-                    System.out.println(posx);
-                    if (posx+200 < 1030){
-                        ranger.get(i).setLocation(posx+1, posy);
-                    }else if (posx+200 == 1030){
-                        ImageIcon att = new ImageIcon("src\\images\\Eris_Attack.gif");
-                        ranger.get(i).setIcon(att);
-                    }
-                    if (posx != 0){
-                        koor.set(i, posx);
-                    }else{
-                        ranger.get(i).setLocation(koor.get(i), 310);
-                    }
-                }
-            }
-        };
-        
-        if (t == null){
-            t = new Timer(10, act);
-            t.start();
+        int cost = ranger[0].getMineral();
+        if (curMana > cost){
+            curMana -= cost;
+            
+            lblRanger.add(new JLabel());
+            // Cek Icon
+            ImageIcon troopJalan = null;
+            if (ranger[0] instanceof Eris)
+                troopJalan = erisJalan;
+            else if (ranger[0] instanceof Yoimiya)
+                troopJalan = yoimiyaJalan;
+            else if (ranger[0] instanceof RaidenShogun)
+                troopJalan = shogunJalan;
+            else if (ranger[0] instanceof Mars)
+                troopJalan = marsJalan;
+            else if (ranger[0] instanceof NewCastle)
+                troopJalan = newcastleJalan;
+
+            // Setting
+            lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
+            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+            koor.add(0);
         }
     }//GEN-LAST:event_Ranger1ActionPerformed
 
     private void Ranger2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger2ActionPerformed
-        // TODO add your handling code here:
-        //cuman copas atasnya ngab :)
-        ranger.add(new JLabel());
-        ImageIcon troop = new ImageIcon("src\\images\\YoimiyaJalanRevisi.gif");
-        ranger.get(ranger.size()-1).setIcon(troop);
-        ranger.get(ranger.size()-1).setBounds(210, 310, 200, 270);
-        getContentPane().add(ranger.get(ranger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
-        koor.add(0);
-                
-        ActionListener act2 = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < ranger.size(); i++) {
-                    int posx = ranger.get(i).getLocation().x;
-                    int posy = ranger.get(i).getLocation().y;
-                    System.out.println(posx);
-                    if (posx+200 < 1030){
-                        ranger.get(i).setLocation(posx+1, posy);
-                    }else if (posx+200 == 1030){
-                        ImageIcon att = new ImageIcon("src\\images\\YoimiyaAttackResize.gif");
-                        ranger.get(i).setIcon(att);
-                    }
-                    if (posx != 0){
-                        koor.set(i, posx);
-                    }else{
-                        ranger.get(i).setLocation(koor.get(i), 310);
-                    }
-                }
-            }
-        };
-        
-        if (t == null){
-            t = new Timer(10, act2);
-            t.start();
+        int cost = ranger[1].getMineral();
+        if (curMana > cost){
+            curMana -= cost;
+            
+            lblRanger.add(new JLabel());
+            // Cek Icon
+            ImageIcon troopJalan = null;
+            if (ranger[1] instanceof Eris)
+                troopJalan = erisJalan;
+            else if (ranger[1] instanceof Yoimiya)
+                troopJalan = yoimiyaJalan;
+            else if (ranger[1] instanceof RaidenShogun)
+                troopJalan = shogunJalan;
+            else if (ranger[1] instanceof Mars)
+                troopJalan = marsJalan;
+            else if (ranger[1] instanceof NewCastle)
+                troopJalan = newcastleJalan;
+
+            // Setting
+            lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
+            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+            koor.add(0);
         }
     }//GEN-LAST:event_Ranger2ActionPerformed
+
+    private void Ranger3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger3ActionPerformed
+        int cost = ranger[2].getMineral();
+        if (curMana > cost){
+            curMana -= cost;
+            
+            lblRanger.add(new JLabel());
+            // Cek Icon
+            ImageIcon troopJalan = null;
+            if (ranger[2] instanceof Eris)
+                troopJalan = erisJalan;
+            else if (ranger[2] instanceof Yoimiya)
+                troopJalan = yoimiyaJalan;
+            else if (ranger[2] instanceof RaidenShogun)
+                troopJalan = shogunJalan;
+            else if (ranger[2] instanceof Mars)
+                troopJalan = marsJalan;
+            else if (ranger[2] instanceof NewCastle)
+                troopJalan = newcastleJalan;
+
+            // Setting
+            lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
+            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+            koor.add(0);
+        }
+    }//GEN-LAST:event_Ranger3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,11 +487,8 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel HpTowerRanger;
     private javax.swing.JLabel MaxMineral;
     private javax.swing.JLabel R1Cost;
-    private javax.swing.JLabel R1Icon;
     private javax.swing.JLabel R2Cost;
-    private javax.swing.JLabel R2Icon;
     private javax.swing.JLabel R3Cost;
-    private javax.swing.JLabel R3Icon;
     private javax.swing.JButton Ranger1;
     private javax.swing.JButton Ranger2;
     private javax.swing.JButton Ranger3;

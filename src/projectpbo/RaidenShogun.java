@@ -14,10 +14,7 @@ import javax.swing.ImageIcon;
 public class RaidenShogun extends Ranger implements Serializable{
 
     public RaidenShogun(String nama, int level) {
-        super(nama, level, 680, 41, 1, 10, 20,
-                new ImageIcon("src\\images\\Yoimiya kecil utk blok.png"),
-                new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif"),
-                new ImageIcon("src\\images\\Yoimiya Attack Resize.gif"));
+        super(nama, level, 680, 41, 1, 10, 20);
     }
    
 }

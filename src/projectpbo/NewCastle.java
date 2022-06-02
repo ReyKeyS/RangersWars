@@ -14,10 +14,7 @@ import javax.swing.ImageIcon;
 public class NewCastle extends Ranger implements Serializable{
 
     public NewCastle(String nama, int level) {
-        super(nama, level, 680, 50, 1, 10, 20,
-                new ImageIcon("src\\images\\Yoimiya kecil utk blok.png"),
-                new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif"),
-                new ImageIcon("src\\images\\Yoimiya Attack Resize.gif"));
+        super(nama, level, 680, 50, 1, 10, 20);
     }
     
 }

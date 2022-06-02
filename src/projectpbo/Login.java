@@ -19,14 +19,14 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     private ArrayList<User> user;
     
-    static boolean keplay = false;
-    static boolean kemute = false;
-    static Music player = Music.getInstance();
+    private boolean keplay = false;
+    private boolean kemute = false;
+    private Music player = Music.getInstance();
     
     /**
      * Creates new form Login
      */
-        
+
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -141,13 +141,13 @@ public class Login extends javax.swing.JFrame {
             if (found){
                 JOptionPane.showMessageDialog(null, "Berhasil Login!", "Message", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new Game(user, idxLog).setVisible(true);
+                new Game(user, idxLog, player, kemute).setVisible(true);
             }else{
                 int confirm = JOptionPane.showConfirmDialog(null, "Yakin Membuat Akun Baru?", "Message", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (confirm == 0){
                     dispose();
                     user.add(new User(curNama));
-                    new Game(user, user.size()-1).setVisible(true);
+                    new Game(user, user.size()-1, player, kemute).setVisible(true);
                 }
             }
         }else{
