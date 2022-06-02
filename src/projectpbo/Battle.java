@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
 
 /**
@@ -69,7 +70,9 @@ public class Battle extends javax.swing.JFrame {
         // Ganti Music
         if (!kemute){
             player.clip.stop();
-            player.loadMusic("src/music/battlemusic.wav");
+            player.loadMusic("src/music/bgBattle.wav");
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-10f);
             player.clip.setMicrosecondPosition(0);
             player.clip.start();
             player.clip.loop(Clip.LOOP_CONTINUOUSLY);
