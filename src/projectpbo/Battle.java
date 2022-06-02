@@ -54,6 +54,9 @@ public class Battle extends javax.swing.JFrame {
     private int curMana = 0;
     private Timer tMana = null;
     
+    // Attacking
+    private Timer tAtt = null;
+    
     /**
      * Creates new form Battle
      */
@@ -106,7 +109,7 @@ public class Battle extends javax.swing.JFrame {
             }
         };
         if (tMana == null){
-            tMana = new Timer(75, actMana);
+            tMana = new Timer(150, actMana);
             tMana.start();
         }
         
@@ -152,12 +155,12 @@ public class Battle extends javax.swing.JFrame {
         
         
         // Enemy Config
-        int hpTowerEnemy = 5000;
-        HpTowerEnemy.setText(Integer.toString(hpTowerEnemy));
+        Tower tEnemy = new Tower(5000, 1, false);
+        HpTowerEnemy.setText(Integer.toString(tEnemy.getHp()));
         
         
         // Game
-        ActionListener act = new ActionListener() {
+        ActionListener actGame = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 for (int i = 0; i < lblRanger.size(); i++) {
                     int posx = lblRanger.get(i).getLocation().x;
@@ -198,12 +201,13 @@ public class Battle extends javax.swing.JFrame {
                     }else{
                         lblRanger.get(i).setLocation(koor.get(i), 310);
                     }
+                    HpTowerEnemy.setText(Integer.toString(tEnemy.getHp()));
                 }
             }
         };
         
         if (t == null){
-            t = new Timer(10, act);
+            t = new Timer(10, actGame);
             t.start();
         }
     }
