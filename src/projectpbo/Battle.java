@@ -261,7 +261,7 @@ public class Battle extends javax.swing.JFrame {
                                     lblEnemy.remove(0);
                                     revalidate();
                                     repaint();
-                                    lblRanger.get(i).setIcon(erisJalan);                                
+                                    lblRanger.get(i).setIcon(erisJalan);
                                 }
                             }
                         }
@@ -666,7 +666,7 @@ public class Battle extends javax.swing.JFrame {
                 troopJalan = yoimiyaJalan;
                 x = 210;
                 y = 430;
-                width = 87;
+                width = 86;
                 height = 120;
             }else if (ranger[0] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
@@ -709,7 +709,7 @@ public class Battle extends javax.swing.JFrame {
                 troopJalan = yoimiyaJalan;
                 x = 210;
                 y = 430;
-                width = 87;
+                width = 86;
                 height = 120;
             }else if (ranger[1] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
@@ -752,7 +752,7 @@ public class Battle extends javax.swing.JFrame {
                 troopJalan = yoimiyaJalan;
                 x = 210;
                 y = 430;
-                width = 87;
+                width = 86;
                 height = 120;
             }else if (ranger[2] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
