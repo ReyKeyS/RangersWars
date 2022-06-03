@@ -30,7 +30,7 @@ public class Battle extends javax.swing.JFrame {
     
     private ImageIcon yoimiyaBox = new ImageIcon("src\\images\\Yoimiya box.png");
     private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Ingame.gif");
-    private ImageIcon yoimiyaAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
+    private ImageIcon yoimiyaAttack = new ImageIcon("src\\images\\Yoimiya Attack Ingame.gif");
     
     private ImageIcon shogunBox = new ImageIcon("src\\images\\Shogun box.png");
     private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
@@ -62,6 +62,14 @@ public class Battle extends javax.swing.JFrame {
     private Timer tEnemyJalan = null;
     private Timer tEnemyAtt = null;
     
+    private void stopTimer(){
+        tMana.stop();
+        tJalan.stop();
+        tAttack.stop();
+        tEnemySpawn.stop();
+        tEnemyJalan.stop();
+        tEnemyAtt.stop();
+    }
     /**
      * Creates new form Battle
      */
@@ -347,9 +355,7 @@ public class Battle extends javax.swing.JFrame {
                     if (towerEnemy.getHp()<=0){
                         towerEnemy.setHp(0);
                         HpTowerEnemy.setText("0");
-                        tJalan.stop();
-                        tAttack.stop();
-                        tMana.stop();
+                        stopTimer();
                         GAMEOVER.setVisible(true);
                         btGameOver.setVisible(true);
                         ketGameOver.setVisible(true);
@@ -633,6 +639,7 @@ public class Battle extends javax.swing.JFrame {
             player.clip.start();
             player.clip.loop(Clip.LOOP_CONTINUOUSLY);
         }
+        stopTimer();
         dispose();
         new Game(u, idx, player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btPauseActionPerformed
