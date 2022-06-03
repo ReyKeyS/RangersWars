@@ -106,11 +106,11 @@ public class Game extends javax.swing.JFrame {
         btUpgrade.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade Hovered.png"))); // NOI18N
         getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
 
-        IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eris Jalan.gif"))); // NOI18N
-        getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, 290));
+        IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ErisPilih.gif"))); // NOI18N
+        getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 250, -1, -1));
 
-        IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Yoimiya Jalan Revisi.gif"))); // NOI18N
-        getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
+        IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/YoimiyaPilih.gif"))); // NOI18N
+        getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button.png"))); // NOI18N
