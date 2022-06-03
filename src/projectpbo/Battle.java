@@ -55,8 +55,11 @@ public class Battle extends javax.swing.JFrame {
     private int curMana = 0;
     private Timer tMana = null;
     
-    // Attacking
-    private Timer tAtt = null;
+    // Enemy
+    private ArrayList<JLabel> lblEnemy = new ArrayList<>();
+    private Timer tEnemySpawn = null;
+    private Timer tEnemyJalan = null;
+    private Timer tEnemyAtt = null;
     
     /**
      * Creates new form Battle
@@ -97,6 +100,9 @@ public class Battle extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setLayout(null);
+        GAMEOVER.setVisible(false);
+        btGameOver.setVisible(false);
+        ketGameOver.setVisible(false);
         
         // Mana config
         int maxMana=100;
@@ -153,12 +159,9 @@ public class Battle extends javax.swing.JFrame {
         else if (ranger[2] instanceof NewCastle)
             Ranger3.setIcon(newcastleBox);
         
-        
-        
-        // Enemy Config
-        Tower tEnemy = new Tower(5000, 1, false);
-        HpTowerEnemy.setText(Integer.toString(tEnemy.getHp()));
-        
+        // Tower Enemy Config
+        Tower towerEnemy = new Tower(500, 1, false);
+        HpTowerEnemy.setText(Integer.toString(towerEnemy.getHp()));
         
         // Game - Jalan
         ActionListener actJalan = new ActionListener() {
@@ -205,7 +208,6 @@ public class Battle extends javax.swing.JFrame {
                 }
             }
         };
-        
         if (tJalan == null){
             tJalan = new Timer(10, actJalan);
             tJalan.start();
@@ -218,29 +220,41 @@ public class Battle extends javax.swing.JFrame {
                     int posy = lblRanger.get(i).getLocation().y;
                     if (lblRanger.get(i).getIcon().equals(erisAttack)){
                         int demeg = u.get(idx).getRanger()[0].getDmg();
-                        int curHp = tEnemy.getHp() - demeg;
-                        tEnemy.setHp(curHp);
+                        int curHp = towerEnemy.getHp() - demeg;
+                        towerEnemy.setHp(curHp);
                         HpTowerEnemy.setText(Integer.toString(curHp));
                     }else if (lblRanger.get(i).getIcon().equals(yoimiyaAttack)){
                         int demeg = u.get(idx).getRanger()[1].getDmg();
-                        int curHp = tEnemy.getHp() - demeg;
-                        tEnemy.setHp(curHp);
+                        int curHp = towerEnemy.getHp() - demeg;
+                        towerEnemy.setHp(curHp);
                         HpTowerEnemy.setText(Integer.toString(curHp));
                     }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
                         int demeg = u.get(idx).getRanger()[2].getDmg();
-                        int curHp = tEnemy.getHp() - demeg;
-                        tEnemy.setHp(curHp);
+                        int curHp = towerEnemy.getHp() - demeg;
+                        towerEnemy.setHp(curHp);
                         HpTowerEnemy.setText(Integer.toString(curHp));
                     }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
                         int demeg = u.get(idx).getRanger()[4].getDmg();
-                        int curHp = tEnemy.getHp() - demeg;
-                        tEnemy.setHp(curHp);
+                        int curHp = towerEnemy.getHp() - demeg;
+                        towerEnemy.setHp(curHp);
                         HpTowerEnemy.setText(Integer.toString(curHp));
                     }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
                         int demeg = u.get(idx).getRanger()[4].getDmg();
-                        int curHp = tEnemy.getHp() - demeg;
-                        tEnemy.setHp(curHp);
+                        int curHp = towerEnemy.getHp() - demeg;
+                        towerEnemy.setHp(curHp);
                         HpTowerEnemy.setText(Integer.toString(curHp));
+                    }
+                    
+                    // Cek GameOver
+                    if (towerEnemy.getHp()<=0){
+                        towerEnemy.setHp(0);
+                        HpTowerEnemy.setText("0");
+                        tJalan.stop();
+                        tAttack.stop();
+                        tMana.stop();
+                        GAMEOVER.setVisible(true);
+                        btGameOver.setVisible(true);
+                        ketGameOver.setVisible(true);
                     }
                 }
             }
@@ -250,8 +264,40 @@ public class Battle extends javax.swing.JFrame {
             tAttack.start();
         }
         
-        
-        
+        // Enemy Config
+        //// Spawn
+        ActionListener actSpawnEnemy = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                lblEnemy.add(new JLabel());
+                lblEnemy.get(lblEnemy.size()-1).setIcon(erisJalan);
+                lblEnemy.get(lblEnemy.size()-1).setBounds(830, 310, 200, 270);
+                getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+            }
+        };
+        if (tEnemySpawn == null){
+            tEnemySpawn = new Timer(5000, actSpawnEnemy);
+            tEnemySpawn.start();
+        }
+        //// Jalan
+        ActionListener actJalanEnemy = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for (int i = 0; i < lblEnemy.size(); i++) {
+                    int Ex = lblEnemy.get(i).getLocation().x;
+                    int Ey = lblEnemy.get(i).getLocation().y;
+                    if (lblEnemy.get(i).getIcon().equals(erisJalan)){
+                        if (Ex > 215){
+                            lblEnemy.get(i).setLocation(Ex-1, Ey);
+                        }else if (Ex == 215){
+                            lblEnemy.get(i).setIcon(erisAttack);
+                        }
+                    }
+                }
+            }
+        };
+        if (tEnemyJalan == null){
+            tEnemyJalan = new Timer(10, actJalanEnemy);
+            tEnemyJalan.start();
+        }
     }
     
     /**
@@ -263,6 +309,8 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GAMEOVER = new javax.swing.JLabel();
+        ketGameOver = new javax.swing.JLabel();
         btPause = new javax.swing.JButton();
         R3Cost = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
@@ -281,6 +329,7 @@ public class Battle extends javax.swing.JFrame {
         btTowerAtt = new javax.swing.JButton();
         TowerEnemy = new javax.swing.JLabel();
         TowerPlayer = new javax.swing.JLabel();
+        btGameOver = new javax.swing.JButton();
         BgBattle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -290,6 +339,17 @@ public class Battle extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        GAMEOVER.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 90)); // NOI18N
+        GAMEOVER.setForeground(new java.awt.Color(255, 0, 0));
+        GAMEOVER.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GAMEOVER.setText("GAME OVER");
+        getContentPane().add(GAMEOVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
+
+        ketGameOver.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        ketGameOver.setForeground(new java.awt.Color(255, 0, 0));
+        ketGameOver.setText("Tap Anywhere to Continue");
+        getContentPane().add(ketGameOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
 
         btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
         btPause.setBorderPainted(false);
@@ -401,12 +461,21 @@ public class Battle extends javax.swing.JFrame {
         TowerPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Rangers.png"))); // NOI18N
         getContentPane().add(TowerPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
+        btGameOver.setBorderPainted(false);
+        btGameOver.setContentAreaFilled(false);
+        btGameOver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGameOverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btGameOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
         BgBattle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
         getContentPane().add(BgBattle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+       
     private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
         if (!kemute){
             player.clip.stop();
@@ -502,6 +571,20 @@ public class Battle extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Ranger3ActionPerformed
 
+    private void btGameOverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGameOverActionPerformed
+        if (!kemute){
+            player.clip.stop();
+            player.loadMusic("src/music/bg.wav");
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-10f);
+            player.clip.setMicrosecondPosition(0);
+            player.clip.start();
+            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+        dispose();
+        new Game(u, idx, player, kemute, keplay).setVisible(true);
+    }//GEN-LAST:event_btGameOverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -542,6 +625,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel BoxMineral;
     private javax.swing.JLabel BoxRangers;
     private javax.swing.JLabel CurMineral;
+    private javax.swing.JLabel GAMEOVER;
     private javax.swing.JLabel HPTEnemyBorder;
     private javax.swing.JLabel HPTRangerBorder;
     private javax.swing.JLabel HpTowerEnemy;
@@ -555,7 +639,9 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JButton Ranger3;
     private javax.swing.JLabel TowerEnemy;
     private javax.swing.JLabel TowerPlayer;
+    private javax.swing.JButton btGameOver;
     private javax.swing.JButton btPause;
     private javax.swing.JButton btTowerAtt;
+    private javax.swing.JLabel ketGameOver;
     // End of variables declaration//GEN-END:variables
 }
