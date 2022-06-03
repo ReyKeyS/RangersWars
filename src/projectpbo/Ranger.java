@@ -5,7 +5,6 @@
 package projectpbo;
 
 import java.io.Serializable;
-import javax.swing.ImageIcon;
 
 /**
  *
