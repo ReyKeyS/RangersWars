@@ -48,7 +48,8 @@ public class Battle extends javax.swing.JFrame {
     
     private ArrayList<JLabel> lblRanger = new ArrayList<>();
     private ArrayList<Integer> koor = new ArrayList<>();
-    private Timer t;
+    private Timer tJalan;
+    private Timer tAttack;
     
     // Mineral
     private int curMana = 0;
@@ -109,7 +110,7 @@ public class Battle extends javax.swing.JFrame {
             }
         };
         if (tMana == null){
-            tMana = new Timer(150, actMana);
+            tMana = new Timer(75, actMana);
             tMana.start();
         }
         
@@ -159,8 +160,8 @@ public class Battle extends javax.swing.JFrame {
         HpTowerEnemy.setText(Integer.toString(tEnemy.getHp()));
         
         
-        // Game
-        ActionListener actGame = new ActionListener() {
+        // Game - Jalan
+        ActionListener actJalan = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 for (int i = 0; i < lblRanger.size(); i++) {
                     int posx = lblRanger.get(i).getLocation().x;
@@ -201,15 +202,56 @@ public class Battle extends javax.swing.JFrame {
                     }else{
                         lblRanger.get(i).setLocation(koor.get(i), 310);
                     }
-                    HpTowerEnemy.setText(Integer.toString(tEnemy.getHp()));
                 }
             }
         };
         
-        if (t == null){
-            t = new Timer(10, actGame);
-            t.start();
+        if (tJalan == null){
+            tJalan = new Timer(10, actJalan);
+            tJalan.start();
         }
+        
+        ActionListener actAttack = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for (int i = 0; i < lblRanger.size(); i++) {
+                    int posx = lblRanger.get(i).getLocation().x;
+                    int posy = lblRanger.get(i).getLocation().y;
+                    if (lblRanger.get(i).getIcon().equals(erisAttack)){
+                        int demeg = u.get(idx).getRanger()[0].getDmg();
+                        int curHp = tEnemy.getHp() - demeg;
+                        tEnemy.setHp(curHp);
+                        HpTowerEnemy.setText(Integer.toString(curHp));
+                    }else if (lblRanger.get(i).getIcon().equals(yoimiyaAttack)){
+                        int demeg = u.get(idx).getRanger()[1].getDmg();
+                        int curHp = tEnemy.getHp() - demeg;
+                        tEnemy.setHp(curHp);
+                        HpTowerEnemy.setText(Integer.toString(curHp));
+                    }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
+                        int demeg = u.get(idx).getRanger()[2].getDmg();
+                        int curHp = tEnemy.getHp() - demeg;
+                        tEnemy.setHp(curHp);
+                        HpTowerEnemy.setText(Integer.toString(curHp));
+                    }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
+                        int demeg = u.get(idx).getRanger()[4].getDmg();
+                        int curHp = tEnemy.getHp() - demeg;
+                        tEnemy.setHp(curHp);
+                        HpTowerEnemy.setText(Integer.toString(curHp));
+                    }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
+                        int demeg = u.get(idx).getRanger()[4].getDmg();
+                        int curHp = tEnemy.getHp() - demeg;
+                        tEnemy.setHp(curHp);
+                        HpTowerEnemy.setText(Integer.toString(curHp));
+                    }
+                }
+            }
+        };
+        if (tAttack == null){
+            tAttack = new Timer(2000, actAttack);
+            tAttack.start();
+        }
+        
+        
+        
     }
     
     /**
@@ -331,6 +373,7 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(BoxRangers, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 140));
 
         HpTowerEnemy.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        HpTowerEnemy.setForeground(new java.awt.Color(0, 0, 0));
         HpTowerEnemy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HpTowerEnemy.setText("000");
         getContentPane().add(HpTowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1145, 615, 80, -1));
@@ -339,6 +382,7 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(HPTEnemyBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, -1, -1));
 
         HpTowerRanger.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        HpTowerRanger.setForeground(new java.awt.Color(0, 0, 0));
         HpTowerRanger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HpTowerRanger.setText("000");
         getContentPane().add(HpTowerRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 615, 80, -1));
