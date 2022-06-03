@@ -16,17 +16,13 @@ public abstract class Ranger implements Serializable{
     protected int level;
     protected int hp;
     protected int dmg;
-    protected int range;
-    protected int movement;
     protected int mineral;
 
-    public Ranger(String nama, int level, int hp, int dmg, int range, int movement, int mineral) {
+    public Ranger(String nama, int level, int hp, int dmg, int mineral) {
         this.nama = nama;
         this.level = level;
         this.hp = hp;
         this.dmg = dmg;
-        this.range = range;
-        this.movement = movement;
         this.mineral = mineral;
     }
     
@@ -60,22 +56,6 @@ public abstract class Ranger implements Serializable{
 
     public void setDmg(int dmg) {
         this.dmg = dmg;
-    }
-
-    public int getRange() {
-        return range;
-    }
-
-    public void setRange(int range) {
-        this.range = range;
-    }
-
-    public int getMovement() {
-        return movement;
-    }
-
-    public void setMovement(int movement) {
-        this.movement = movement;
     }
 
     public int getMineral() {

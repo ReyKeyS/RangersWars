@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Eris extends Ranger implements Serializable{
     
     public Eris(String nama, int level) {
-        super(nama, level, 620, 55, 1, 10, 20);
+        super(nama, level, 620, 55, 20);
     }
     
 }

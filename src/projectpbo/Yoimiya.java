@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Yoimiya extends Ranger implements Serializable{
 
     public Yoimiya(String nama, int level) {
-        super(nama, level, 580, 40, 5, 10, 25);
+        super(nama, level, 580, 40, 25);
     }
 
 }

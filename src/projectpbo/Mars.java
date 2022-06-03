@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Mars extends Ranger implements Serializable{
 
     public Mars(String nama, int level) {
-        super(nama, level, 740, 63, 1, 10, 20);
+        super(nama, level, 740, 63, 20);
     }
     
 }

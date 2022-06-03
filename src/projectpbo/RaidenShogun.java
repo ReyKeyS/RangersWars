@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class RaidenShogun extends Ranger implements Serializable{
 
     public RaidenShogun(String nama, int level) {
-        super(nama, level, 680, 41, 1, 10, 20);
+        super(nama, level, 680, 41, 20);
     }
    
 }
