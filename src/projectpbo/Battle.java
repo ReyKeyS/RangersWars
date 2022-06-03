@@ -363,7 +363,7 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Enemy Config
-        Enemy enemy = new Enemy(1, 100, 1000);
+        Enemy enemy = new Enemy(1, 100, 500);
         //// Spawn
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -375,7 +375,7 @@ public class Battle extends javax.swing.JFrame {
             }
         };
         if (tEnemySpawn == null){
-            tEnemySpawn = new Timer(8000, actSpawnEnemy);
+            tEnemySpawn = new Timer(7000, actSpawnEnemy);
             tEnemySpawn.start();
         }
         //// Jalan
@@ -645,20 +645,36 @@ public class Battle extends javax.swing.JFrame {
             lblRanger.add(new JLabel());
             // Cek Icon
             ImageIcon troopJalan = null;
-            if (ranger[0] instanceof Eris)
+            int x = 0;
+            int y = 0;
+            int width = 0;
+            int height = 0;
+            if (ranger[0] instanceof Eris){
                 troopJalan = erisJalan;
-            else if (ranger[0] instanceof Yoimiya)
+                x = 210;
+                y = 430;
+                width = 90;
+                height = 120;
+            }else if (ranger[0] instanceof Yoimiya){
                 troopJalan = yoimiyaJalan;
-            else if (ranger[0] instanceof RaidenShogun)
+                x = 210;
+                y = 430;
+                width = 87;
+                height = 120;
+            }else if (ranger[0] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
-            else if (ranger[0] instanceof Mars)
+                x = 210;
+                y = 430;
+                width = 140;
+                height = 120;
+            }else if (ranger[0] instanceof Mars)
                 troopJalan = marsJalan;
             else if (ranger[0] instanceof NewCastle)
                 troopJalan = newcastleJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
-            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
             getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
             lblHpRanger.add(ranger[0].getHp());
         }
@@ -672,20 +688,36 @@ public class Battle extends javax.swing.JFrame {
             lblRanger.add(new JLabel());
             // Cek Icon
             ImageIcon troopJalan = null;
-            if (ranger[1] instanceof Eris)
+            int x = 0;
+            int y = 0;
+            int width = 0;
+            int height = 0;
+            if (ranger[1] instanceof Eris){
                 troopJalan = erisJalan;
-            else if (ranger[1] instanceof Yoimiya)
+                x = 210;
+                y = 430;
+                width = 90;
+                height = 120;
+            }else if (ranger[1] instanceof Yoimiya){
                 troopJalan = yoimiyaJalan;
-            else if (ranger[1] instanceof RaidenShogun)
+                x = 210;
+                y = 430;
+                width = 87;
+                height = 120;
+            }else if (ranger[1] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
-            else if (ranger[1] instanceof Mars)
+                x = 210;
+                y = 430;
+                width = 140;
+                height = 120;
+            }else if (ranger[1] instanceof Mars)
                 troopJalan = marsJalan;
             else if (ranger[1] instanceof NewCastle)
                 troopJalan = newcastleJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
-            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
             getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
             lblHpRanger.add(ranger[1].getHp());
         }
@@ -703,9 +735,13 @@ public class Battle extends javax.swing.JFrame {
             int y = 0;
             int width = 0;
             int height = 0;
-            if (ranger[2] instanceof Eris)
+            if (ranger[2] instanceof Eris){
                 troopJalan = erisJalan;
-            else if (ranger[2] instanceof Yoimiya){
+                x = 210;
+                y = 430;
+                width = 90;
+                height = 120;
+            }else if (ranger[2] instanceof Yoimiya){
                 troopJalan = yoimiyaJalan;
                 x = 210;
                 y = 430;
