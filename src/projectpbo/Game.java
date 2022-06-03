@@ -110,7 +110,7 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 250, -1, -1));
 
         IdleYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/YoimiyaPilih.gif"))); // NOI18N
-        getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        getContentPane().add(IdleYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 255, -1, -1));
 
         btLogout.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit button.png"))); // NOI18N
@@ -197,7 +197,7 @@ public class Game extends javax.swing.JFrame {
                 pilih5ActionPerformed(evt);
             }
         });
-        getContentPane().add(pilih5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1005, 170, 180, 360));
+        getContentPane().add(pilih5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1005, 230, 180, 300));
 
         pilih4.setBorderPainted(false);
         pilih4.setContentAreaFilled(false);
@@ -206,7 +206,7 @@ public class Game extends javax.swing.JFrame {
                 pilih4ActionPerformed(evt);
             }
         });
-        getContentPane().add(pilih4, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 170, 180, 360));
+        getContentPane().add(pilih4, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 230, 180, 300));
 
         pilih3.setBorderPainted(false);
         pilih3.setContentAreaFilled(false);
@@ -215,7 +215,7 @@ public class Game extends javax.swing.JFrame {
                 pilih3ActionPerformed(evt);
             }
         });
-        getContentPane().add(pilih3, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 170, 180, 360));
+        getContentPane().add(pilih3, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 230, 180, 300));
 
         pilih2.setBorderPainted(false);
         pilih2.setContentAreaFilled(false);
@@ -224,7 +224,7 @@ public class Game extends javax.swing.JFrame {
                 pilih2ActionPerformed(evt);
             }
         });
-        getContentPane().add(pilih2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 170, 180, 360));
+        getContentPane().add(pilih2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 230, 180, 300));
 
         pilih1.setBorderPainted(false);
         pilih1.setContentAreaFilled(false);
@@ -233,7 +233,7 @@ public class Game extends javax.swing.JFrame {
                 pilih1ActionPerformed(evt);
             }
         });
-        getContentPane().add(pilih1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 180, 360));
+        getContentPane().add(pilih1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 180, 300));
 
         BgGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
         getContentPane().add(BgGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

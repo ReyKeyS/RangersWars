@@ -25,14 +25,14 @@ public class Battle extends javax.swing.JFrame {
     
     // Declaration
     private ImageIcon erisBox = new ImageIcon("src\\images\\Eris box.png");
-    private ImageIcon erisJalan = new ImageIcon("src\\images\\ErisJalan.gif");
+    private ImageIcon erisJalan = new ImageIcon("src\\images\\Eris Jalan Ingame.gif");
     private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris_Attack.gif");
     
     private ImageIcon yoimiyaBox = new ImageIcon("src\\images\\Yoimiya box.png");
-    private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif");
+    private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Ingame.gif");
     private ImageIcon yoimiyaAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
     
-    private ImageIcon shogunBox = new ImageIcon("src\\images\\Yoimiya box.png");
+    private ImageIcon shogunBox = new ImageIcon("src\\images\\Shogun box.png");
     private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
     private ImageIcon shogunAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
     
@@ -705,9 +705,13 @@ public class Battle extends javax.swing.JFrame {
             int height = 0;
             if (ranger[2] instanceof Eris)
                 troopJalan = erisJalan;
-            else if (ranger[2] instanceof Yoimiya)
+            else if (ranger[2] instanceof Yoimiya){
                 troopJalan = yoimiyaJalan;
-            else if (ranger[2] instanceof RaidenShogun){
+                x = 210;
+                y = 430;
+                width = 87;
+                height = 120;
+            }else if (ranger[2] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
                 x = 210;
                 y = 430;
