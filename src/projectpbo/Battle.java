@@ -33,7 +33,7 @@ public class Battle extends javax.swing.JFrame {
     private ImageIcon yoimiyaAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
     
     private ImageIcon shogunBox = new ImageIcon("src\\images\\Yoimiya box.png");
-    private ImageIcon shogunJalan = new ImageIcon("src\\images\\Yoimiya Jalan Revisi.gif");
+    private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
     private ImageIcon shogunAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
     
     private ImageIcon marsBox = new ImageIcon("src\\images\\Eris box.png");
@@ -699,20 +699,28 @@ public class Battle extends javax.swing.JFrame {
             lblRanger.add(new JLabel());
             // Cek Icon
             ImageIcon troopJalan = null;
+            int x = 0;
+            int y = 0;
+            int width = 0;
+            int height = 0;
             if (ranger[2] instanceof Eris)
                 troopJalan = erisJalan;
             else if (ranger[2] instanceof Yoimiya)
                 troopJalan = yoimiyaJalan;
-            else if (ranger[2] instanceof RaidenShogun)
+            else if (ranger[2] instanceof RaidenShogun){
                 troopJalan = shogunJalan;
-            else if (ranger[2] instanceof Mars)
+                x = 210;
+                y = 430;
+                width = 140;
+                height = 120;
+            }else if (ranger[2] instanceof Mars)
                 troopJalan = marsJalan;
             else if (ranger[2] instanceof NewCastle)
                 troopJalan = newcastleJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
-            lblRanger.get(lblRanger.size()-1).setBounds(210, 310, 200, 270);
+            lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
             getContentPane().add(lblRanger.get(lblRanger.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
             lblHpRanger.add(ranger[2].getHp());
         }
