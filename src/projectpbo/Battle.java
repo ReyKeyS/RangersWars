@@ -146,6 +146,7 @@ public class Battle extends javax.swing.JFrame {
                     CD++;
                     CoolDown.setText(Integer.toString(CD));
                 }else{
+                    CoolDown.setText("Ready");
                     tCDTower.stop();
                 }
             }
@@ -620,11 +621,11 @@ public class Battle extends javax.swing.JFrame {
         HPTRangerBorder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa tower rangers.png"))); // NOI18N
         getContentPane().add(HPTRangerBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
-        CoolDown.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        CoolDown.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         CoolDown.setForeground(new java.awt.Color(0, 0, 0));
         CoolDown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CoolDown.setText("0");
-        getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 637, 40, -1));
+        CoolDown.setText("Ready");
+        getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 641, 70, -1));
 
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
         btTowerAtt.setBorderPainted(false);
