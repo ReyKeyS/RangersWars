@@ -393,9 +393,9 @@ public class Battle extends javax.swing.JFrame {
                     if (lblEnemy.get(i).getIcon().equals(yoimiyaAttack)){
                         int demeg = enemy.getDmg();
                         if (Ex == 215){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
+                            int curHp = u.get(idx).getTower().getHp() - demeg;
+                            u.get(idx).getTower().setHp(curHp);
+                            HpTowerRanger.setText(Integer.toString(curHp));
                         }else{
                             if (lblHpRanger.size() != 0){
                                 lblHpRanger.set(0, lblHpRanger.get(0)-demeg);
