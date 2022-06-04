@@ -446,7 +446,7 @@ public class Battle extends javax.swing.JFrame {
                 }
                 // Cek GameOver
                 if (u.get(idx).getTower().getHp()<=0){
-                    u.get(idx).getTower().setHp(0);
+                    u.get(idx).getTower().setHp(hpTower);
                     HpTowerRanger.setText("0");
                     stopTimer();
                     GAMEOVER.setVisible(true);
