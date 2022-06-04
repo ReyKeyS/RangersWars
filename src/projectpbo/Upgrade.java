@@ -45,10 +45,12 @@ public class Upgrade extends javax.swing.JFrame {
     private void initComponents() {
 
         Back = new javax.swing.JButton();
+        BgUpgrade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
         Back.setText("Back");
@@ -58,19 +60,31 @@ public class Upgrade extends javax.swing.JFrame {
             }
         });
 
+        BgUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
+        BgUpgrade.setMaximumSize(new java.awt.Dimension(1280, 720));
+        BgUpgrade.setMinimumSize(new java.awt.Dimension(1280, 720));
+        BgUpgrade.setPreferredSize(new java.awt.Dimension(1280, 720));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(Back)
-                .addContainerGap(1180, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(Back))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(BgUpgrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(611, Short.MAX_VALUE)
+                .addGap(224, 224, 224)
+                .addComponent(BgUpgrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Back)
                 .addGap(84, 84, 84))
         );
@@ -121,5 +135,6 @@ public class Upgrade extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
+    private javax.swing.JLabel BgUpgrade;
     // End of variables declaration//GEN-END:variables
 }
