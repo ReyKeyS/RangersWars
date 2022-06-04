@@ -32,7 +32,7 @@ public class User implements Serializable{
         choose[3] = false;
         ranger[4] = new NewCastle("NewCastle", 1);
         choose[4] = false;
-        this.tower = new Tower(200, 1, false);
+        this.tower = new Tower(2000, 1, false);
     }
 
     public String getNama() {

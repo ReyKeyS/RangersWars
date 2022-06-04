@@ -51,6 +51,9 @@ public class Battle extends javax.swing.JFrame {
     private Timer tJalan;
     private Timer tAttack;
     
+    // Prize
+    private int prize = 0;
+    
     // Mineral
     private int curMana = 0;
     private Timer tMana = null;
@@ -102,7 +105,6 @@ public class Battle extends javax.swing.JFrame {
         
         this.u = players;
         this.idx = idx;
-        int hpTower = u.get(idx).getTower().getHp();
         int keisi = 0;
         // Cek Boolean
         for (int i = 0; i < 5; i++) {
@@ -118,6 +120,7 @@ public class Battle extends javax.swing.JFrame {
         GAMEOVER.setVisible(false);
         btGameOver.setVisible(false);
         ketGameOver.setVisible(false);
+        Prize.setVisible(false);
         
         // Mana config
         int maxMana=100;
@@ -153,7 +156,9 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Ranger Config
+        int hpTower = u.get(idx).getTower().getHp();
         HpTowerRanger.setText(Integer.toString(hpTower));
+        
         R1Cost.setText(Integer.toString(ranger[0].getMineral()));
         if (ranger[0] instanceof Eris)
             Ranger1.setIcon(erisBox);
@@ -191,7 +196,7 @@ public class Battle extends javax.swing.JFrame {
             Ranger3.setIcon(newcastleBox);
         
         // Tower Enemy Config
-        Tower towerEnemy = new Tower(500, 1, false);
+        Tower towerEnemy = new Tower(2500, 1, false);
         HpTowerEnemy.setText(Integer.toString(towerEnemy.getHp()));
         
         // Ranger Config
@@ -270,14 +275,21 @@ public class Battle extends javax.swing.JFrame {
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() != 0){
-                                lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
-                                if (lblHpEnemy.get(0) <= 0){
-                                    lblHpEnemy.remove(0);
-                                    remove(lblEnemy.get(0));
-                                    lblEnemy.remove(0);
-                                    revalidate();
-                                    repaint();
+                            if (lblHpEnemy.size() >= 1 && posx+165 >= lblEnemy.get(0).getLocation().x){
+                                if (!lblHpEnemy.isEmpty()){
+                                    if (lblHpEnemy.get(0) <= 0){
+                                        lblHpEnemy.remove(0);
+                                        remove(lblEnemy.get(0));
+                                        lblEnemy.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblRanger.get(i).setIcon(erisJalan);
+                                        lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
+                                        i = -1;
+                                    }else{
+                                        lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
+                                    }
+                                }else{
                                     lblRanger.get(i).setIcon(erisJalan);
                                     lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
                                 }
@@ -293,21 +305,28 @@ public class Battle extends javax.swing.JFrame {
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() != 0){
-                                lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
-                                if (lblHpEnemy.get(0) <= 0){
-                                    lblHpEnemy.remove(0);
-                                    remove(lblEnemy.get(0));
-                                    lblEnemy.remove(0);
-                                    revalidate();
-                                    repaint();
+                            if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x){
+                                if (!lblHpEnemy.isEmpty()){
+                                    if (lblHpEnemy.get(0) <= 0){
+                                        lblHpEnemy.remove(0);
+                                        remove(lblEnemy.get(0));
+                                        lblEnemy.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblRanger.get(i).setIcon(yoimiyaJalan);
+                                        lblRanger.get(i).setBounds(posx, posy, 86, 120);
+                                        i = -1;
+                                    }else{
+                                        lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
+                                    }
+                                }else{
                                     lblRanger.get(i).setIcon(yoimiyaJalan);
                                     lblRanger.get(i).setBounds(posx, posy, 86, 120);
                                 }
                             }else{
                                 lblRanger.get(i).setIcon(yoimiyaJalan);
                                 lblRanger.get(i).setBounds(posx, posy, 86, 120);
-                            }
+                            }                            
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
                         
@@ -316,26 +335,30 @@ public class Battle extends javax.swing.JFrame {
                     }else if (lblRanger.get(i).getIcon().equals(newcastleAttack)){
                         
                     }
-                    
-                    // Cek GameOver
-                    if (towerEnemy.getHp()<=0){
-                        towerEnemy.setHp(0);
-                        HpTowerEnemy.setText("0");
-                        stopTimer();
-                        GAMEOVER.setVisible(true);
-                        btGameOver.setVisible(true);
-                        ketGameOver.setVisible(true);
-                    }
+                }
+                // Cek GameOver
+                if (towerEnemy.getHp()<=0){
+                    towerEnemy.setHp(0);
+                    HpTowerEnemy.setText("0");
+                    stopTimer();
+                    GAMEOVER.setVisible(true);
+                    btGameOver.setVisible(true);
+                    ketGameOver.setVisible(true);
+                    prize = 1000;
+                    u.get(idx).setGold(u.get(idx).getGold() + prize);
+                    u.get(idx).setLevel(u.get(idx).getLevel() + 1);
+                    Prize.setText("You Win! You got "+prize+" Gold!");
+                    Prize.setVisible(true);
                 }
             }
         };
         if (tAttack == null){
-            tAttack = new Timer(2000, actAttack);
+            tAttack = new Timer(500, actAttack);
             tAttack.start();
         }
         
         // Enemy Config
-        Enemy enemy = new Enemy(1, 100, 500);
+        Enemy enemy = new Enemy(1, 600, 50);
         //// Spawn
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -397,28 +420,44 @@ public class Battle extends javax.swing.JFrame {
                             u.get(idx).getTower().setHp(curHp);
                             HpTowerRanger.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpRanger.size() != 0){
-                                lblHpRanger.set(0, lblHpRanger.get(0)-demeg);
-                                if (lblHpRanger.get(0) <= 0){                              
-                                    lblHpRanger.remove(0);
-                                    remove(lblRanger.get(0));
-                                    lblRanger.remove(0);
-                                    revalidate();
-                                    repaint();
+                            if (lblHpRanger.size() >= 1 && Ex <= lblRanger.get(0).getLocation().x+lblRanger.get(0).getBounds().width){
+                                if (!lblHpRanger.isEmpty()){
+                                    lblHpRanger.set(0, lblHpRanger.get(0)-demeg);
+                                    if (lblHpRanger.get(0) <= 0){                              
+                                        lblHpRanger.remove(0);
+                                        remove(lblRanger.get(0));
+                                        lblRanger.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblEnemy.get(i).setIcon(yoimiyaJalan);
+                                        lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
+                                    }
+                                }else{
                                     lblEnemy.get(i).setIcon(yoimiyaJalan);
                                     lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
                                 }
                             }else{
                                 lblEnemy.get(i).setIcon(yoimiyaJalan);
                                 lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
-                            }
+                            }                             
                         }
                     }
+                }
+                // Cek GameOver
+                if (u.get(idx).getTower().getHp()<=0){
+                    u.get(idx).getTower().setHp(0);
+                    HpTowerRanger.setText("0");
+                    stopTimer();
+                    GAMEOVER.setVisible(true);
+                    btGameOver.setVisible(true);
+                    ketGameOver.setVisible(true);
+                    Prize.setText("You Lose! You got 0 Gold!");
+                    Prize.setVisible(true);
                 }
             }
         };
         if (tEnemyAtt == null){
-            tEnemyAtt = new Timer(2000, actAttackEnemy);
+            tEnemyAtt = new Timer(500, actAttackEnemy);
             tEnemyAtt.start();
         }
     }
@@ -432,6 +471,7 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Prize = new javax.swing.JLabel();
         GAMEOVER = new javax.swing.JLabel();
         ketGameOver = new javax.swing.JLabel();
         btPause = new javax.swing.JButton();
@@ -464,16 +504,22 @@ public class Battle extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Prize.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        Prize.setForeground(new java.awt.Color(255, 204, 51));
+        Prize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Prize.setText("You got 0000 Gold");
+        getContentPane().add(Prize, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 300, 490, -1));
+
         GAMEOVER.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 90)); // NOI18N
         GAMEOVER.setForeground(new java.awt.Color(255, 0, 0));
         GAMEOVER.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GAMEOVER.setText("GAME OVER");
-        getContentPane().add(GAMEOVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
+        getContentPane().add(GAMEOVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 135, -1, -1));
 
         ketGameOver.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         ketGameOver.setForeground(new java.awt.Color(255, 0, 0));
         ketGameOver.setText("Tap Anywhere to Continue");
-        getContentPane().add(ketGameOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
+        getContentPane().add(ketGameOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 230, -1, -1));
 
         btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
         btPause.setBorderPainted(false);
@@ -578,7 +624,7 @@ public class Battle extends javax.swing.JFrame {
         CoolDown.setForeground(new java.awt.Color(0, 0, 0));
         CoolDown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CoolDown.setText("0");
-        getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 637, 40, -1));
+        getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 637, 40, -1));
 
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
         btTowerAtt.setBorderPainted(false);
@@ -777,6 +823,7 @@ public class Battle extends javax.swing.JFrame {
                 revalidate();
                 repaint();
             }
+            lblHpEnemy.clear();
             CD = 0;
             CoolDown.setText("0");
             tCDTower.start();
@@ -830,6 +877,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel HpTowerEnemy;
     private javax.swing.JLabel HpTowerRanger;
     private javax.swing.JLabel MaxMineral;
+    private javax.swing.JLabel Prize;
     private javax.swing.JLabel R1Cost;
     private javax.swing.JLabel R2Cost;
     private javax.swing.JLabel R3Cost;
