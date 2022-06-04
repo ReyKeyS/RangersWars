@@ -358,7 +358,7 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Enemy Config
-        Enemy enemy = new Enemy(1, 600, 50);
+        Enemy enemy = new Enemy(1, 300, 50);
         //// Spawn
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {

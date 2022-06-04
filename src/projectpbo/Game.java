@@ -30,6 +30,19 @@ public class Game extends javax.swing.JFrame {
      * Creates new form Game
      */
     
+    // Proc Saving
+    private void SavingGame(){
+        try {            
+            FileOutputStream save = new FileOutputStream(System.getProperty("user.dir") + "\\users.ser");
+            ObjectOutputStream out = new ObjectOutputStream(save);
+            out.writeObject(this.user);
+            out.close();
+            save.close();
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "failed");
+        }
+    }
+    
     public Game(){
         initComponents();
         this.setLocationRelativeTo(null);
@@ -58,6 +71,8 @@ public class Game extends javax.swing.JFrame {
             merah4.setIcon(btHijau);
         if (user.get(idx).getChoose()[4])
             merah5.setIcon(btHijau);
+        
+        SavingGame();
     }
     
     /**
@@ -243,15 +258,7 @@ public class Game extends javax.swing.JFrame {
 
     private void btLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogoutActionPerformed
         // Saving
-        try {            
-            FileOutputStream save = new FileOutputStream(System.getProperty("user.dir") + "\\users.ser");
-            ObjectOutputStream out = new ObjectOutputStream(save);
-            out.writeObject(this.user);
-            out.close();
-            save.close();
-        }catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "failed");
-        }
+        SavingGame();
         dispose();
         new Login(player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
