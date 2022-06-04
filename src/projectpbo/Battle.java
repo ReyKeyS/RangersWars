@@ -55,6 +55,11 @@ public class Battle extends javax.swing.JFrame {
     private int curMana = 0;
     private Timer tMana = null;
     
+    // Cooldown tower skill
+    private int CD = 0;
+    private int maxCD;
+    private Timer tCDTower = null;
+    
     // Enemy
     private ArrayList<JLabel> lblEnemy = new ArrayList<>();
     private ArrayList<Integer> lblHpEnemy = new ArrayList<>();
@@ -69,6 +74,7 @@ public class Battle extends javax.swing.JFrame {
         tEnemySpawn.stop();
         tEnemyJalan.stop();
         tEnemyAtt.stop();
+        tCDTower.stop();
     }
     /**
      * Creates new form Battle
@@ -129,6 +135,22 @@ public class Battle extends javax.swing.JFrame {
             tMana.start();
         }
         
+        // Tower Config
+        this.maxCD = 10;
+        ActionListener actCDTower = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                if (CD < maxCD){
+                    CD++;
+                    CoolDown.setText(Integer.toString(CD));
+                }else{
+                    tCDTower.stop();
+                }
+            }
+        };
+        if (tCDTower == null){
+            tCDTower = new Timer(1000, actCDTower);
+            tCDTower.start();
+        }
         
         // Ranger Config
         HpTowerRanger.setText(Integer.toString(hpTower));
@@ -280,7 +302,7 @@ public class Battle extends javax.swing.JFrame {
                                     revalidate();
                                     repaint();
                                     lblRanger.get(i).setIcon(yoimiyaJalan);
-                                lblRanger.get(i).setBounds(posx, posy, 86, 120);
+                                    lblRanger.get(i).setBounds(posx, posy, 86, 120);
                                 }
                             }else{
                                 lblRanger.get(i).setIcon(yoimiyaJalan);
@@ -427,6 +449,7 @@ public class Battle extends javax.swing.JFrame {
         HPTEnemyBorder = new javax.swing.JLabel();
         HpTowerRanger = new javax.swing.JLabel();
         HPTRangerBorder = new javax.swing.JLabel();
+        CoolDown = new javax.swing.JLabel();
         btTowerAtt = new javax.swing.JButton();
         TowerEnemy = new javax.swing.JLabel();
         TowerPlayer = new javax.swing.JLabel();
@@ -551,9 +574,20 @@ public class Battle extends javax.swing.JFrame {
         HPTRangerBorder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Nyawa tower rangers.png"))); // NOI18N
         getContentPane().add(HPTRangerBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
+        CoolDown.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        CoolDown.setForeground(new java.awt.Color(0, 0, 0));
+        CoolDown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CoolDown.setText("0");
+        getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 637, 40, -1));
+
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
         btTowerAtt.setBorderPainted(false);
         btTowerAtt.setContentAreaFilled(false);
+        btTowerAtt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTowerAttActionPerformed(evt);
+            }
+        });
         getContentPane().add(btTowerAtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, -1, -1));
 
         TowerEnemy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Musuh.png"))); // NOI18N
@@ -735,6 +769,20 @@ public class Battle extends javax.swing.JFrame {
         new Game(u, idx, player, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btGameOverActionPerformed
 
+    private void btTowerAttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTowerAttActionPerformed
+        if (CD == maxCD){
+            for (int i = lblEnemy.size()-1; i >= 0 ; i--) {
+                remove(lblEnemy.get(i));
+                lblEnemy.remove(i);
+                revalidate();
+                repaint();
+            }
+            CD = 0;
+            CoolDown.setText("0");
+            tCDTower.start();
+        }
+    }//GEN-LAST:event_btTowerAttActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -774,6 +822,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel BgBattle;
     private javax.swing.JLabel BoxMineral;
     private javax.swing.JLabel BoxRangers;
+    private javax.swing.JLabel CoolDown;
     private javax.swing.JLabel CurMineral;
     private javax.swing.JLabel GAMEOVER;
     private javax.swing.JLabel HPTEnemyBorder;
