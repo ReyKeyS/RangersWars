@@ -26,7 +26,7 @@ public class Battle extends javax.swing.JFrame {
     // Declaration
     private ImageIcon erisBox = new ImageIcon("src\\images\\Eris box.png");
     private ImageIcon erisJalan = new ImageIcon("src\\images\\Eris Jalan Ingame.gif");
-    private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris_Attack.gif");
+    private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris gada blue meke ukurane 150px.gif");
     
     private ImageIcon yoimiyaBox = new ImageIcon("src\\images\\Yoimiya box.png");
     private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Ingame.gif");
@@ -179,59 +179,54 @@ public class Battle extends javax.swing.JFrame {
                 for (int i = 0; i < lblRanger.size(); i++) {
                     int posx = lblRanger.get(i).getLocation().x;
                     int posy = lblRanger.get(i).getLocation().y;
-                    // Depan Enemy
-                    boolean jalan = true;
-                    for (int j = 0; j < lblEnemy.size(); j++) {
-                        int eX = lblEnemy.get(j).getLocation().x;
-                        int eY = lblEnemy.get(j).getLocation().y;
-                        if (posx+200 >= eX){
-                            jalan = false;
+                    if (lblRanger.get(i).getIcon().equals(erisJalan)){
+                        // Depan Enemy
+                        boolean jalan = true;
+                        for (int j = 0; j < lblEnemy.size(); j++) {
+                            int eX = lblEnemy.get(j).getLocation().x;
+                            int eY = lblEnemy.get(j).getLocation().y;
+                            if (posx+165 >= eX){
+                                jalan = false;
+                            }
                         }
-                    }
-                    if (jalan){
-                        if (lblRanger.get(i).getIcon().equals(erisJalan)){
-                            if (posx+200 < 1030){
+                        if (jalan){
+                            if (posx+165 < 1070){
                                 lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+200 == 1030){
+                            }else if (posx+165 == 1070){
                                 lblRanger.get(i).setIcon(erisAttack);
+                                lblRanger.get(i).setBounds(posx, posy-30, 165, 150);
                             }
-                        }else if (lblRanger.get(i).getIcon().equals(yoimiyaJalan)){
-                            if (posx+200 < 1030){
-                                lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+200 == 1030){
-                                lblRanger.get(i).setIcon(yoimiyaAttack);
-                            }
-                        }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
-                            if (posx+200 < 1030){
-                                lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+200 == 1030){
-                                lblRanger.get(i).setIcon(shogunAttack);
-                            }
-                        }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
-                            if (posx+200 < 1030){
-                                lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+200 == 1030){
-                                lblRanger.get(i).setIcon(marsAttack);
-                            }
-                        }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
-                            if (posx+200 < 1030){
-                                lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+200 == 1030){
-                                lblRanger.get(i).setIcon(newcastleAttack);
-                            }
-                        }
-                    }else{
-                        if (lblRanger.get(i).getIcon().equals(erisJalan)){
+                        }else{
                             lblRanger.get(i).setIcon(erisAttack);
-                        }else if (lblRanger.get(i).getIcon().equals(yoimiyaJalan)){
-                            lblRanger.get(i).setIcon(yoimiyaAttack);
-                        }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
-                            lblRanger.get(i).setIcon(shogunAttack);
-                        }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
-                            lblRanger.get(i).setIcon(marsAttack);
-                        }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
-                            lblRanger.get(i).setIcon(newcastleAttack);
+                            lblRanger.get(i).setBounds(posx, posy-30, 165, 150);
+                        }                        
+                    }else if (lblRanger.get(i).getIcon().equals(yoimiyaJalan)){
+                        // Depan Enemy
+                        boolean jalan = true;
+                        for (int j = 0; j < lblEnemy.size(); j++) {
+                            int eX = lblEnemy.get(j).getLocation().x;
+                            int eY = lblEnemy.get(j).getLocation().y;
+                            if (posx+199 >= eX){
+                                jalan = false;
+                            }
                         }
+                        if (jalan){
+                            if (posx+199 < 1070){
+                                lblRanger.get(i).setLocation(posx+1, posy);
+                            }else if (posx+199 == 1070){
+                                lblRanger.get(i).setIcon(yoimiyaAttack);
+                                lblRanger.get(i).setBounds(posx, posy, 199, 120);
+                            }
+                        }else{
+                            lblRanger.get(i).setIcon(yoimiyaAttack);
+                            lblRanger.get(i).setBounds(posx, posy, 199, 120);
+                        }
+                    }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
+                        
+                    }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
+                        
+                    }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
+                        
                     }
                 }
             }
@@ -248,7 +243,7 @@ public class Battle extends javax.swing.JFrame {
                     int posy = lblRanger.get(i).getLocation().y;
                     if (lblRanger.get(i).getIcon().equals(erisAttack)){
                         int demeg = u.get(idx).getRanger()[0].getDmg();
-                        if (posx+200 == 1030){
+                        if (posx+165 == 1070){
                             int curHp = towerEnemy.getHp() - demeg;
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
@@ -262,12 +257,16 @@ public class Battle extends javax.swing.JFrame {
                                     revalidate();
                                     repaint();
                                     lblRanger.get(i).setIcon(erisJalan);
+                                    lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
                                 }
+                            }else{
+                                lblRanger.get(i).setIcon(erisJalan);
+                                lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
                             }
                         }
                     }else if (lblRanger.get(i).getIcon().equals(yoimiyaAttack)){
                         int demeg = u.get(idx).getRanger()[1].getDmg();
-                        if (posx+200 == 1030){
+                        if (posx+199 == 1070){
                             int curHp = towerEnemy.getHp() - demeg;
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
@@ -281,74 +280,19 @@ public class Battle extends javax.swing.JFrame {
                                     revalidate();
                                     repaint();
                                     lblRanger.get(i).setIcon(yoimiyaJalan);
+                                lblRanger.get(i).setBounds(posx, posy, 86, 120);
                                 }
                             }else{
                                 lblRanger.get(i).setIcon(yoimiyaJalan);
+                                lblRanger.get(i).setBounds(posx, posy, 86, 120);
                             }
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
-                        int demeg = u.get(idx).getRanger()[2].getDmg();
-                        if (posx+200 == 1030){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
-                        }else{
-                            if (lblHpEnemy.size() != 0){
-                                lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
-                                if (lblHpEnemy.get(0) <= 0){
-                                    lblHpEnemy.remove(0);
-                                    remove(lblEnemy.get(0));
-                                    lblEnemy.remove(0);
-                                    revalidate();
-                                    repaint();
-                                    lblRanger.get(i).setIcon(shogunJalan);                                
-                                }
-                            }else{
-                                lblRanger.get(i).setIcon(shogunJalan);
-                            }
-                        }
+                        
                     }else if (lblRanger.get(i).getIcon().equals(marsAttack)){
-                        int demeg = u.get(idx).getRanger()[4].getDmg();
-                        if (posx+200 == 1030){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
-                        }else{
-                            if (lblHpEnemy.size() != 0){
-                                lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
-                                if (lblHpEnemy.get(0) <= 0){
-                                    lblHpEnemy.remove(0);
-                                    remove(lblEnemy.get(0));
-                                    lblEnemy.remove(0);
-                                    revalidate();
-                                    repaint();
-                                    lblRanger.get(i).setIcon(marsJalan);
-                                }
-                            }else{
-                                lblRanger.get(i).setIcon(marsJalan);
-                            }
-                        }
+                        
                     }else if (lblRanger.get(i).getIcon().equals(newcastleAttack)){
-                        int demeg = u.get(idx).getRanger()[4].getDmg();
-                        if (posx+200 == 1030){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
-                        }else{
-                            if (lblHpEnemy.size() != 0){
-                                lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
-                                if (lblHpEnemy.get(0) <= 0){
-                                    lblHpEnemy.remove(0);
-                                    remove(lblEnemy.get(0));
-                                    lblEnemy.remove(0);
-                                    revalidate();
-                                    repaint();
-                                    lblRanger.get(i).setIcon(newcastleJalan);
-                                }
-                            }else{
-                                lblRanger.get(i).setIcon(newcastleJalan);
-                            }
-                        }
+                        
                     }
                     
                     // Cek GameOver
@@ -375,7 +319,7 @@ public class Battle extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 lblEnemy.add(new JLabel());
                 lblEnemy.get(lblEnemy.size()-1).setIcon(yoimiyaJalan);
-                lblEnemy.get(lblEnemy.size()-1).setBounds(830, 310, 200, 270);
+                lblEnemy.get(lblEnemy.size()-1).setBounds(944, 430, 86, 120);
                 getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
                 lblHpEnemy.add(enemy.getHp());
             }
@@ -394,7 +338,7 @@ public class Battle extends javax.swing.JFrame {
                     for (int j = 0; j < lblRanger.size(); j++) {
                         int rangX = lblRanger.get(j).getLocation().x;
                         int rangY = lblRanger.get(j).getLocation().y;
-                        if (Ex <= rangX+200){
+                        if (Ex <= rangX+lblRanger.get(j).getBounds().width){
                             jalan = false;
                         }
                     }
@@ -404,10 +348,12 @@ public class Battle extends javax.swing.JFrame {
                                 lblEnemy.get(i).setLocation(Ex-1, Ey);
                             }else if (Ex == 215){
                                 lblEnemy.get(i).setIcon(yoimiyaAttack);
+                                lblEnemy.get(i).setBounds(Ex, Ey, 199, 120);
                             }
                         }
                     }else{
                         lblEnemy.get(i).setIcon(yoimiyaAttack);
+                        lblEnemy.get(i).setBounds(Ex, Ey, 199, 120);
                     }
                 }
             }
@@ -438,9 +384,11 @@ public class Battle extends javax.swing.JFrame {
                                     revalidate();
                                     repaint();
                                     lblEnemy.get(i).setIcon(yoimiyaJalan);
+                                    lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
                                 }
                             }else{
                                 lblEnemy.get(i).setIcon(yoimiyaJalan);
+                                lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
                             }
                         }
                     }
