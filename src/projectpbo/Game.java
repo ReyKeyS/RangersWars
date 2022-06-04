@@ -119,6 +119,11 @@ public class Game extends javax.swing.JFrame {
         btUpgrade.setBorderPainted(false);
         btUpgrade.setContentAreaFilled(false);
         btUpgrade.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade Hovered.png"))); // NOI18N
+        btUpgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUpgradeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
 
         IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ErisPilih.gif"))); // NOI18N
@@ -383,6 +388,12 @@ public class Game extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_pilih5ActionPerformed
+
+    private void btUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpgradeActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Upgrade(user,idx,player,kemute,keplay).setVisible(true);
+    }//GEN-LAST:event_btUpgradeActionPerformed
 
     /**
      * @param args the command line arguments

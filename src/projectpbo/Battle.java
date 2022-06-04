@@ -155,11 +155,10 @@ public class Battle extends javax.swing.JFrame {
             tCDTower = new Timer(1000, actCDTower);
             tCDTower.start();
         }
-        
-        // Ranger Config
         int hpTower = u.get(idx).getTower().getHp();
         HpTowerRanger.setText(Integer.toString(hpTower));
         
+        // Ranger Config
         R1Cost.setText(Integer.toString(ranger[0].getMineral()));
         if (ranger[0] instanceof Eris)
             Ranger1.setIcon(erisBox);
