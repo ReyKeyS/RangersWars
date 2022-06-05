@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class Game extends javax.swing.JFrame {
-    private Music player = null;
+    private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
     
@@ -48,8 +48,8 @@ public class Game extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public Game(ArrayList<User> players, int idx, Music player, boolean kemute, boolean keplay) {
-        this.player = player;
+    public Game(ArrayList<User> players, int idx, Music MainTheme, boolean kemute, boolean keplay) {
+        this.MainTheme = MainTheme;
         this.kemute = kemute;
         this.keplay = keplay;
         
@@ -265,7 +265,7 @@ public class Game extends javax.swing.JFrame {
         // Saving
         SavingGame();
         dispose();
-        new Login(player, kemute, keplay).setVisible(true);
+        new Login(MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
@@ -278,7 +278,7 @@ public class Game extends javax.swing.JFrame {
         }
         if (Choice == 3){
             dispose();
-            new Battle(user, idx, player, kemute, keplay).setVisible(true);
+            new Battle(user, idx, MainTheme, kemute, keplay).setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
         }
@@ -392,7 +392,7 @@ public class Game extends javax.swing.JFrame {
     private void btUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpgradeActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Upgrade(user,idx,player,kemute,keplay).setVisible(true);
+        new Upgrade(user,idx,MainTheme,kemute,keplay).setVisible(true);
     }//GEN-LAST:event_btUpgradeActionPerformed
 
     /**

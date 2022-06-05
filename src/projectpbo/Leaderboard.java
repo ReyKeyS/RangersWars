@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * @author Grady
  */
 public class Leaderboard extends javax.swing.JFrame {
-    private Music player = null;
+    private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
     
@@ -26,8 +26,8 @@ public class Leaderboard extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public Leaderboard(ArrayList<User> players, Music player, boolean kemute, boolean keplay) {
-        this.player = player;
+    public Leaderboard(ArrayList<User> players, Music MainTheme, boolean kemute, boolean keplay) {
+        this.MainTheme = MainTheme;
         this.kemute = kemute;
         this.keplay = keplay;
         
@@ -126,7 +126,7 @@ public class Leaderboard extends javax.swing.JFrame {
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Login(player, kemute, keplay).setVisible(true);
+        new Login(MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
     /**

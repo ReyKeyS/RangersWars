@@ -16,9 +16,12 @@ import javax.swing.*;
  * @author RyanK
  */
 public class Battle extends javax.swing.JFrame {
-    private Music player = null;
+    private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
+    
+    private Music BattleTheme = new Music("src\\music\\bgBattle.wav");
+    private Music soundThunder = new Music("src\\music\\Thundergod's_Wrath.wav");
     
     private ArrayList<User> u = new ArrayList<>();
     private int idx;
@@ -88,19 +91,18 @@ public class Battle extends javax.swing.JFrame {
         setLayout(null);
     }
     
-    public Battle(ArrayList<User> players, int idx, Music player, boolean kemute, boolean keplay) {
-        this.player = player;
+    public Battle(ArrayList<User> players, int idx, Music MainTheme, boolean kemute, boolean keplay) {
+        this.MainTheme = MainTheme;
         this.kemute = kemute;
         this.keplay = keplay;
         // Ganti Music
         if (!kemute){
-            player.clip.stop();
-            player.loadMusic("src/music/bgBattle.wav");
-            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            MainTheme.Clip().stop();
+            FloatControl volume = (FloatControl) BattleTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
-            player.clip.setMicrosecondPosition(0);
-            player.clip.start();
-            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+            BattleTheme.Clip().setMicrosecondPosition(0);
+            BattleTheme.Clip().start();
+            BattleTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }       
         
         this.u = players;
@@ -659,17 +661,16 @@ public class Battle extends javax.swing.JFrame {
        
     private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
         if (!kemute){
-            player.clip.stop();
-            player.loadMusic("src/music/bg.wav");
-            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            BattleTheme.Clip().stop();
+            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
-            player.clip.setMicrosecondPosition(0);
-            player.clip.start();
-            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+            MainTheme.Clip().setMicrosecondPosition(0);
+            MainTheme.Clip().start();
+            MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
         stopTimer();
         dispose();
-        new Game(u, idx, player, kemute, keplay).setVisible(true);
+        new Game(u, idx, MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btPauseActionPerformed
 
     private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed
@@ -803,16 +804,15 @@ public class Battle extends javax.swing.JFrame {
 
     private void btGameOverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGameOverActionPerformed
         if (!kemute){
-            player.clip.stop();
-            player.loadMusic("src/music/bg.wav");
-            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            BattleTheme.Clip().stop();
+            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
-            player.clip.setMicrosecondPosition(0);
-            player.clip.start();
-            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+            MainTheme.Clip().setMicrosecondPosition(0);
+            MainTheme.Clip().start();
+            MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
         dispose();
-        new Game(u, idx, player, kemute, keplay).setVisible(true);
+        new Game(u, idx, MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btGameOverActionPerformed
 
     private void btTowerAttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTowerAttActionPerformed
@@ -828,11 +828,10 @@ public class Battle extends javax.swing.JFrame {
             CoolDown.setText("0");
             tCDTower.start();
             if (!kemute){
-                player.loadMusic("src/music/Thundergod's_Wrath.wav");
-                FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+                FloatControl volume = (FloatControl) soundThunder.Clip().getControl(FloatControl.Type.MASTER_GAIN);
                 volume.setValue(-10f);
-                player.clip.setMicrosecondPosition(0);
-                player.clip.start();
+                soundThunder.Clip().setMicrosecondPosition(0);
+                soundThunder.Clip().start();
             }
         }
     }//GEN-LAST:event_btTowerAttActionPerformed

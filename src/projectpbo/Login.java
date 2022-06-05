@@ -21,7 +21,7 @@ public class Login extends javax.swing.JFrame {
     
     private boolean keplay = false;
     private boolean kemute = false;
-    private Music player = Music.getInstance();
+    private Music MainTheme;
     
     /**
      * Creates new form Login
@@ -43,12 +43,12 @@ public class Login extends javax.swing.JFrame {
         }
         if (!keplay){
             keplay = true;
-            player.loadMusic("src/music/bg.wav");
-            player.clip.setMicrosecondPosition(0);
-            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            MainTheme = new Music("src/music/bg.wav");
+            MainTheme.Clip().setMicrosecondPosition(0);
+            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
-            player.clip.start();
-            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+            MainTheme.Clip().start();
+            MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
         if (!kemute){
             btMute.setIcon(new ImageIcon("src\\images\\Music button.png"));
@@ -59,8 +59,8 @@ public class Login extends javax.swing.JFrame {
         }
     }
     
-    public Login(Music player, boolean kemute, boolean keplay) {
-        this.player = player;
+    public Login(Music MainTheme, boolean kemute, boolean keplay) {
+        this.MainTheme = MainTheme;
         this.kemute = kemute;
         this.keplay = keplay;
         
@@ -79,12 +79,12 @@ public class Login extends javax.swing.JFrame {
         }
         if (!keplay){
             keplay = true;
-            player.loadMusic("src/music/bg.wav");
-            player.clip.setMicrosecondPosition(0);
-            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            MainTheme = new Music("src/music/bg.wav");
+            MainTheme.Clip().setMicrosecondPosition(0);
+            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(-10f);
-            player.clip.start();
-            player.clip.loop(Clip.LOOP_CONTINUOUSLY);
+            MainTheme.Clip().start();
+            MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
         if (!kemute){
             btMute.setIcon(new ImageIcon("src\\images\\Music button.png"));
@@ -177,13 +177,13 @@ public class Login extends javax.swing.JFrame {
             if (found){
                 JOptionPane.showMessageDialog(null, "Berhasil Login!", "Message", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new Game(user, idxLog, player, kemute, keplay).setVisible(true);
+                new Game(user, idxLog, MainTheme, kemute, keplay).setVisible(true);
             }else{
                 int confirm = JOptionPane.showConfirmDialog(null, "Yakin Membuat Akun Baru?", "Message", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (confirm == 0){
                     dispose();
                     user.add(new User(curNama));
-                    new Game(user, user.size()-1, player, kemute, keplay).setVisible(true);
+                    new Game(user, user.size()-1, MainTheme, kemute, keplay).setVisible(true);
                 }
             }
         }else{
@@ -194,11 +194,11 @@ public class Login extends javax.swing.JFrame {
     private void btLeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLeaderActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Leaderboard(user, player, kemute, keplay).setVisible(true);
+        new Leaderboard(user, MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btLeaderActionPerformed
 
     private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed
-        FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+        FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
         if(!kemute){
             volume.setValue(-80f);
             kemute = true;

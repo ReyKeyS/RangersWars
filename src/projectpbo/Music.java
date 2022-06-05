@@ -15,20 +15,10 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class Music {
-    static Music player = new Music();
-    
-    static Clip clip;
+    private Clip clip;
 
-    public Music() {
-    }
-    
-    public static Music getInstance(){
-        return player;
-    }
-    
-    public static void loadMusic(String filepath){
+    public Music(String filepath) {
         try{
-//            File musicPath = new File("src/music/bg.wav");
             File musicPath = new File(filepath);
             AudioInputStream audioinput = AudioSystem.getAudioInputStream(musicPath);
             clip = AudioSystem.getClip();
@@ -37,5 +27,9 @@ public class Music {
             JOptionPane.showMessageDialog(null, "Music Error");
         }
     }
-    
+
+    public Clip Clip() {
+        return clip;
+    }
+
 }
