@@ -827,6 +827,11 @@ public class Battle extends javax.swing.JFrame {
             CD = 0;
             CoolDown.setText("0");
             tCDTower.start();
+            
+            player.loadMusic("src/music/Thundergod's_Wrath.wav");
+            FloatControl volume = (FloatControl) player.clip.getControl(FloatControl.Type.MASTER_GAIN);
+            player.clip.setMicrosecondPosition(0);
+            player.clip.start();
         }
     }//GEN-LAST:event_btTowerAttActionPerformed
 
