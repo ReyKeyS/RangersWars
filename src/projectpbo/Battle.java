@@ -47,6 +47,8 @@ public class Battle extends javax.swing.JFrame {
     private ImageIcon newcastleJalan = new ImageIcon("src\\images\\Eris box.gif");
     private ImageIcon newcastleAttack = new ImageIcon("src\\images\\Eris box.gif");
     
+    private ImageIcon pentolJalan = new ImageIcon("src\\images\\PentolJalan.gif");
+    
     private Ranger[] ranger = new Ranger[3];
     
     private ArrayList<JLabel> lblRanger = new ArrayList<>();
@@ -83,7 +85,9 @@ public class Battle extends javax.swing.JFrame {
         tEnemyJalan.stop();
         tEnemyAtt.stop();
         tCDTower.stop();
-        animasiTower.stop();
+        if (animasiTower != null){
+            animasiTower.stop();
+        }
     }
     /**
      * Creates new form Battle
@@ -371,8 +375,8 @@ public class Battle extends javax.swing.JFrame {
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lblEnemy.add(new JLabel());
-                lblEnemy.get(lblEnemy.size()-1).setIcon(yoimiyaJalan);
-                lblEnemy.get(lblEnemy.size()-1).setBounds(944, 430, 86, 120);
+                lblEnemy.get(lblEnemy.size()-1).setIcon(pentolJalan);
+                lblEnemy.get(lblEnemy.size()-1).setBounds(955, 430, 97, 120);
                 getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
                 lblHpEnemy.add(enemy.getHp());
             }
@@ -396,7 +400,7 @@ public class Battle extends javax.swing.JFrame {
                         }
                     }
                     if (jalan){
-                        if (lblEnemy.get(i).getIcon().equals(yoimiyaJalan)){
+                        if (lblEnemy.get(i).getIcon().equals(pentolJalan)){
                             if (Ex > 215){
                                 lblEnemy.get(i).setLocation(Ex-1, Ey);
                             }else if (Ex == 215){
