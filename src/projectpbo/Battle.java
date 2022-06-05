@@ -65,6 +65,8 @@ public class Battle extends javax.swing.JFrame {
     private int CD = 0;
     private int maxCD;
     private Timer tCDTower = null;
+    private Timer animasiTower = null;
+    private int waktu = 0;
     
     // Enemy
     private ArrayList<JLabel> lblEnemy = new ArrayList<>();
@@ -81,6 +83,7 @@ public class Battle extends javax.swing.JFrame {
         tEnemyJalan.stop();
         tEnemyAtt.stop();
         tCDTower.stop();
+        animasiTower.stop();
     }
     /**
      * Creates new form Battle
@@ -508,9 +511,7 @@ public class Battle extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Thunder.setText("jLabel1");
-        getContentPane().add(Thunder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(Thunder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         Prize.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         Prize.setForeground(new java.awt.Color(255, 204, 51));
@@ -836,6 +837,23 @@ public class Battle extends javax.swing.JFrame {
                 volume.setValue(-10f);
                 soundThunder.Clip().setMicrosecondPosition(0);
                 soundThunder.Clip().start();
+            }
+            waktu = 0;
+            Thunder.setIcon(new ImageIcon("src\\images\\animasi thunder.gif"));
+            ActionListener animasiT = new ActionListener(){
+                public void actionPerformed(ActionEvent e) {
+                    waktu++;
+                    if (waktu < 3){
+                        Thunder.setVisible(true);
+                    }else if (waktu == 4){
+                        Thunder.setVisible(false);
+                        animasiTower.stop();
+                    }
+                }
+            };
+            if (animasiTower == null){
+                animasiTower = new Timer(80, animasiT);
+                animasiTower.start();
             }
         }
     }//GEN-LAST:event_btTowerAttActionPerformed
