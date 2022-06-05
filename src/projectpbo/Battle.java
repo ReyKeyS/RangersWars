@@ -475,6 +475,7 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Thunder = new javax.swing.JLabel();
         Prize = new javax.swing.JLabel();
         GAMEOVER = new javax.swing.JLabel();
         ketGameOver = new javax.swing.JLabel();
@@ -507,6 +508,9 @@ public class Battle extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Thunder.setText("jLabel1");
+        getContentPane().add(Thunder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Prize.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         Prize.setForeground(new java.awt.Color(255, 204, 51));
@@ -826,6 +830,7 @@ public class Battle extends javax.swing.JFrame {
             CD = 0;
             CoolDown.setText("0");
             tCDTower.start();
+            Thunder.setIcon(new ImageIcon("src/images/animasi thunder.gif"));
             if (!kemute){
                 FloatControl volume = (FloatControl) soundThunder.Clip().getControl(FloatControl.Type.MASTER_GAIN);
                 volume.setValue(-10f);
@@ -889,6 +894,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JButton Ranger1;
     private javax.swing.JButton Ranger2;
     private javax.swing.JButton Ranger3;
+    private javax.swing.JLabel Thunder;
     private javax.swing.JLabel TowerEnemy;
     private javax.swing.JLabel TowerPlayer;
     private javax.swing.JButton btGameOver;
