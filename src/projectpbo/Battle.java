@@ -48,6 +48,7 @@ public class Battle extends javax.swing.JFrame {
     private ImageIcon newcastleAttack = new ImageIcon("src\\images\\Eris box.gif");
     
     private ImageIcon pentolJalan = new ImageIcon("src\\images\\PentolJalan.gif");
+    private ImageIcon pentolAttack = new ImageIcon("src\\images\\PentolAttack.gif");
     
     private Ranger[] ranger = new Ranger[3];
     
@@ -224,7 +225,7 @@ public class Battle extends javax.swing.JFrame {
                         for (int j = 0; j < lblEnemy.size(); j++) {
                             int eX = lblEnemy.get(j).getLocation().x;
                             int eY = lblEnemy.get(j).getLocation().y;
-                            if (posx+165 >= eX){
+                            if (posx+165 >= eX+71){
                                 jalan = false;
                             }
                         }
@@ -245,7 +246,7 @@ public class Battle extends javax.swing.JFrame {
                         for (int j = 0; j < lblEnemy.size(); j++) {
                             int eX = lblEnemy.get(j).getLocation().x;
                             int eY = lblEnemy.get(j).getLocation().y;
-                            if (posx+199 >= eX){
+                            if (posx+199 >= eX+71){
                                 jalan = false;
                             }
                         }
@@ -287,7 +288,7 @@ public class Battle extends javax.swing.JFrame {
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() >= 1 && posx+165 >= lblEnemy.get(0).getLocation().x){
+                            if (lblHpEnemy.size() >= 1 && posx+165 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
                                     if (lblHpEnemy.get(0) <= 0){
                                         lblHpEnemy.remove(0);
@@ -317,7 +318,7 @@ public class Battle extends javax.swing.JFrame {
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x){
+                            if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
                                     if (lblHpEnemy.get(0) <= 0){
                                         lblHpEnemy.remove(0);
@@ -376,7 +377,8 @@ public class Battle extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 lblEnemy.add(new JLabel());
                 lblEnemy.get(lblEnemy.size()-1).setIcon(pentolJalan);
-                lblEnemy.get(lblEnemy.size()-1).setBounds(955, 430, 97, 120);
+                lblEnemy.get(lblEnemy.size()-1).setBounds(902, 430, 168, 120);
+                lblEnemy.get(lblEnemy.size()-1).setHorizontalAlignment(JLabel.RIGHT);
                 getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
                 lblHpEnemy.add(enemy.getHp());
             }
@@ -395,22 +397,20 @@ public class Battle extends javax.swing.JFrame {
                     for (int j = 0; j < lblRanger.size(); j++) {
                         int rangX = lblRanger.get(j).getLocation().x;
                         int rangY = lblRanger.get(j).getLocation().y;
-                        if (Ex <= rangX+lblRanger.get(j).getBounds().width){
+                        if (Ex-95 <= rangX){
                             jalan = false;
                         }
                     }
                     if (jalan){
                         if (lblEnemy.get(i).getIcon().equals(pentolJalan)){
-                            if (Ex > 215){
+                            if (Ex-95 > 215){
                                 lblEnemy.get(i).setLocation(Ex-1, Ey);
-                            }else if (Ex == 215){
-                                lblEnemy.get(i).setIcon(yoimiyaAttack);
-                                lblEnemy.get(i).setBounds(Ex, Ey, 199, 120);
+                            }else if (Ex-95 == 215){
+                                lblEnemy.get(i).setIcon(pentolAttack);
                             }
                         }
                     }else{
-                        lblEnemy.get(i).setIcon(yoimiyaAttack);
-                        lblEnemy.get(i).setBounds(Ex, Ey, 199, 120);
+                        lblEnemy.get(i).setIcon(pentolAttack);
                     }
                 }
             }
@@ -425,9 +425,9 @@ public class Battle extends javax.swing.JFrame {
                 for (int i = 0; i < lblEnemy.size(); i++) {
                     int Ex = lblEnemy.get(i).getLocation().x;
                     int Ey = lblEnemy.get(i).getLocation().y;
-                    if (lblEnemy.get(i).getIcon().equals(yoimiyaAttack)){
+                    if (lblEnemy.get(i).getIcon().equals(pentolAttack)){
                         int demeg = enemy.getDmg();
-                        if (Ex == 215){
+                        if (Ex-95 == 215){
                             int curHp = u.get(idx).getTower().getHp() - demeg;
                             u.get(idx).getTower().setHp(curHp);
                             HpTowerRanger.setText(Integer.toString(curHp));
@@ -441,16 +441,13 @@ public class Battle extends javax.swing.JFrame {
                                         lblRanger.remove(0);
                                         revalidate();
                                         repaint();
-                                        lblEnemy.get(i).setIcon(yoimiyaJalan);
-                                        lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
+                                        lblEnemy.get(i).setIcon(pentolJalan);
                                     }
                                 }else{
-                                    lblEnemy.get(i).setIcon(yoimiyaJalan);
-                                    lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
+                                    lblEnemy.get(i).setIcon(pentolJalan);
                                 }
                             }else{
-                                lblEnemy.get(i).setIcon(yoimiyaJalan);
-                                lblEnemy.get(i).setBounds(Ex, Ey, 86, 120);
+                                lblEnemy.get(i).setIcon(pentolJalan);
                             }                             
                         }
                     }
@@ -681,6 +678,7 @@ public class Battle extends javax.swing.JFrame {
             MainTheme.Clip().start();
             MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
+        u.get(idx).getTower().setHp(1900+u.get(idx).getLevel()*100);
         stopTimer();
         dispose();
         new Game(u, idx, MainTheme, kemute, keplay).setVisible(true);

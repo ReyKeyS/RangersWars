@@ -51,13 +51,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/Eris gada bluescreen meke ukurane 180px.gif"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="310" y="200" width="-1" height="-1"/>
+          <AbsoluteConstraints x="447" y="240" width="360" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -81,7 +82,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="210" y="50" width="-1" height="-1"/>
+          <AbsoluteConstraints x="320" y="240" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
