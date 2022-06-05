@@ -126,6 +126,7 @@ public class Battle extends javax.swing.JFrame {
         btGameOver.setVisible(false);
         ketGameOver.setVisible(false);
         Prize.setVisible(false);
+        black.setVisible(false);
         
         // Mana config
         int maxMana=100;
@@ -479,6 +480,7 @@ public class Battle extends javax.swing.JFrame {
     private void initComponents() {
 
         Thunder = new javax.swing.JLabel();
+        black = new javax.swing.JLabel();
         Prize = new javax.swing.JLabel();
         GAMEOVER = new javax.swing.JLabel();
         ketGameOver = new javax.swing.JLabel();
@@ -512,6 +514,9 @@ public class Battle extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(Thunder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        black.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/black.png"))); // NOI18N
+        getContentPane().add(black, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Prize.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         Prize.setForeground(new java.awt.Color(255, 204, 51));
@@ -831,7 +836,6 @@ public class Battle extends javax.swing.JFrame {
             CD = 0;
             CoolDown.setText("0");
             tCDTower.start();
-            Thunder.setIcon(new ImageIcon("src/images/animasi thunder.gif"));
             if (!kemute){
                 FloatControl volume = (FloatControl) soundThunder.Clip().getControl(FloatControl.Type.MASTER_GAIN);
                 volume.setValue(-10f);
@@ -839,20 +843,21 @@ public class Battle extends javax.swing.JFrame {
                 soundThunder.Clip().start();
             }
             waktu = 0;
+            black.setVisible(true);
             Thunder.setIcon(new ImageIcon("src\\images\\animasi thunder.gif"));
             ActionListener animasiT = new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
                     waktu++;
-                    if (waktu < 3){
+                    if (waktu < 5){
                         Thunder.setVisible(true);
-                    }else if (waktu == 4){
+                    }else if (waktu == 5){
                         Thunder.setVisible(false);
-                        animasiTower.stop();
+                        black.setVisible(false);
                     }
                 }
             };
             if (animasiTower == null){
-                animasiTower = new Timer(80, animasiT);
+                animasiTower = new Timer(100, animasiT);
                 animasiTower.start();
             }
         }
@@ -915,6 +920,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel Thunder;
     private javax.swing.JLabel TowerEnemy;
     private javax.swing.JLabel TowerPlayer;
+    private javax.swing.JLabel black;
     private javax.swing.JButton btGameOver;
     private javax.swing.JButton btPause;
     private javax.swing.JButton btTowerAtt;
