@@ -147,8 +147,10 @@ public class Battle extends javax.swing.JFrame {
                 if (CD < maxCD){
                     CD++;
                     CoolDown.setText(Integer.toString(CD));
-                }else{
-                    CoolDown.setText("Ready");
+                    if (CD == maxCD){
+                        CoolDown.setText("Ready");
+                    }
+                }else if (CD == maxCD){
                     tCDTower.stop();
                 }
             }
@@ -605,7 +607,6 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(BoxRangers, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 140));
 
         HpTowerEnemy.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        HpTowerEnemy.setForeground(new java.awt.Color(0, 0, 0));
         HpTowerEnemy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HpTowerEnemy.setText("000");
         getContentPane().add(HpTowerEnemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(1145, 615, 80, -1));
@@ -614,7 +615,6 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(HPTEnemyBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, -1, -1));
 
         HpTowerRanger.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        HpTowerRanger.setForeground(new java.awt.Color(0, 0, 0));
         HpTowerRanger.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HpTowerRanger.setText("000");
         getContentPane().add(HpTowerRanger, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 615, 80, -1));
@@ -623,9 +623,8 @@ public class Battle extends javax.swing.JFrame {
         getContentPane().add(HPTRangerBorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
         CoolDown.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        CoolDown.setForeground(new java.awt.Color(0, 0, 0));
         CoolDown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CoolDown.setText("Ready");
+        CoolDown.setText("0");
         getContentPane().add(CoolDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 641, 70, -1));
 
         btTowerAtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tower Attack.png"))); // NOI18N
