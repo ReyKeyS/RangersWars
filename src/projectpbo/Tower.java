@@ -13,12 +13,10 @@ import java.io.Serializable;
 public class Tower implements Serializable{
     private int hp;
     private int level;
-    private boolean cd;
 
-    public Tower(int hp, int level, boolean cd) {
-        this.hp = hp;
+    public Tower(int level) {
+        this.hp = 200;
         this.level = level;
-        this.cd = cd;
     }
 
     public int getHp() {
@@ -37,12 +35,5 @@ public class Tower implements Serializable{
         this.level = level;
     }
 
-    public boolean isCd() {
-        return cd;
-    }
-
-    public void setCd(boolean cd) {
-        this.cd = cd;
-    }
 
 }

@@ -13,10 +13,10 @@ public class Enemy {
     private int hp;
     private int dmg;
 
-    public Enemy(int level, int hp, int dmg) {
+    public Enemy(int level) {
         this.level = level;
-        this.hp = hp;
-        this.dmg = dmg;
+        this.hp = 280 + level*20;
+        this.dmg = 25 + level*15;
     }
 
     public int getLevel() {

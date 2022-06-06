@@ -418,7 +418,8 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Enemy Config
-        Enemy enemy = new Enemy(1, 300, 50);
+        Enemy enemy = new Enemy(u.get(idx).getLevel());
+        
         //// Spawn
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
