@@ -85,6 +85,7 @@ public class Game extends javax.swing.JFrame {
     private void initComponents() {
 
         btUpgrade = new javax.swing.JButton();
+        IdleShogun = new javax.swing.JLabel();
         IdleEris = new javax.swing.JLabel();
         IdleYoimiya = new javax.swing.JLabel();
         btLogout = new javax.swing.JButton();
@@ -125,6 +126,9 @@ public class Game extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
+
+        IdleShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Raiden Shogun Pilih.gif"))); // NOI18N
+        getContentPane().add(IdleShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
         IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ErisPilih.gif"))); // NOI18N
         getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 250, -1, -1));
@@ -436,6 +440,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel GoldLB;
     private javax.swing.JLabel HeroStand;
     private javax.swing.JLabel IdleEris;
+    private javax.swing.JLabel IdleShogun;
     private javax.swing.JLabel IdleYoimiya;
     private javax.swing.JLabel Level;
     private javax.swing.JLabel LevelLB;
