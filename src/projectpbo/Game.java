@@ -127,8 +127,8 @@ public class Game extends javax.swing.JFrame {
         });
         getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
 
-        IdleShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Raiden Shogun Pilih.gif"))); // NOI18N
-        getContentPane().add(IdleShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        IdleShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Raiden Shogun Jalan Menu.gif"))); // NOI18N
+        getContentPane().add(IdleShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 255, -1, -1));
 
         IdleEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ErisPilih.gif"))); // NOI18N
         getContentPane().add(IdleEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 250, -1, -1));

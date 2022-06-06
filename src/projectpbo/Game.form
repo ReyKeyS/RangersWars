@@ -56,12 +56,12 @@
     <Component class="javax.swing.JLabel" name="IdleShogun">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Raiden Shogun Pilih.gif"/>
+          <Image iconType="3" name="/images/Raiden Shogun Jalan Menu.gif"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="510" y="260" width="-1" height="-1"/>
+          <AbsoluteConstraints x="510" y="255" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
