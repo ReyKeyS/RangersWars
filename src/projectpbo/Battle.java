@@ -37,7 +37,7 @@ public class Battle extends javax.swing.JFrame {
     
     private ImageIcon shogunBox = new ImageIcon("src\\images\\Shogun box.png");
     private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
-    private ImageIcon shogunAttack = new ImageIcon("src\\images\\Yoimiya Attack Resize.gif");
+    private ImageIcon shogunAttack = new ImageIcon("src\\images\\Raiden Shogun Att.gif");
     
     private ImageIcon marsBox = new ImageIcon("src\\images\\Eris box.png");
     private ImageIcon marsJalan = new ImageIcon("src\\images\\Eris box.gif");
@@ -262,7 +262,26 @@ public class Battle extends javax.swing.JFrame {
                             lblRanger.get(i).setBounds(posx, posy, 199, 120);
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunJalan)){
-                        
+                        // Depan Enemy
+                        boolean jalan = true;
+                        for (int j = 0; j < lblEnemy.size(); j++) {
+                            int eX = lblEnemy.get(j).getLocation().x;
+                            int eY = lblEnemy.get(j).getLocation().y;
+                            if (posx+244 >= eX+71){
+                                jalan = false;
+                            }
+                        }
+                        if (jalan){
+                            if (posx+244 < 1070){
+                                lblRanger.get(i).setLocation(posx+1, posy);
+                            }else if (posx+244 == 1070){
+                                lblRanger.get(i).setIcon(shogunAttack);
+                                lblRanger.get(i).setBounds(posx+20, posy-75, 244, 202);
+                            }
+                        }else{
+                            lblRanger.get(i).setIcon(shogunAttack);
+                            lblRanger.get(i).setBounds(posx+20, posy-75, 244, 202);
+                        }
                     }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
                         
                     }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
@@ -342,7 +361,35 @@ public class Battle extends javax.swing.JFrame {
                             }                            
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
-                        
+                        int demeg = u.get(idx).getRanger()[2].getDmg();
+                        if (posx+244 == 1070){
+                            int curHp = towerEnemy.getHp() - demeg;
+                            towerEnemy.setHp(curHp);
+                            HpTowerEnemy.setText(Integer.toString(curHp));
+                        }else{
+                            if (lblHpEnemy.size() >= 1 && posx+244 >= lblEnemy.get(0).getLocation().x + 71){
+                                if (!lblHpEnemy.isEmpty()){
+                                    if (lblHpEnemy.get(0) <= 0){
+                                        lblHpEnemy.remove(0);
+                                        remove(lblEnemy.get(0));
+                                        lblEnemy.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblRanger.get(i).setIcon(shogunJalan);
+                                        lblRanger.get(i).setBounds(posx-20, posy+75, 140, 120);
+                                        i = -1;
+                                    }else{
+                                        lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
+                                    }
+                                }else{
+                                    lblRanger.get(i).setIcon(shogunJalan);
+                                    lblRanger.get(i).setBounds(posx-20, posy+75, 140, 120);
+                                }
+                            }else{
+                                lblRanger.get(i).setIcon(shogunJalan);
+                                lblRanger.get(i).setBounds(posx-20, posy+75, 140, 120);
+                            }
+                        }
                     }else if (lblRanger.get(i).getIcon().equals(marsAttack)){
                         
                     }else if (lblRanger.get(i).getIcon().equals(newcastleAttack)){
