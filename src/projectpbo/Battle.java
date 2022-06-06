@@ -29,7 +29,7 @@ public class Battle extends javax.swing.JFrame {
     // Declaration
     private ImageIcon erisBox = new ImageIcon("src\\images\\Eris box.png");
     private ImageIcon erisJalan = new ImageIcon("src\\images\\Eris Jalan Ingame.gif");
-    private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris gada blue meke ukurane 150px.gif");
+    private ImageIcon erisAttack = new ImageIcon("src\\images\\Eris attack.gif");
     
     private ImageIcon yoimiyaBox = new ImageIcon("src\\images\\Yoimiya box.png");
     private ImageIcon yoimiyaJalan = new ImageIcon("src\\images\\Yoimiya Jalan Ingame.gif");
@@ -225,20 +225,20 @@ public class Battle extends javax.swing.JFrame {
                         for (int j = 0; j < lblEnemy.size(); j++) {
                             int eX = lblEnemy.get(j).getLocation().x;
                             int eY = lblEnemy.get(j).getLocation().y;
-                            if (posx+165 >= eX+71){
+                            if (posx+175 >= eX+71){
                                 jalan = false;
                             }
                         }
                         if (jalan){
-                            if (posx+165 < 1070){
+                            if (posx+170 < 1070){
                                 lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+165 == 1070){
+                            }else if (posx+170 == 1070){
                                 lblRanger.get(i).setIcon(erisAttack);
-                                lblRanger.get(i).setBounds(posx, posy-30, 165, 150);
+                                lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
                             }
                         }else{
                             lblRanger.get(i).setIcon(erisAttack);
-                            lblRanger.get(i).setBounds(posx, posy-30, 165, 150);
+                            lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
                         }                        
                     }else if (lblRanger.get(i).getIcon().equals(yoimiyaJalan)){
                         // Depan Enemy
@@ -283,12 +283,12 @@ public class Battle extends javax.swing.JFrame {
                     int posy = lblRanger.get(i).getLocation().y;
                     if (lblRanger.get(i).getIcon().equals(erisAttack)){
                         int demeg = u.get(idx).getRanger()[0].getDmg();
-                        if (posx+165 == 1070){
+                        if (posx+175 == 1070){
                             int curHp = towerEnemy.getHp() - demeg;
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() >= 1 && posx+165 >= lblEnemy.get(0).getLocation().x + 71){
+                            if (lblHpEnemy.size() >= 1 && posx+175 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
                                     if (lblHpEnemy.get(0) <= 0){
                                         lblHpEnemy.remove(0);
@@ -297,18 +297,18 @@ public class Battle extends javax.swing.JFrame {
                                         revalidate();
                                         repaint();
                                         lblRanger.get(i).setIcon(erisJalan);
-                                        lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
+                                        lblRanger.get(i).setBounds(posx+30, posy+26, 90, 120);
                                         i = -1;
                                     }else{
                                         lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
                                     }
                                 }else{
                                     lblRanger.get(i).setIcon(erisJalan);
-                                    lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
+                                    lblRanger.get(i).setBounds(posx+30, posy+26, 90, 120);
                                 }
                             }else{
                                 lblRanger.get(i).setIcon(erisJalan);
-                                lblRanger.get(i).setBounds(posx, posy+30, 90, 120);
+                                lblRanger.get(i).setBounds(posx+30, posy+26, 90, 120);
                             }
                         }
                     }else if (lblRanger.get(i).getIcon().equals(yoimiyaAttack)){
