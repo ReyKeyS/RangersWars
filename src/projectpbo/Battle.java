@@ -146,7 +146,7 @@ public class Battle extends javax.swing.JFrame {
             }
         };
         if (tMana == null){
-            tMana = new Timer(75, actMana);
+            tMana = new Timer(150, actMana);
             tMana.start();
         }
         
