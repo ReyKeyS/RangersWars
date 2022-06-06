@@ -225,14 +225,14 @@ public class Battle extends javax.swing.JFrame {
                         for (int j = 0; j < lblEnemy.size(); j++) {
                             int eX = lblEnemy.get(j).getLocation().x;
                             int eY = lblEnemy.get(j).getLocation().y;
-                            if (posx+175+30 >= eX+71){
+                            if (posx+175 >= eX+71){
                                 jalan = false;
                             }
                         }
                         if (jalan){
-                            if (posx+175+30 < 1070){
+                            if (posx+175 < 1070){
                                 lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+175+30 == 1070){
+                            }else if (posx+175 == 1070){
                                 lblRanger.get(i).setIcon(erisAttack);
                                 lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
                             }
@@ -302,12 +302,12 @@ public class Battle extends javax.swing.JFrame {
                     int posy = lblRanger.get(i).getLocation().y;
                     if (lblRanger.get(i).getIcon().equals(erisAttack)){
                         int demeg = u.get(idx).getRanger()[0].getDmg();
-                        if (posx+175+30 == 1070){
+                        if (posx+175 == 1070-30){
                             int curHp = towerEnemy.getHp() - demeg;
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
                         }else{
-                            if (lblHpEnemy.size() >= 1 && posx+175+30 >= lblEnemy.get(0).getLocation().x + 71){
+                            if (lblHpEnemy.size() >= 1 && posx+175 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
                                     if (lblHpEnemy.get(0) <= 0){
                                         lblHpEnemy.remove(0);
@@ -362,7 +362,7 @@ public class Battle extends javax.swing.JFrame {
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
                         int demeg = u.get(idx).getRanger()[2].getDmg();
-                        if (posx+244 == 1070){
+                        if (posx+244 == 1070-20){
                             int curHp = towerEnemy.getHp() - demeg;
                             towerEnemy.setHp(curHp);
                             HpTowerEnemy.setText(Integer.toString(curHp));
