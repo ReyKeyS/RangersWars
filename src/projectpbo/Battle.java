@@ -77,7 +77,7 @@ public class Battle extends javax.swing.JFrame {
     private Timer tEnemySpawn = null;
     private Timer tEnemyJalan = null;
     private Timer tEnemyAtt = null;
-    
+    private int towerEnemy;
     private void stopTimer(){
         tMana.stop();
         tJalan.stop();
@@ -116,6 +116,7 @@ public class Battle extends javax.swing.JFrame {
         this.u = players;
         this.idx = idx;
         int keisi = 0;
+        towerEnemy = 500 + u.get(idx).getLevel()*200;
         // Cek Boolean
         for (int i = 0; i < 5; i++) {
             if (u.get(idx).getChoose()[i]){
@@ -209,8 +210,8 @@ public class Battle extends javax.swing.JFrame {
             Ranger3.setIcon(newcastleBox);
         
         // Tower Enemy Config
-        Tower towerEnemy = new Tower(2500, 1, false);
-        HpTowerEnemy.setText(Integer.toString(towerEnemy.getHp()));
+        
+        HpTowerEnemy.setText(Integer.toString(towerEnemy));
         
         // Ranger Config
         //// Jalan
@@ -303,9 +304,8 @@ public class Battle extends javax.swing.JFrame {
                     if (lblRanger.get(i).getIcon().equals(erisAttack)){
                         int demeg = u.get(idx).getRanger()[0].getDmg();
                         if (posx+175 == 1070-30){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
+                            towerEnemy -= demeg;
+                            HpTowerEnemy.setText(Integer.toString(towerEnemy));
                         }else{
                             if (lblHpEnemy.size() >= 1 && posx+175 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
@@ -333,9 +333,8 @@ public class Battle extends javax.swing.JFrame {
                     }else if (lblRanger.get(i).getIcon().equals(yoimiyaAttack)){
                         int demeg = u.get(idx).getRanger()[1].getDmg();
                         if (posx+199 == 1070){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
+                            towerEnemy -= demeg;
+                            HpTowerEnemy.setText(Integer.toString(towerEnemy));
                         }else{
                             if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
@@ -363,9 +362,8 @@ public class Battle extends javax.swing.JFrame {
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
                         int demeg = u.get(idx).getRanger()[2].getDmg();
                         if (posx+244 == 1070-20){
-                            int curHp = towerEnemy.getHp() - demeg;
-                            towerEnemy.setHp(curHp);
-                            HpTowerEnemy.setText(Integer.toString(curHp));
+                            towerEnemy -= demeg;
+                            HpTowerEnemy.setText(Integer.toString(towerEnemy));
                         }else{
                             if (lblHpEnemy.size() >= 1 && posx+244 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
@@ -397,8 +395,8 @@ public class Battle extends javax.swing.JFrame {
                     }
                 }
                 // Cek GameOver
-                if (towerEnemy.getHp()<=0){
-                    towerEnemy.setHp(0);
+                if (towerEnemy<=0){
+                    towerEnemy=0;
                     HpTowerEnemy.setText("0");
                     stopTimer();
                     GAMEOVER.setVisible(true);

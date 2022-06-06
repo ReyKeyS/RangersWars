@@ -15,7 +15,7 @@ public class Tower implements Serializable{
     private int level;
 
     public Tower(int level) {
-        this.hp = 200;
+        this.hp = 200 + level*100;
         this.level = level;
     }
 
