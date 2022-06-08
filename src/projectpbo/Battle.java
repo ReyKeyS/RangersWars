@@ -66,7 +66,7 @@ public class Battle extends javax.swing.JFrame {
     
     // Cooldown tower skill
     private int CD = 0;
-    private int maxCD;
+    private int maxCD = 10;
     private Timer tCDTower = null;
     private Timer animasiTower = null;
     private int waktu = 0;
@@ -154,7 +154,6 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Tower Config
-        this.maxCD = 10;
         ActionListener actCDTower = new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 if (CD < maxCD){
@@ -924,6 +923,8 @@ public class Battle extends javax.swing.JFrame {
                 animasiTower = new Timer(100, animasiT);
                 animasiTower.start();
             }
+            
+            maxCD += 5;
         }
     }//GEN-LAST:event_btTowerAttActionPerformed
 
