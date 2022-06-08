@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Eris extends Ranger implements Serializable{
     
     public Eris(String nama, int level) {
-        super(nama, level, 248, 55, 20);
+        super(nama, level, 620, 55, 20);
     }
     
 }

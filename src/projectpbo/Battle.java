@@ -78,6 +78,9 @@ public class Battle extends javax.swing.JFrame {
     private Timer tEnemyJalan = null;
     private Timer tEnemyAtt = null;
     private int towerEnemy;
+    private int spawnCD = 0;
+    private int spawnMaxCD = 3;
+    
     private void stopTimer(){
         tMana.stop();
         tJalan.stop();
@@ -116,7 +119,7 @@ public class Battle extends javax.swing.JFrame {
         this.u = players;
         this.idx = idx;
         int keisi = 0;
-        towerEnemy = 500 + u.get(idx).getLevel()*200;
+        towerEnemy = 900 + u.get(idx).getLevel()*100;
         // Cek Boolean
         for (int i = 0; i < 5; i++) {
             if (u.get(idx).getChoose()[i]){
@@ -210,7 +213,6 @@ public class Battle extends javax.swing.JFrame {
             Ranger3.setIcon(newcastleBox);
         
         // Tower Enemy Config
-        
         HpTowerEnemy.setText(Integer.toString(towerEnemy));
         
         // Ranger Config
@@ -402,7 +404,7 @@ public class Battle extends javax.swing.JFrame {
                     GAMEOVER.setVisible(true);
                     btGameOver.setVisible(true);
                     ketGameOver.setVisible(true);
-                    prize = 1000;
+                    prize += u.get(idx).getLevel()*10;
                     u.get(idx).setGold(u.get(idx).getGold() + prize);
                     u.get(idx).setLevel(u.get(idx).getLevel() + 1);
                     Prize.setText("You Win! You got "+prize+" Gold!");
@@ -421,16 +423,28 @@ public class Battle extends javax.swing.JFrame {
         //// Spawn
         ActionListener actSpawnEnemy = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lblEnemy.add(new JLabel());
-                lblEnemy.get(lblEnemy.size()-1).setIcon(pentolJalan);
-                lblEnemy.get(lblEnemy.size()-1).setBounds(902, 430, 168, 120);
-                lblEnemy.get(lblEnemy.size()-1).setHorizontalAlignment(JLabel.RIGHT);
-                getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
-                lblHpEnemy.add(enemy.getHp());
+                spawnCD++;
+                if (spawnCD == spawnMaxCD){
+                    lblEnemy.add(new JLabel());
+                    lblEnemy.get(lblEnemy.size()-1).setIcon(pentolJalan);
+                    lblEnemy.get(lblEnemy.size()-1).setBounds(902, 430, 168, 120);
+                    lblEnemy.get(lblEnemy.size()-1).setHorizontalAlignment(JLabel.RIGHT);
+                    getContentPane().add(lblEnemy.get(lblEnemy.size()-1), new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1),1);
+                    lblHpEnemy.add(enemy.getHp());
+                    spawnCD = 0;
+                    if (spawnMaxCD == 3){
+                        spawnMaxCD = 7;
+                    }else{
+                        spawnMaxCD--;
+                        if (spawnMaxCD == 2){
+                            spawnMaxCD = 7;
+                        }
+                    }
+                }
             }
         };
         if (tEnemySpawn == null){
-            tEnemySpawn = new Timer(7000, actSpawnEnemy);
+            tEnemySpawn = new Timer(1000, actSpawnEnemy);
             tEnemySpawn.start();
         }
         //// Jalan
@@ -506,7 +520,9 @@ public class Battle extends javax.swing.JFrame {
                     GAMEOVER.setVisible(true);
                     btGameOver.setVisible(true);
                     ketGameOver.setVisible(true);
-                    Prize.setText("You Lose! You got 0 Gold!");
+                    prize += u.get(idx).getLevel()*10 / 4;
+                    u.get(idx).setGold(u.get(idx).getGold() + prize);                    
+                    Prize.setText("You Lose! You got "+prize+" Gold!");
                     Prize.setVisible(true);
                 }
             }

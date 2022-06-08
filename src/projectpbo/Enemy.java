@@ -15,8 +15,11 @@ public class Enemy {
 
     public Enemy(int level) {
         this.level = level;
-        this.hp = 280 + level*20;
-        this.dmg = 25 + level*15;
+        this.hp = 250 + level*50;
+        this.dmg = 10 + level*30;
+        if (level % 10 == 0){
+            this.dmg = (10 + level*30) + (10 + level*30)/4;
+        }
     }
 
     public int getLevel() {

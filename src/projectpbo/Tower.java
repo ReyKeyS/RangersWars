@@ -13,10 +13,12 @@ import java.io.Serializable;
 public class Tower implements Serializable{
     private int hp;
     private int level;
+    private int goldCost;
 
     public Tower(int level) {
-        this.hp = 200 + level*100;
+        this.hp = 600 + level*100;
         this.level = level;
+        this.goldCost = level * 10;
     }
 
     public int getHp() {
@@ -35,5 +37,12 @@ public class Tower implements Serializable{
         this.level = level;
     }
 
+    public int getGoldCost() {
+        return goldCost;
+    }
 
+    public void setGoldCost(int goldCost) {
+        this.goldCost = goldCost;
+    }
+    
 }
