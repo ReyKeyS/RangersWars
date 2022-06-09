@@ -17,12 +17,18 @@ public class Upgrade extends javax.swing.JFrame {
     
     private ArrayList<User> pemain = new ArrayList<>();
     private int idx;
+    
+    private int curGold;
+    private int costEris;
+    private int costYoimiya;
+    private int costShogun;
     /**
      * Creates new form Upgrade
      */
     public Upgrade() {
         initComponents();
     }
+    
     public Upgrade(ArrayList<User> pemain,int idx, Music player, boolean kemute, boolean keplay) {
         this.player = player;
         this.kemute = kemute;
@@ -34,6 +40,18 @@ public class Upgrade extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
+        this.curGold = pemain.get(idx).getGold();
+        gold.setText(Integer.toString(curGold));
+        user.setText(pemain.get(idx).getNama());
+        
+        hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getHp()));
+        dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getDmg()));
+        
+        hpYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getHp()));
+        dmgYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getDmg()));
+        
+        hpShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getHp()));
+        dmgShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getDmg()));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,7 +62,22 @@ public class Upgrade extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lvlShogun = new javax.swing.JLabel();
+        upShogun = new javax.swing.JButton();
+        dmgShogun = new javax.swing.JLabel();
+        hpShogun = new javax.swing.JLabel();
+        lvlYoimiya = new javax.swing.JLabel();
+        upYoimiya = new javax.swing.JButton();
+        dmgYoimiya = new javax.swing.JLabel();
+        hpYoimiya = new javax.swing.JLabel();
+        hargaEris = new javax.swing.JLabel();
+        lvlEris = new javax.swing.JLabel();
+        upEris = new javax.swing.JButton();
+        dmgEris = new javax.swing.JLabel();
+        hpEris = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
+        gold = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
         BgUpgrade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,18 +86,110 @@ public class Upgrade extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back button.png"))); // NOI18N
+        lvlShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lvlShogun.setForeground(new java.awt.Color(255, 255, 255));
+        lvlShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlShogun.setText("Level 999");
+        getContentPane().add(lvlShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 580, 110, -1));
+
+        upShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
+        upShogun.setBorderPainted(false);
+        upShogun.setContentAreaFilled(false);
+        getContentPane().add(upShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 560, -1, -1));
+
+        dmgShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgShogun.setForeground(new java.awt.Color(255, 255, 255));
+        dmgShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgShogun.setText("999");
+        dmgShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 510, 90, -1));
+
+        hpShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        hpShogun.setForeground(new java.awt.Color(255, 255, 255));
+        hpShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hpShogun.setText("999");
+        hpShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hpShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 455, 90, -1));
+
+        lvlYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lvlYoimiya.setForeground(new java.awt.Color(255, 255, 255));
+        lvlYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlYoimiya.setText("Level 999");
+        getContentPane().add(lvlYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 580, 110, -1));
+
+        upYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
+        upYoimiya.setBorderPainted(false);
+        upYoimiya.setContentAreaFilled(false);
+        getContentPane().add(upYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 560, -1, -1));
+
+        dmgYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgYoimiya.setForeground(new java.awt.Color(255, 255, 255));
+        dmgYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgYoimiya.setText("999");
+        dmgYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, 90, -1));
+
+        hpYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        hpYoimiya.setForeground(new java.awt.Color(255, 255, 255));
+        hpYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hpYoimiya.setText("999");
+        hpYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hpYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 455, 90, -1));
+
+        hargaEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        hargaEris.setForeground(new java.awt.Color(255, 255, 0));
+        hargaEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hargaEris.setText("99999");
+        getContentPane().add(hargaEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 640, 110, -1));
+
+        lvlEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lvlEris.setForeground(new java.awt.Color(255, 255, 255));
+        lvlEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlEris.setText("Level 999");
+        getContentPane().add(lvlEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 580, 110, -1));
+
+        upEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
+        upEris.setBorderPainted(false);
+        upEris.setContentAreaFilled(false);
+        getContentPane().add(upEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
+
+        dmgEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris.setText("999");
+        dmgEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 510, 90, -1));
+
+        hpEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        hpEris.setForeground(new java.awt.Color(255, 255, 255));
+        hpEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hpEris.setText("999");
+        hpEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hpEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 455, 90, -1));
+
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Back.png"))); // NOI18N
         Back.setBorderPainted(false);
         Back.setContentAreaFilled(false);
-        Back.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Back button hovered.png"))); // NOI18N
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        BgUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background Habis login revisi.gif"))); // NOI18N
+        gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        gold.setForeground(new java.awt.Color(0, 0, 0));
+        gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gold.setText("99999");
+        getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 120, -1));
+
+        user.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        user.setForeground(new java.awt.Color(153, 255, 153));
+        user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        user.setText("User");
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 250, -1));
+
+        BgUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Upgrade Center BARU.jpg"))); // NOI18N
         getContentPane().add(BgUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -114,5 +239,20 @@ public class Upgrade extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JLabel BgUpgrade;
+    private javax.swing.JLabel dmgEris;
+    private javax.swing.JLabel dmgShogun;
+    private javax.swing.JLabel dmgYoimiya;
+    private javax.swing.JLabel gold;
+    private javax.swing.JLabel hargaEris;
+    private javax.swing.JLabel hpEris;
+    private javax.swing.JLabel hpShogun;
+    private javax.swing.JLabel hpYoimiya;
+    private javax.swing.JLabel lvlEris;
+    private javax.swing.JLabel lvlShogun;
+    private javax.swing.JLabel lvlYoimiya;
+    private javax.swing.JButton upEris;
+    private javax.swing.JButton upShogun;
+    private javax.swing.JButton upYoimiya;
+    private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

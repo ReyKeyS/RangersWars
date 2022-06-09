@@ -462,9 +462,9 @@ public class Battle extends javax.swing.JFrame {
                     }
                     if (jalan){
                         if (lblEnemy.get(i).getIcon().equals(pentolJalan)){
-                            if (Ex-95 > 215){
+                            if (Ex-95 > 200-95){
                                 lblEnemy.get(i).setLocation(Ex-1, Ey);
-                            }else if (Ex-95 == 215){
+                            }else if (Ex-95 == 200-95){
                                 lblEnemy.get(i).setIcon(pentolAttack);
                             }
                         }
@@ -486,7 +486,7 @@ public class Battle extends javax.swing.JFrame {
                     int Ey = lblEnemy.get(i).getLocation().y;
                     if (lblEnemy.get(i).getIcon().equals(pentolAttack)){
                         int demeg = enemy.getDmg();
-                        if (Ex-95 == 215){
+                        if (Ex-95 == 200-95){
                             int curHp = u.get(idx).getTower().getHp() - demeg;
                             u.get(idx).getTower().setHp(curHp);
                             HpTowerRanger.setText(Integer.toString(curHp));
