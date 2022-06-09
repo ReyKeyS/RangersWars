@@ -138,14 +138,14 @@ public class Upgrade extends javax.swing.JFrame {
         dmgShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dmgShogun.setText("999");
         dmgShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(dmgShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 510, 90, -1));
+        getContentPane().add(dmgShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 90, -1));
 
         hpShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         hpShogun.setForeground(new java.awt.Color(255, 255, 255));
         hpShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hpShogun.setText("999");
         hpShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hpShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 455, 90, -1));
+        getContentPane().add(hpShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 90, -1));
 
         ARROWUP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
         ARROWUP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -180,14 +180,14 @@ public class Upgrade extends javax.swing.JFrame {
         dmgYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dmgYoimiya.setText("999");
         dmgYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(dmgYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, 90, -1));
+        getContentPane().add(dmgYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 90, -1));
 
         hpYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         hpYoimiya.setForeground(new java.awt.Color(255, 255, 255));
         hpYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hpYoimiya.setText("999");
         hpYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hpYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 455, 90, -1));
+        getContentPane().add(hpYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 90, -1));
 
         ARROWUP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
         ARROWUP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -222,14 +222,14 @@ public class Upgrade extends javax.swing.JFrame {
         dmgEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dmgEris.setText("999");
         dmgEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(dmgEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 510, 90, -1));
+        getContentPane().add(dmgEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
 
         hpEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         hpEris.setForeground(new java.awt.Color(255, 255, 255));
         hpEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hpEris.setText("999");
         hpEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hpEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 455, 90, -1));
+        getContentPane().add(hpEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 90, -1));
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Back.png"))); // NOI18N
         Back.setBorderPainted(false);
@@ -239,10 +239,9 @@ public class Upgrade extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        gold.setForeground(new java.awt.Color(0, 0, 0));
         gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gold.setText("99999");
         getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 120, -1));
