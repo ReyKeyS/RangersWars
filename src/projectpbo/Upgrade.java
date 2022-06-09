@@ -76,6 +76,8 @@ public class Upgrade extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MineralYoi = new javax.swing.JLabel();
+        MineralShogun = new javax.swing.JLabel();
         ARROWUP2 = new javax.swing.JLabel();
         hargaShogun = new javax.swing.JLabel();
         lvlShogun = new javax.swing.JLabel();
@@ -94,16 +96,48 @@ public class Upgrade extends javax.swing.JFrame {
         upEris = new javax.swing.JButton();
         dmgEris = new javax.swing.JLabel();
         hpEris = new javax.swing.JLabel();
+        MineralEris = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         gold = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         BgUpgrade = new javax.swing.JLabel();
+        dmgEris1 = new javax.swing.JLabel();
+        dmgEris2 = new javax.swing.JLabel();
+        dmgEris3 = new javax.swing.JLabel();
+        dmgEris4 = new javax.swing.JLabel();
+        dmgEris5 = new javax.swing.JLabel();
+        dmgEris6 = new javax.swing.JLabel();
+        dmgEris7 = new javax.swing.JLabel();
+        dmgEris8 = new javax.swing.JLabel();
+        dmgEris9 = new javax.swing.JLabel();
+        dmgEris10 = new javax.swing.JLabel();
+        dmgEris11 = new javax.swing.JLabel();
+        dmgEris12 = new javax.swing.JLabel();
+        dmgEris13 = new javax.swing.JLabel();
+        dmgEris14 = new javax.swing.JLabel();
+        dmgEris15 = new javax.swing.JLabel();
+        dmgEris16 = new javax.swing.JLabel();
+        dmgEris17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rangers Wars");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MineralYoi.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        MineralYoi.setForeground(new java.awt.Color(255, 255, 255));
+        MineralYoi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MineralYoi.setText("999");
+        MineralYoi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(MineralYoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 90, -1));
+
+        MineralShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        MineralShogun.setForeground(new java.awt.Color(255, 255, 255));
+        MineralShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MineralShogun.setText("999");
+        MineralShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(MineralShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 90, -1));
 
         ARROWUP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
         ARROWUP2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -231,6 +265,13 @@ public class Upgrade extends javax.swing.JFrame {
         hpEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(hpEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 90, -1));
 
+        MineralEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        MineralEris.setForeground(new java.awt.Color(255, 255, 255));
+        MineralEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MineralEris.setText("999");
+        MineralEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(MineralEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, 90, -1));
+
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Back.png"))); // NOI18N
         Back.setBorderPainted(false);
         Back.setContentAreaFilled(false);
@@ -244,16 +285,135 @@ public class Upgrade extends javax.swing.JFrame {
         gold.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gold.setText("99999");
-        getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 120, -1));
+        getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 120, -1));
 
         user.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         user.setForeground(new java.awt.Color(153, 255, 153));
         user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         user.setText("User");
-        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 250, -1));
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 250, -1));
 
         BgUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Upgrade Center BARU.jpg"))); // NOI18N
         getContentPane().add(BgUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        dmgEris1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris1.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris1.setText("999");
+        dmgEris1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris2.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris2.setText("999");
+        dmgEris2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris3.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris3.setText("999");
+        dmgEris3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris4.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris4.setText("999");
+        dmgEris4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris5.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris5.setText("999");
+        dmgEris5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris6.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris6.setText("999");
+        dmgEris6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris7.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris7.setText("999");
+        dmgEris7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris8.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris8.setText("999");
+        dmgEris8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris9.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris9.setText("999");
+        dmgEris9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris10.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris10.setText("999");
+        dmgEris10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris11.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris11.setText("999");
+        dmgEris11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris12.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris12.setText("999");
+        dmgEris12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris13.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris13.setText("999");
+        dmgEris13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris14.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris14.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris14.setText("999");
+        dmgEris14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris15.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris15.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris15.setText("999");
+        dmgEris15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris16.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris16.setText("999");
+        dmgEris16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
+
+        dmgEris17.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgEris17.setForeground(new java.awt.Color(255, 255, 255));
+        dmgEris17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgEris17.setText("999");
+        dmgEris17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgEris17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -289,7 +449,7 @@ public class Upgrade extends javax.swing.JFrame {
             // Kurangi Gold + Update button
             curGold -= costYoimiya;
             gold.setText(Integer.toString(curGold));
-            int levelEris = pemain.get(idx).getRanger()[1].getLevel() + 1;
+            int levelEris = pemain.get(idx).getRanger()[0].getLevel() + 1;
             lvlEris.setText("Level " + Integer.toString(levelEris));
             costEris = 5 + (levelEris-1)*10;
             hargaEris.setText(Integer.toString(costEris));
@@ -365,7 +525,27 @@ public class Upgrade extends javax.swing.JFrame {
     private javax.swing.JLabel ARROWUP2;
     private javax.swing.JButton Back;
     private javax.swing.JLabel BgUpgrade;
+    private javax.swing.JLabel MineralEris;
+    private javax.swing.JLabel MineralShogun;
+    private javax.swing.JLabel MineralYoi;
     private javax.swing.JLabel dmgEris;
+    private javax.swing.JLabel dmgEris1;
+    private javax.swing.JLabel dmgEris10;
+    private javax.swing.JLabel dmgEris11;
+    private javax.swing.JLabel dmgEris12;
+    private javax.swing.JLabel dmgEris13;
+    private javax.swing.JLabel dmgEris14;
+    private javax.swing.JLabel dmgEris15;
+    private javax.swing.JLabel dmgEris16;
+    private javax.swing.JLabel dmgEris17;
+    private javax.swing.JLabel dmgEris2;
+    private javax.swing.JLabel dmgEris3;
+    private javax.swing.JLabel dmgEris4;
+    private javax.swing.JLabel dmgEris5;
+    private javax.swing.JLabel dmgEris6;
+    private javax.swing.JLabel dmgEris7;
+    private javax.swing.JLabel dmgEris8;
+    private javax.swing.JLabel dmgEris9;
     private javax.swing.JLabel dmgShogun;
     private javax.swing.JLabel dmgYoimiya;
     private javax.swing.JLabel gold;
