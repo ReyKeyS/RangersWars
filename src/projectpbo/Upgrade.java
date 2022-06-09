@@ -27,6 +27,7 @@ public class Upgrade extends javax.swing.JFrame {
      */
     public Upgrade() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public Upgrade(ArrayList<User> pemain,int idx, Music player, boolean kemute, boolean keplay) {
@@ -46,12 +47,25 @@ public class Upgrade extends javax.swing.JFrame {
         
         hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getHp()));
         dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getDmg()));
-        
+        int levelEris = pemain.get(idx).getRanger()[0].getLevel();
+        lvlEris.setText("Level " + Integer.toString(levelEris));
+        costEris = 5 + (levelEris-1)*10;
+        hargaEris.setText(Integer.toString(costEris));
+                
         hpYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getHp()));
         dmgYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getDmg()));
+        int levelYoimiya = pemain.get(idx).getRanger()[1].getLevel();
+        lvlYoimiya.setText("Level " + Integer.toString(levelYoimiya));
+        costYoimiya = 5 + (levelYoimiya-1)*10;
+        hargaYoimiya.setText(Integer.toString(costYoimiya));
         
         hpShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getHp()));
         dmgShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getDmg()));
+        int levelShogun = pemain.get(idx).getRanger()[2].getLevel();
+        lvlShogun.setText("Level " + Integer.toString(levelShogun));
+        costShogun = 5 + (levelShogun-1)*10;
+        hargaShogun.setText(Integer.toString(costShogun));
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,14 +76,19 @@ public class Upgrade extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ARROWUP2 = new javax.swing.JLabel();
+        hargaShogun = new javax.swing.JLabel();
         lvlShogun = new javax.swing.JLabel();
         upShogun = new javax.swing.JButton();
         dmgShogun = new javax.swing.JLabel();
         hpShogun = new javax.swing.JLabel();
+        ARROWUP1 = new javax.swing.JLabel();
+        hargaYoimiya = new javax.swing.JLabel();
         lvlYoimiya = new javax.swing.JLabel();
         upYoimiya = new javax.swing.JButton();
         dmgYoimiya = new javax.swing.JLabel();
         hpYoimiya = new javax.swing.JLabel();
+        ARROWUP = new javax.swing.JLabel();
         hargaEris = new javax.swing.JLabel();
         lvlEris = new javax.swing.JLabel();
         upEris = new javax.swing.JButton();
@@ -86,15 +105,32 @@ public class Upgrade extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ARROWUP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
+        ARROWUP2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(ARROWUP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 595, -1, -1));
+
+        hargaShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        hargaShogun.setForeground(new java.awt.Color(255, 255, 0));
+        hargaShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hargaShogun.setText("99999");
+        hargaShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hargaShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 645, 110, -1));
+
         lvlShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         lvlShogun.setForeground(new java.awt.Color(255, 255, 255));
         lvlShogun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlShogun.setText("Level 999");
-        getContentPane().add(lvlShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 580, 110, -1));
+        lvlShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lvlShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 575, 110, -1));
 
         upShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
         upShogun.setBorderPainted(false);
         upShogun.setContentAreaFilled(false);
+        upShogun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upShogunActionPerformed(evt);
+            }
+        });
         getContentPane().add(upShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 560, -1, -1));
 
         dmgShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
@@ -111,15 +147,32 @@ public class Upgrade extends javax.swing.JFrame {
         hpShogun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(hpShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 455, 90, -1));
 
+        ARROWUP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
+        ARROWUP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(ARROWUP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(387, 595, -1, -1));
+
+        hargaYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        hargaYoimiya.setForeground(new java.awt.Color(255, 255, 0));
+        hargaYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hargaYoimiya.setText("99999");
+        hargaYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hargaYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 645, 110, -1));
+
         lvlYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         lvlYoimiya.setForeground(new java.awt.Color(255, 255, 255));
         lvlYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlYoimiya.setText("Level 999");
-        getContentPane().add(lvlYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 580, 110, -1));
+        lvlYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lvlYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 575, 110, -1));
 
         upYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
         upYoimiya.setBorderPainted(false);
         upYoimiya.setContentAreaFilled(false);
+        upYoimiya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upYoimiyaActionPerformed(evt);
+            }
+        });
         getContentPane().add(upYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 560, -1, -1));
 
         dmgYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
@@ -136,21 +189,32 @@ public class Upgrade extends javax.swing.JFrame {
         hpYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(hpYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 455, 90, -1));
 
+        ARROWUP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrowUP.png"))); // NOI18N
+        ARROWUP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(ARROWUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 595, -1, -1));
+
         hargaEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         hargaEris.setForeground(new java.awt.Color(255, 255, 0));
         hargaEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hargaEris.setText("99999");
-        getContentPane().add(hargaEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 640, 110, -1));
+        hargaEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hargaEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 645, 110, -1));
 
         lvlEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         lvlEris.setForeground(new java.awt.Color(255, 255, 255));
         lvlEris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlEris.setText("Level 999");
-        getContentPane().add(lvlEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 580, 110, -1));
+        lvlEris.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lvlEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 575, 110, -1));
 
         upEris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
         upEris.setBorderPainted(false);
         upEris.setContentAreaFilled(false);
+        upEris.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upErisActionPerformed(evt);
+            }
+        });
         getContentPane().add(upEris, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
 
         dmgEris.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
@@ -201,6 +265,66 @@ public class Upgrade extends javax.swing.JFrame {
         new Game(pemain,idx,player,kemute,keplay).setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
+    private void upErisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upErisActionPerformed
+        if (curGold >= costEris){
+            // Kurangi Gold + Update button
+            curGold -= costEris;
+            gold.setText(Integer.toString(curGold));
+            int levelYoimiya = pemain.get(idx).getRanger()[1].getLevel();
+            lvlYoimiya.setText("Level " + Integer.toString(levelYoimiya));
+            costYoimiya = 5 + (levelYoimiya-1)*10;
+            hargaYoimiya.setText(Integer.toString(costYoimiya));
+            
+            // Upgrade Status
+            pemain.get(idx).getRanger()[1].setHp(pemain.get(idx).getRanger()[1].getHp() + 10);
+            pemain.get(idx).getRanger()[1].setDmg(pemain.get(idx).getRanger()[1].getDmg() + 15);
+            pemain.get(idx).getRanger()[1].setMineral(pemain.get(idx).getRanger()[1].getMineral() + 5);
+            
+            hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[1].getHp()));
+            dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[1].getDmg()));
+        }
+    }//GEN-LAST:event_upErisActionPerformed
+
+    private void upYoimiyaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upYoimiyaActionPerformed
+        if (curGold >= costYoimiya){
+            // Kurangi Gold + Update button
+            curGold -= costYoimiya;
+            gold.setText(Integer.toString(curGold));
+            int levelEris = pemain.get(idx).getRanger()[1].getLevel() + 1;
+            lvlEris.setText("Level " + Integer.toString(levelEris));
+            costEris = 5 + (levelEris-1)*10;
+            hargaEris.setText(Integer.toString(costEris));
+            
+            // Upgrade Status
+            pemain.get(idx).getRanger()[0].setHp(pemain.get(idx).getRanger()[0].getHp() + 15);
+            pemain.get(idx).getRanger()[0].setDmg(pemain.get(idx).getRanger()[0].getDmg() + 10);
+            pemain.get(idx).getRanger()[0].setMineral(pemain.get(idx).getRanger()[0].getMineral() + 5);
+            
+            hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getHp()));
+            dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getDmg()));
+        }
+    }//GEN-LAST:event_upYoimiyaActionPerformed
+
+    private void upShogunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upShogunActionPerformed
+        if (curGold >= costShogun){
+            // Kurangi Gold + Update button
+            curGold -= costShogun;
+            gold.setText(Integer.toString(curGold));
+            int levelShogun = pemain.get(idx).getRanger()[2].getLevel();
+            lvlShogun.setText("Level " + Integer.toString(levelShogun));
+            costShogun = 5 + (levelShogun-1)*10;
+            hargaShogun.setText(Integer.toString(costShogun));
+            
+            // Upgrade Status
+            pemain.get(idx).getRanger()[2].setHp(pemain.get(idx).getRanger()[2].getHp() + 20);
+            pemain.get(idx).getRanger()[2].setDmg(pemain.get(idx).getRanger()[2].getDmg() + 10);
+            pemain.get(idx).getRanger()[2].setMineral(pemain.get(idx).getRanger()[2].getMineral() + 5);
+            
+            hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[2].getHp()));
+            dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[2].getDmg()));
+        }
+    }//GEN-LAST:event_upShogunActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,6 +361,9 @@ public class Upgrade extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ARROWUP;
+    private javax.swing.JLabel ARROWUP1;
+    private javax.swing.JLabel ARROWUP2;
     private javax.swing.JButton Back;
     private javax.swing.JLabel BgUpgrade;
     private javax.swing.JLabel dmgEris;
@@ -244,6 +371,8 @@ public class Upgrade extends javax.swing.JFrame {
     private javax.swing.JLabel dmgYoimiya;
     private javax.swing.JLabel gold;
     private javax.swing.JLabel hargaEris;
+    private javax.swing.JLabel hargaShogun;
+    private javax.swing.JLabel hargaYoimiya;
     private javax.swing.JLabel hpEris;
     private javax.swing.JLabel hpShogun;
     private javax.swing.JLabel hpYoimiya;
