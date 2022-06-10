@@ -123,7 +123,7 @@ public class Game extends javax.swing.JFrame {
                 btTowerUpActionPerformed(evt);
             }
         });
-        getContentPane().add(btTowerUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 560, 120, 110));
+        getContentPane().add(btTowerUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, 120, 110));
 
         btUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade.png"))); // NOI18N
         btUpgrade.setBorderPainted(false);
