@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class Game extends javax.swing.JFrame {
+    private Music battleStart = new Music("src\\music\\BattleStart.wav");
     private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
@@ -295,6 +296,8 @@ public class Game extends javax.swing.JFrame {
         if (Choice == 3){
             dispose();
             new Battle(user, idx, MainTheme, kemute, keplay).setVisible(true);
+            if (!kemute)
+                battleStart.Clip().start();
         }else{
             JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
         }
