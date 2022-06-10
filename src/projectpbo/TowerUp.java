@@ -51,10 +51,6 @@ public class TowerUp extends javax.swing.JFrame {
         // Gold
         this.curGold = pemain.get(idx).getGold();
         gold.setText(Integer.toString(curGold));
-        // Details        
-        TowerHp.setText(Integer.toString(pemain.get(idx).getTower().getHp()));
-        TowerMax.setText(Integer.toString(pemain.get(idx).getTower().getMineralMax()));
-        TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralRate()));
         // Levels
         this.lvlHp = pemain.get(idx).getTower().getLevelHp();
         this.lvlMax = pemain.get(idx).getTower().getLevelMax();
@@ -82,15 +78,12 @@ public class TowerUp extends javax.swing.JFrame {
 
         gold = new javax.swing.JLabel();
         btBack = new javax.swing.JButton();
-        TowerRate = new javax.swing.JLabel();
         costRate = new javax.swing.JLabel();
         LevelRate = new javax.swing.JLabel();
         upRate = new javax.swing.JButton();
-        TowerMax = new javax.swing.JLabel();
         costMax = new javax.swing.JLabel();
         LevelMax = new javax.swing.JLabel();
         upMax = new javax.swing.JButton();
-        TowerHp = new javax.swing.JLabel();
         costHp = new javax.swing.JLabel();
         LevelHp = new javax.swing.JLabel();
         upHp = new javax.swing.JButton();
@@ -99,7 +92,6 @@ public class TowerUp extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -118,12 +110,6 @@ public class TowerUp extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 29, -1, -1));
-
-        TowerRate.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerRate.setForeground(new java.awt.Color(255, 255, 255));
-        TowerRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerRate.setText("99999");
-        getContentPane().add(TowerRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 630, 110, -1));
 
         costRate.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costRate.setForeground(new java.awt.Color(255, 255, 0));
@@ -148,12 +134,6 @@ public class TowerUp extends javax.swing.JFrame {
         });
         getContentPane().add(upRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 500, -1, -1));
 
-        TowerMax.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerMax.setForeground(new java.awt.Color(255, 255, 255));
-        TowerMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerMax.setText("99999");
-        getContentPane().add(TowerMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 110, -1));
-
         costMax.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costMax.setForeground(new java.awt.Color(255, 255, 0));
         costMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -176,12 +156,6 @@ public class TowerUp extends javax.swing.JFrame {
             }
         });
         getContentPane().add(upMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 300, -1, -1));
-
-        TowerHp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerHp.setForeground(new java.awt.Color(255, 255, 255));
-        TowerHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerHp.setText("99999");
-        getContentPane().add(TowerHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 110, -1));
 
         costHp.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costHp.setForeground(new java.awt.Color(255, 255, 0));
@@ -239,7 +213,6 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setLevelHp(lvlHp);
             pemain.get(idx).getTower().setHp(pemain.get(idx).getTower().getHp() + 100);
             // Update Screen
-            TowerHp.setText(Integer.toString(pemain.get(idx).getTower().getHp()));
             LevelHp.setText(Integer.toString(lvlHp));
         }
     }//GEN-LAST:event_upHpActionPerformed
@@ -257,7 +230,6 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setLevelMax(lvlMax);
             pemain.get(idx).getTower().setMineralMax(pemain.get(idx).getTower().getMineralMax() + 100);
             // Update Screen
-            TowerMax.setText(Integer.toString(pemain.get(idx).getTower().getMineralMax()));
             LevelMax.setText(Integer.toString(lvlMax));
         }
     }//GEN-LAST:event_upMaxActionPerformed
@@ -275,7 +247,6 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setLevelRate(lvlRate);
             pemain.get(idx).getTower().setMineralRate(pemain.get(idx).getTower().getMineralRate() + 1);
             // Update Screen
-            TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralRate()));
             LevelRate.setText(Integer.toString(lvlRate));
         }
     }//GEN-LAST:event_upRateActionPerformed
@@ -319,9 +290,6 @@ public class TowerUp extends javax.swing.JFrame {
     private javax.swing.JLabel LevelHp;
     private javax.swing.JLabel LevelMax;
     private javax.swing.JLabel LevelRate;
-    private javax.swing.JLabel TowerHp;
-    private javax.swing.JLabel TowerMax;
-    private javax.swing.JLabel TowerRate;
     private javax.swing.JLabel bgUpTower;
     private javax.swing.JButton btBack;
     private javax.swing.JLabel costHp;
