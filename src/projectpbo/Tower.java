@@ -15,16 +15,14 @@ public class Tower implements Serializable{
     private int levelHp;
     private int levelRate;
     private int levelMax;
-    private int goldCost;
     private int mineralRate;
     private int mineralMax;
 
-    public Tower(int level) {
-        this.hp = 600 + level*100;
-        this.levelHp = level;
-        this.levelRate = level;
-        this.levelMax = level;
-        this.goldCost = level * 10;
+    public Tower() {
+        this.hp = 700;
+        this.levelHp = 1;
+        this.levelRate = 1;
+        this.levelMax = 1;
         this.mineralRate = 1;
         this.mineralMax = 100;
     }
@@ -61,14 +59,6 @@ public class Tower implements Serializable{
         this.levelMax = levelMax;
     }
     
-    public int getGoldCost() {
-        return goldCost;
-    }
-
-    public void setGoldCost(int goldCost) {
-        this.goldCost = goldCost;
-    }
-
     public int getMineralRate() {
         return mineralRate;
     }

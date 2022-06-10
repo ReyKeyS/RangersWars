@@ -117,13 +117,16 @@ public class Game extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btTowerUp.setText("Upgrade Tower");
+        btTowerUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Up Tower menu.png"))); // NOI18N
+        btTowerUp.setContentAreaFilled(false);
+        btTowerUp.setDefaultCapable(false);
+        btTowerUp.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Up Tower Menu hovered.png"))); // NOI18N
         btTowerUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btTowerUpActionPerformed(evt);
             }
         });
-        getContentPane().add(btTowerUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, 120, 110));
+        getContentPane().add(btTowerUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 140, 140));
 
         btUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade.png"))); // NOI18N
         btUpgrade.setBorderPainted(false);

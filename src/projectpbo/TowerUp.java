@@ -53,19 +53,22 @@ public class TowerUp extends javax.swing.JFrame {
         gold.setText(Integer.toString(curGold));
         // Details        
         TowerHp.setText(Integer.toString(pemain.get(idx).getTower().getHp()));
-        TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralRate()));
         TowerMax.setText(Integer.toString(pemain.get(idx).getTower().getMineralMax()));
+        TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralRate()));
         // Levels
         this.lvlHp = pemain.get(idx).getTower().getLevelHp();
-        this.lvlRate = pemain.get(idx).getTower().getLevelRate();
         this.lvlMax = pemain.get(idx).getTower().getLevelMax();
+        this.lvlRate = pemain.get(idx).getTower().getLevelRate();
         LevelHp.setText(Integer.toString(lvlHp));
-        LevelRate.setText(Integer.toString(lvlRate));
         LevelMax.setText(Integer.toString(lvlMax));
+        LevelRate.setText(Integer.toString(lvlRate));
         // Cost
         this.hargaHp = 10 * lvlHp;
-        this.hargaRate = 10 * lvlRate;
         this.hargaMax = 10 * lvlMax;
+        this.hargaRate = 10 * lvlRate;
+        costHp.setText(Integer.toString(hargaHp));
+        costMax.setText(Integer.toString(hargaMax));
+        costRate.setText(Integer.toString(hargaRate));
     }
     
     /**
@@ -125,9 +128,9 @@ public class TowerUp extends javax.swing.JFrame {
         costRate.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costRate.setForeground(new java.awt.Color(255, 255, 0));
         costRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        costRate.setText("999");
+        costRate.setText("99999");
         costRate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(costRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1017, 595, 120, 40));
+        getContentPane().add(costRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1028, 600, 120, 40));
 
         LevelRate.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
         LevelRate.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,7 +141,6 @@ public class TowerUp extends javax.swing.JFrame {
         upRate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up tower.png"))); // NOI18N
         upRate.setBorderPainted(false);
         upRate.setContentAreaFilled(false);
-        upRate.setFocusable(false);
         upRate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upRateActionPerformed(evt);
@@ -155,9 +157,9 @@ public class TowerUp extends javax.swing.JFrame {
         costMax.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costMax.setForeground(new java.awt.Color(255, 255, 0));
         costMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        costMax.setText("999");
+        costMax.setText("99999");
         costMax.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(costMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(1017, 395, 120, 40));
+        getContentPane().add(costMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(1028, 400, 120, 40));
 
         LevelMax.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
         LevelMax.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,7 +170,6 @@ public class TowerUp extends javax.swing.JFrame {
         upMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up tower.png"))); // NOI18N
         upMax.setBorderPainted(false);
         upMax.setContentAreaFilled(false);
-        upMax.setFocusable(false);
         upMax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upMaxActionPerformed(evt);
@@ -185,9 +186,9 @@ public class TowerUp extends javax.swing.JFrame {
         costHp.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         costHp.setForeground(new java.awt.Color(255, 255, 0));
         costHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        costHp.setText("999");
+        costHp.setText("99999");
         costHp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(costHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1017, 195, 120, 40));
+        getContentPane().add(costHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1028, 200, 120, 40));
 
         LevelHp.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
         LevelHp.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,7 +199,6 @@ public class TowerUp extends javax.swing.JFrame {
         upHp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up tower.png"))); // NOI18N
         upHp.setBorderPainted(false);
         upHp.setContentAreaFilled(false);
-        upHp.setFocusable(false);
         upHp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 upHpActionPerformed(evt);
@@ -228,9 +228,10 @@ public class TowerUp extends javax.swing.JFrame {
 
     private void upHpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upHpActionPerformed
         if (curGold >= hargaHp){
-            // SetGold
+            // SetGold + Update Button
             curGold -= hargaHp;
             hargaHp += 10;
+            costHp.setText(Integer.toString(hargaHp));
             pemain.get(idx).setGold(curGold);
             gold.setText(Integer.toString(curGold));
             // LevelUp
@@ -245,9 +246,10 @@ public class TowerUp extends javax.swing.JFrame {
 
     private void upMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upMaxActionPerformed
         if (curGold >= hargaMax){
-            // SetGold
+            // SetGold + Update Button
             curGold -= hargaMax;
             hargaMax += 10;
+            costMax.setText(Integer.toString(hargaMax));
             pemain.get(idx).setGold(curGold);
             gold.setText(Integer.toString(curGold));
             // LevelUp
@@ -255,22 +257,23 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setLevelMax(lvlMax);
             pemain.get(idx).getTower().setMineralMax(pemain.get(idx).getTower().getMineralMax() + 100);
             // Update Screen
-            TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralMax()));
-            LevelRate.setText(Integer.toString(lvlMax));
+            TowerMax.setText(Integer.toString(pemain.get(idx).getTower().getMineralMax()));
+            LevelMax.setText(Integer.toString(lvlMax));
         }
     }//GEN-LAST:event_upMaxActionPerformed
 
     private void upRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upRateActionPerformed
         if (curGold >= hargaRate){
-            // SetGold
+            // SetGold + Update Button
             curGold -= hargaRate;
             hargaRate += 10;
+            costRate.setText(Integer.toString(hargaRate));
             pemain.get(idx).setGold(curGold);
             gold.setText(Integer.toString(curGold));
             // LevelUp
             lvlRate++;
             pemain.get(idx).getTower().setLevelRate(lvlRate);
-            pemain.get(idx).getTower().setMineralRate(pemain.get(idx).getTower().getMineralRate() + 100);
+            pemain.get(idx).getTower().setMineralRate(pemain.get(idx).getTower().getMineralRate() + 1);
             // Update Screen
             TowerRate.setText(Integer.toString(pemain.get(idx).getTower().getMineralRate()));
             LevelRate.setText(Integer.toString(lvlRate));

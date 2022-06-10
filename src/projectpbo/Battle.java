@@ -62,9 +62,12 @@ public class Battle extends javax.swing.JFrame {
     
     // Mineral
     private int curMana = 0;
+    private int manaRate;
+    private int manaMax;
     private Timer tMana = null;
     
     // Cooldown tower skill
+    private int hpTower;
     private int CD = 0;
     private int maxCD = 10;
     private Timer tCDTower = null;
@@ -119,7 +122,6 @@ public class Battle extends javax.swing.JFrame {
         this.u = players;
         this.idx = idx;
         int keisi = 0;
-        towerEnemy = 900 + u.get(idx).getLevel()*100;
         // Cek Boolean
         for (int i = 0; i < 5; i++) {
             if (u.get(idx).getChoose()[i]){
@@ -137,13 +139,18 @@ public class Battle extends javax.swing.JFrame {
         Prize.setVisible(false);
         black.setVisible(false);
         
+        // Tower Enemy Config
+        towerEnemy = 900 + u.get(idx).getLevel()*100;
+        HpTowerEnemy.setText(Integer.toString(towerEnemy));
+        
         // Mana config
-        int maxMana=100;
-        MaxMineral.setText(Integer.toString(maxMana));
+        this.manaRate = u.get(idx).getTower().getMineralRate();
+        this.manaMax = u.get(idx).getTower().getMineralMax();
+        MaxMineral.setText(Integer.toString(manaMax));
         ActionListener actMana = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (curMana < maxMana){
-                    curMana+=1;
+                if (curMana < manaMax){
+                    curMana += manaRate;
                     CurMineral.setText(Integer.toString(curMana));
                 }
             }
@@ -171,7 +178,7 @@ public class Battle extends javax.swing.JFrame {
             tCDTower = new Timer(1000, actCDTower);
             tCDTower.start();
         }
-        int hpTower = u.get(idx).getTower().getHp();
+        this.hpTower = u.get(idx).getTower().getHp();
         HpTowerRanger.setText(Integer.toString(hpTower));
         
         // Ranger Config
@@ -210,9 +217,6 @@ public class Battle extends javax.swing.JFrame {
             Ranger3.setIcon(marsBox);
         else if (ranger[2] instanceof NewCastle)
             Ranger3.setIcon(newcastleBox);
-        
-        // Tower Enemy Config
-        HpTowerEnemy.setText(Integer.toString(towerEnemy));
         
         // Ranger Config
         //// Jalan
@@ -487,9 +491,8 @@ public class Battle extends javax.swing.JFrame {
                     if (lblEnemy.get(i).getIcon().equals(pentolAttack)){
                         int demeg = enemy.getDmg();
                         if (Ex-95 == 200-95){
-                            int curHp = u.get(idx).getTower().getHp() - demeg;
-                            u.get(idx).getTower().setHp(curHp);
-                            HpTowerRanger.setText(Integer.toString(curHp));
+                            hpTower -= demeg;
+                            HpTowerRanger.setText(Integer.toString(hpTower));
                         }else{
                             if (lblHpRanger.size() >= 1 && Ex <= lblRanger.get(0).getLocation().x+lblRanger.get(0).getBounds().width){
                                 if (!lblHpRanger.isEmpty()){
@@ -512,8 +515,7 @@ public class Battle extends javax.swing.JFrame {
                     }
                 }
                 // Cek GameOver
-                if (u.get(idx).getTower().getHp()<=0){
-                    u.get(idx).getTower().setHp(hpTower);
+                if (hpTower<=0){
                     HpTowerRanger.setText("0");
                     stopTimer();
                     GAMEOVER.setVisible(true);
@@ -546,7 +548,7 @@ public class Battle extends javax.swing.JFrame {
         Prize = new javax.swing.JLabel();
         GAMEOVER = new javax.swing.JLabel();
         ketGameOver = new javax.swing.JLabel();
-        btPause = new javax.swing.JButton();
+        btStop = new javax.swing.JButton();
         R3Cost = new javax.swing.JLabel();
         Ranger3 = new javax.swing.JButton();
         R2Cost = new javax.swing.JLabel();
@@ -597,16 +599,16 @@ public class Battle extends javax.swing.JFrame {
         ketGameOver.setText("Tap Anywhere to Continue");
         getContentPane().add(ketGameOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 230, -1, -1));
 
-        btPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Pause.png"))); // NOI18N
-        btPause.setBorderPainted(false);
-        btPause.setContentAreaFilled(false);
-        btPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btPause.addActionListener(new java.awt.event.ActionListener() {
+        btStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Exit Ingame.png"))); // NOI18N
+        btStop.setBorderPainted(false);
+        btStop.setContentAreaFilled(false);
+        btStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btPauseActionPerformed(evt);
+                btStopActionPerformed(evt);
             }
         });
-        getContentPane().add(btPause, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
+        getContentPane().add(btStop, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
 
         R3Cost.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         R3Cost.setForeground(new java.awt.Color(255, 255, 255));
@@ -730,7 +732,7 @@ public class Battle extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
        
-    private void btPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPauseActionPerformed
+    private void btStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btStopActionPerformed
         if (!kemute){
             BattleTheme.Clip().stop();
             FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
@@ -739,11 +741,10 @@ public class Battle extends javax.swing.JFrame {
             MainTheme.Clip().start();
             MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
-        u.get(idx).getTower().setHp(1900+u.get(idx).getLevel()*100);
         stopTimer();
         dispose();
         new Game(u, idx, MainTheme, kemute, keplay).setVisible(true);
-    }//GEN-LAST:event_btPauseActionPerformed
+    }//GEN-LAST:event_btStopActionPerformed
 
     private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed
         int cost = ranger[0].getMineral();
@@ -987,7 +988,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel TowerPlayer;
     private javax.swing.JLabel black;
     private javax.swing.JButton btGameOver;
-    private javax.swing.JButton btPause;
+    private javax.swing.JButton btStop;
     private javax.swing.JButton btTowerAtt;
     private javax.swing.JLabel ketGameOver;
     // End of variables declaration//GEN-END:variables
