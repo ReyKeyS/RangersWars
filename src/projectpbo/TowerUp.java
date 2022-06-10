@@ -77,31 +77,28 @@ public class TowerUp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gold = new javax.swing.JLabel();
         btBack = new javax.swing.JButton();
-        TowerMax = new javax.swing.JLabel();
-        upMax = new javax.swing.JButton();
-        TowerRate = new javax.swing.JLabel();
+        gold = new javax.swing.JLabel();
         upRate = new javax.swing.JButton();
-        TowerHp = new javax.swing.JLabel();
-        upHp = new javax.swing.JButton();
-        costMax = new javax.swing.JLabel();
+        TowerRate = new javax.swing.JLabel();
         costRate = new javax.swing.JLabel();
-        costHp = new javax.swing.JLabel();
-        LevelMax = new javax.swing.JLabel();
         LevelRate = new javax.swing.JLabel();
+        upMax = new javax.swing.JButton();
+        TowerMax = new javax.swing.JLabel();
+        costMax = new javax.swing.JLabel();
+        LevelMax = new javax.swing.JLabel();
+        upHp = new javax.swing.JButton();
+        TowerHp = new javax.swing.JLabel();
+        costHp = new javax.swing.JLabel();
         LevelHp = new javax.swing.JLabel();
+        bgUpTower = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        gold.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gold.setText("99999");
-        getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1151, 32, 98, -1));
 
         btBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol Back.png"))); // NOI18N
         btBack.setBorderPainted(false);
@@ -113,23 +110,10 @@ public class TowerUp extends javax.swing.JFrame {
         });
         getContentPane().add(btBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 29, -1, -1));
 
-        TowerMax.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerMax.setText("99999");
-        getContentPane().add(TowerMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 110, -1));
-
-        upMax.setText("upMax");
-        upMax.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upMaxActionPerformed(evt);
-            }
-        });
-        getContentPane().add(upMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 440, 100, 90));
-
-        TowerRate.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerRate.setText("99999");
-        getContentPane().add(TowerRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 110, -1));
+        gold.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        gold.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gold.setText("99999");
+        getContentPane().add(gold, new org.netbeans.lib.awtextra.AbsoluteConstraints(1151, 32, 98, -1));
 
         upRate.setText("upRate");
         upRate.addActionListener(new java.awt.event.ActionListener() {
@@ -137,12 +121,47 @@ public class TowerUp extends javax.swing.JFrame {
                 upRateActionPerformed(evt);
             }
         });
-        getContentPane().add(upRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 100, 80));
+        getContentPane().add(upRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 100, 80));
 
-        TowerHp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TowerHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TowerHp.setText("99999");
-        getContentPane().add(TowerHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 110, -1));
+        TowerRate.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TowerRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TowerRate.setText("99999");
+        getContentPane().add(TowerRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 630, 110, -1));
+
+        costRate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        costRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        costRate.setText("10");
+        getContentPane().add(costRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 570, 60, -1));
+
+        LevelRate.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
+        LevelRate.setForeground(new java.awt.Color(255, 255, 255));
+        LevelRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LevelRate.setText("999");
+        getContentPane().add(LevelRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, 220, 70));
+
+        upMax.setText("upMax");
+        upMax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upMaxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(upMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 340, 100, 90));
+
+        TowerMax.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TowerMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TowerMax.setText("99999");
+        getContentPane().add(TowerMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 110, -1));
+
+        costMax.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        costMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        costMax.setText("10");
+        getContentPane().add(costMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 360, 60, -1));
+
+        LevelMax.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
+        LevelMax.setForeground(new java.awt.Color(255, 255, 255));
+        LevelMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LevelMax.setText("999");
+        getContentPane().add(LevelMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 350, 220, 70));
 
         upHp.setText("upHp");
         upHp.addActionListener(new java.awt.event.ActionListener() {
@@ -150,34 +169,26 @@ public class TowerUp extends javax.swing.JFrame {
                 upHpActionPerformed(evt);
             }
         });
-        getContentPane().add(upHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 445, 110, 80));
+        getContentPane().add(upHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 140, 110, 80));
 
-        costMax.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        costMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        costMax.setText("10");
-        getContentPane().add(costMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 550, 60, -1));
-
-        costRate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        costRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        costRate.setText("10");
-        getContentPane().add(costRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 550, 60, -1));
+        TowerHp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TowerHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TowerHp.setText("99999");
+        getContentPane().add(TowerHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 110, -1));
 
         costHp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         costHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         costHp.setText("10");
-        getContentPane().add(costHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 60, -1));
+        getContentPane().add(costHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, 60, -1));
 
-        LevelMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LevelMax.setText("Level 999");
-        getContentPane().add(LevelMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 60, -1));
-
-        LevelRate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LevelRate.setText("Level 999");
-        getContentPane().add(LevelRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 420, 60, -1));
-
+        LevelHp.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 64)); // NOI18N
+        LevelHp.setForeground(new java.awt.Color(255, 255, 255));
         LevelHp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LevelHp.setText("Level 999");
-        getContentPane().add(LevelHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 410, 60, -1));
+        LevelHp.setText("999");
+        getContentPane().add(LevelHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 220, 70));
+
+        bgUpTower.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Upgrade Tower.jpg"))); // NOI18N
+        getContentPane().add(bgUpTower, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -276,6 +287,7 @@ public class TowerUp extends javax.swing.JFrame {
     private javax.swing.JLabel TowerHp;
     private javax.swing.JLabel TowerMax;
     private javax.swing.JLabel TowerRate;
+    private javax.swing.JLabel bgUpTower;
     private javax.swing.JButton btBack;
     private javax.swing.JLabel costHp;
     private javax.swing.JLabel costMax;
