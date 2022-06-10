@@ -414,7 +414,7 @@ public class Upgrade extends javax.swing.JFrame {
             
             // Upgrade Status
             pemain.get(idx).getRanger()[0].setHp(pemain.get(idx).getRanger()[0].getHp() + 15);
-            pemain.get(idx).getRanger()[0].setDmg(pemain.get(idx).getRanger()[0].getDmg() + 10);
+            pemain.get(idx).getRanger()[0].setDmg(pemain.get(idx).getRanger()[0].getDmg() + 15);
             pemain.get(idx).getRanger()[0].setMineral(pemain.get(idx).getRanger()[0].getMineral() + 5);
             
             hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getHp()));
@@ -436,8 +436,8 @@ public class Upgrade extends javax.swing.JFrame {
             hargaYoimiya.setText(Integer.toString(costYoimiya));
             
             // Upgrade Status
-            pemain.get(idx).getRanger()[1].setHp(pemain.get(idx).getRanger()[1].getHp() + 10);
-            pemain.get(idx).getRanger()[1].setDmg(pemain.get(idx).getRanger()[1].getDmg() + 15);
+            pemain.get(idx).getRanger()[1].setHp(pemain.get(idx).getRanger()[1].getHp() + 5);
+            pemain.get(idx).getRanger()[1].setDmg(pemain.get(idx).getRanger()[1].getDmg() + 25);
             pemain.get(idx).getRanger()[1].setMineral(pemain.get(idx).getRanger()[1].getMineral() + 5);
             
             hpYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getHp()));
@@ -460,7 +460,7 @@ public class Upgrade extends javax.swing.JFrame {
             
             // Upgrade Status
             pemain.get(idx).getRanger()[2].setHp(pemain.get(idx).getRanger()[2].getHp() + 10);
-            pemain.get(idx).getRanger()[2].setDmg(pemain.get(idx).getRanger()[2].getDmg() + 15);
+            pemain.get(idx).getRanger()[2].setDmg(pemain.get(idx).getRanger()[2].getDmg() + 20);
             pemain.get(idx).getRanger()[2].setMineral(pemain.get(idx).getRanger()[2].getMineral() + 5);
             
             hpShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getHp()));
@@ -482,7 +482,7 @@ public class Upgrade extends javax.swing.JFrame {
             hargaMars.setText(Integer.toString(costMars));
             
             // Upgrade Status
-            pemain.get(idx).getRanger()[3].setHp(pemain.get(idx).getRanger()[3].getHp() + 40);
+            pemain.get(idx).getRanger()[3].setHp(pemain.get(idx).getRanger()[3].getHp() + 25);
             pemain.get(idx).getRanger()[3].setDmg(pemain.get(idx).getRanger()[3].getDmg() + 5);
             pemain.get(idx).getRanger()[3].setMineral(pemain.get(idx).getRanger()[3].getMineral() + 5);
             
@@ -505,8 +505,8 @@ public class Upgrade extends javax.swing.JFrame {
             hargaNewcastle.setText(Integer.toString(costNewcastle));
             
             // Upgrade Status
-            pemain.get(idx).getRanger()[4].setHp(pemain.get(idx).getRanger()[4].getHp() + 30);
-            pemain.get(idx).getRanger()[4].setDmg(pemain.get(idx).getRanger()[4].getDmg() + 5);
+            pemain.get(idx).getRanger()[4].setHp(pemain.get(idx).getRanger()[4].getHp() + 20);
+            pemain.get(idx).getRanger()[4].setDmg(pemain.get(idx).getRanger()[4].getDmg() + 10);
             pemain.get(idx).getRanger()[4].setMineral(pemain.get(idx).getRanger()[4].getMineral() + 5);
             
             hpNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
