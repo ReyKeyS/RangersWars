@@ -84,6 +84,7 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btTowerUp = new javax.swing.JButton();
         btUpgrade = new javax.swing.JButton();
         IdleShogun = new javax.swing.JLabel();
         IdleEris = new javax.swing.JLabel();
@@ -115,6 +116,14 @@ public class Game extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btTowerUp.setText("Upgrade Tower");
+        btTowerUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTowerUpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btTowerUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 560, 120, 110));
 
         btUpgrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol upgrade.png"))); // NOI18N
         btUpgrade.setBorderPainted(false);
@@ -396,8 +405,13 @@ public class Game extends javax.swing.JFrame {
     private void btUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpgradeActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Upgrade(user,idx,MainTheme,kemute,keplay).setVisible(true);
+        new Upgrade(user, idx, MainTheme, kemute, keplay).setVisible(true);
     }//GEN-LAST:event_btUpgradeActionPerformed
+
+    private void btTowerUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTowerUpActionPerformed
+        dispose();
+        new TowerUp(user, idx, MainTheme, kemute, keplay).setVisible(true);
+    }//GEN-LAST:event_btTowerUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -447,6 +461,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel WelcomeLB;
     private javax.swing.JButton btLaunch;
     private javax.swing.JButton btLogout;
+    private javax.swing.JButton btTowerUp;
     private javax.swing.JButton btUpgrade;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel merah1;
