@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
  * @author Grady
  */
 public class Upgrade extends javax.swing.JFrame {
+    private Music btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+    private Music btClick = new Music("src\\music\\buttonclick.wav");
     private Music player = null;
     private boolean kemute = false;
     private boolean keplay = false;
@@ -397,6 +399,8 @@ public class Upgrade extends javax.swing.JFrame {
         }
         dispose();
         new Game(pemain,idx,player,kemute,keplay).setVisible(true);
+        if (!kemute)
+            btClick.Clip().start();
     }//GEN-LAST:event_BackActionPerformed
 
     private void upErisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upErisActionPerformed
@@ -419,6 +423,11 @@ public class Upgrade extends javax.swing.JFrame {
             hpEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getHp()));
             dmgEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getDmg()));
             mineralEris.setText(Integer.toString(pemain.get(idx).getRanger()[0].getMineral()));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upErisActionPerformed
 
@@ -442,6 +451,11 @@ public class Upgrade extends javax.swing.JFrame {
             hpYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getHp()));
             dmgYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getDmg()));
             mineralYoimiya.setText(Integer.toString(pemain.get(idx).getRanger()[1].getMineral()));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upYoimiyaActionPerformed
 
@@ -465,6 +479,11 @@ public class Upgrade extends javax.swing.JFrame {
             hpShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getHp()));
             dmgShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getDmg()));
             mineralShogun.setText(Integer.toString(pemain.get(idx).getRanger()[2].getMineral()));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upShogunActionPerformed
 
@@ -488,6 +507,11 @@ public class Upgrade extends javax.swing.JFrame {
             hpMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getHp()));
             dmgMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getDmg()));
             mineralMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getMineral()));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upMarsActionPerformed
 
@@ -511,6 +535,11 @@ public class Upgrade extends javax.swing.JFrame {
             hpNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
             dmgNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getDmg()));
             mineralNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getMineral()));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upNewcastleActionPerformed
 

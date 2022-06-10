@@ -744,6 +744,11 @@ public class Battle extends javax.swing.JFrame {
         stopTimer();
         dispose();
         new Game(u, idx, MainTheme, kemute, keplay).setVisible(true);
+        
+        if (!kemute){
+            Music btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btStopActionPerformed
 
     private void Ranger1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ranger1ActionPerformed

@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class TowerUp extends javax.swing.JFrame {
+    private Music btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+    private Music btClick = new Music("src\\music\\buttonclick.wav");
     private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
@@ -198,6 +200,10 @@ public class TowerUp extends javax.swing.JFrame {
         }
         dispose();
         new Game(pemain, idx, MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btBackActionPerformed
 
     private void upHpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upHpActionPerformed
@@ -214,6 +220,11 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setHp(pemain.get(idx).getTower().getHp() + 100);
             // Update Screen
             LevelHp.setText(Integer.toString(lvlHp));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upHpActionPerformed
 
@@ -231,6 +242,11 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setMineralMax(pemain.get(idx).getTower().getMineralMax() + 100);
             // Update Screen
             LevelMax.setText(Integer.toString(lvlMax));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upMaxActionPerformed
 
@@ -248,6 +264,11 @@ public class TowerUp extends javax.swing.JFrame {
             pemain.get(idx).getTower().setMineralRate(pemain.get(idx).getTower().getMineralRate() + 1);
             // Update Screen
             LevelRate.setText(Integer.toString(lvlRate));
+            // Sound Effect
+            if (!kemute){
+                btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
+                btUpgrade.Clip().start();
+            }
         }
     }//GEN-LAST:event_upRateActionPerformed
 

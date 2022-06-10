@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
  * @author Grady
  */
 public class Leaderboard extends javax.swing.JFrame {
+    private Music btClick = new Music("src\\music\\buttonclick.wav");
     private Music MainTheme = null;
     private boolean kemute = false;
     private boolean keplay = false;
@@ -127,6 +128,10 @@ public class Leaderboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         new Login(MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_BackActionPerformed
 
     /**

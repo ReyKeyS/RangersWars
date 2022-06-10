@@ -21,7 +21,8 @@ public class Login extends javax.swing.JFrame {
     
     private boolean keplay = false;
     private boolean kemute = false;
-    private Music MainTheme;
+    private Music MainTheme = null;
+    private Music btClick = new Music("src\\music\\buttonclick.wav");
     
     /**
      * Creates new form Login
@@ -45,8 +46,6 @@ public class Login extends javax.swing.JFrame {
             keplay = true;
             MainTheme = new Music("src/music/bg.wav");
             MainTheme.Clip().setMicrosecondPosition(0);
-            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
-            volume.setValue(-10f);
             MainTheme.Clip().start();
             MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
@@ -81,8 +80,6 @@ public class Login extends javax.swing.JFrame {
             keplay = true;
             MainTheme = new Music("src/music/bg.wav");
             MainTheme.Clip().setMicrosecondPosition(0);
-            FloatControl volume = (FloatControl) MainTheme.Clip().getControl(FloatControl.Type.MASTER_GAIN);
-            volume.setValue(-10f);
             MainTheme.Clip().start();
             MainTheme.Clip().loop(Clip.LOOP_CONTINUOUSLY);
         }
@@ -175,10 +172,18 @@ public class Login extends javax.swing.JFrame {
                 }
             }
             if (found){
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
                 JOptionPane.showMessageDialog(null, "Berhasil Login!", "Message", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 new Game(user, idxLog, MainTheme, kemute, keplay).setVisible(true);
             }else{
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
                 int confirm = JOptionPane.showConfirmDialog(null, "Yakin Membuat Akun Baru?", "Message", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (confirm == 0){
                     dispose();
@@ -195,6 +200,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         new Leaderboard(user, MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btLeaderActionPerformed
 
     private void btMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMuteActionPerformed

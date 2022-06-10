@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author RyanK
  */
 public class Game extends javax.swing.JFrame {
+    private Music btClick = new Music("src\\music\\buttonclick.wav");
     private Music battleStart = new Music("src\\music\\BattleStart.wav");
     private Music MainTheme = null;
     private boolean kemute = false;
@@ -283,6 +284,10 @@ public class Game extends javax.swing.JFrame {
         SavingGame();
         dispose();
         new Login(MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void btLaunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLaunchActionPerformed
@@ -296,8 +301,10 @@ public class Game extends javax.swing.JFrame {
         if (Choice == 3){
             dispose();
             new Battle(user, idx, MainTheme, kemute, keplay).setVisible(true);
-            if (!kemute)
+            if (!kemute){
+                battleStart = new Music("src\\music\\BattleStart.wav");
                 battleStart.Clip().start();
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
         }
@@ -307,6 +314,10 @@ public class Game extends javax.swing.JFrame {
         if (user.get(idx).getChoose()[0]){
             user.get(idx).setChoose(0, false);
             merah1.setIcon(btMerah);
+            if (!kemute){
+                btClick = new Music("src\\music\\buttonclick.wav");
+                btClick.Clip().start();
+            }
         }else{
             boolean sementara[] = user.get(idx).getChoose();
             int Choice = 0;
@@ -319,7 +330,11 @@ public class Game extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(0, true);
-            merah1.setIcon(btHijau);
+                merah1.setIcon(btHijau);
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
             }
         }
     }//GEN-LAST:event_pilih1ActionPerformed
@@ -328,6 +343,10 @@ public class Game extends javax.swing.JFrame {
         if (user.get(idx).getChoose()[1]){
             user.get(idx).setChoose(1, false);
             merah2.setIcon(btMerah);
+            if (!kemute){
+                btClick = new Music("src\\music\\buttonclick.wav");
+                btClick.Clip().start();
+            }
         }else{
             boolean sementara[] = user.get(idx).getChoose();
             int Choice = 0;
@@ -340,7 +359,11 @@ public class Game extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(1, true);
-            merah2.setIcon(btHijau);
+                merah2.setIcon(btHijau);
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
             }
         }
     }//GEN-LAST:event_pilih2ActionPerformed
@@ -349,6 +372,10 @@ public class Game extends javax.swing.JFrame {
         if (user.get(idx).getChoose()[2]){
             user.get(idx).setChoose(2, false);
             merah3.setIcon(btMerah);
+            if (!kemute){
+                btClick = new Music("src\\music\\buttonclick.wav");
+                btClick.Clip().start();
+            }
         }else{
             boolean sementara[] = user.get(idx).getChoose();
             int Choice = 0;
@@ -361,7 +388,11 @@ public class Game extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(2, true);
-            merah3.setIcon(btHijau);
+                merah3.setIcon(btHijau);
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
             }
         }
     }//GEN-LAST:event_pilih3ActionPerformed
@@ -370,6 +401,10 @@ public class Game extends javax.swing.JFrame {
         if (user.get(idx).getChoose()[3]){
             user.get(idx).setChoose(3, false);
             merah4.setIcon(btMerah);
+            if (!kemute){
+                btClick = new Music("src\\music\\buttonclick.wav");
+                btClick.Clip().start();
+            }
         }else{
             boolean sementara[] = user.get(idx).getChoose();
             int Choice = 0;
@@ -382,7 +417,11 @@ public class Game extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(3, true);
-            merah4.setIcon(btHijau);
+                merah4.setIcon(btHijau);
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
             }
         }
     }//GEN-LAST:event_pilih4ActionPerformed
@@ -391,6 +430,10 @@ public class Game extends javax.swing.JFrame {
         if (user.get(idx).getChoose()[4]){
             user.get(idx).setChoose(4, false);
             merah5.setIcon(btMerah);
+            if (!kemute){
+                btClick = new Music("src\\music\\buttonclick.wav");
+                btClick.Clip().start();
+            }
         }else{
             boolean sementara[] = user.get(idx).getChoose();
             int Choice = 0;
@@ -403,7 +446,11 @@ public class Game extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Harus Terpilih 3 Rangers", "Warning", JOptionPane.ERROR_MESSAGE);
             }else{
                 user.get(idx).setChoose(4, true);
-            merah5.setIcon(btHijau);
+                merah5.setIcon(btHijau);
+                if (!kemute){
+                    btClick = new Music("src\\music\\buttonclick.wav");
+                    btClick.Clip().start();
+                }
             }
         }
     }//GEN-LAST:event_pilih5ActionPerformed
@@ -412,11 +459,19 @@ public class Game extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         new Upgrade(user, idx, MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btUpgradeActionPerformed
 
     private void btTowerUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTowerUpActionPerformed
         dispose();
         new TowerUp(user, idx, MainTheme, kemute, keplay).setVisible(true);
+        if (!kemute){
+            btClick = new Music("src\\music\\buttonclick.wav");
+            btClick.Clip().start();
+        }
     }//GEN-LAST:event_btTowerUpActionPerformed
 
     /**
