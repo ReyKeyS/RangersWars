@@ -39,13 +39,13 @@ public class Battle extends javax.swing.JFrame {
     private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
     private ImageIcon shogunAttack = new ImageIcon("src\\images\\Raiden Shogun Att.gif");
     
-    private ImageIcon tanjiroBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon tanjiroBox = new ImageIcon("src\\images\\Tanjidor Box.png");
     private ImageIcon tanjiroJalan = new ImageIcon("src\\images\\Tanjidor Jalan Ingame.gif");
     private ImageIcon tanjiroAttack = new ImageIcon("src\\images\\Tanjidor Attack lol 100.gif");
     
-    private ImageIcon GojoBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon GojoBox = new ImageIcon("src\\images\\Gojo Box.png");
     private ImageIcon GojoJalan = new ImageIcon("src\\images\\Gojo Satoru Jalan Ingame.gif");
-    private ImageIcon GojoAttack = new ImageIcon("src\\images\\Tanjidor Attack lol 100.gif");
+    private ImageIcon GojoAttack = new ImageIcon("src\\images\\Gojo Attacks ukuran 120 tinggie.gif");
     
     private ImageIcon pentolJalan = new ImageIcon("src\\images\\PentolJalan.gif");
     private ImageIcon pentolAttack = new ImageIcon("src\\images\\PentolAttack.gif");
@@ -294,23 +294,42 @@ public class Battle extends javax.swing.JFrame {
                         for (int j = 0; j < lblEnemy.size(); j++) {
                             int eX = lblEnemy.get(j).getLocation().x;
                             int eY = lblEnemy.get(j).getLocation().y;
-                            if (posx+175 >= eX+71){
+                            if (posx+173 >= eX+71){
                                 jalan = false;
                             }
                         }
                         if (jalan){
-                            if (posx+175 < 1070){
+                            if (posx+173 < 1070){
                                 lblRanger.get(i).setLocation(posx+1, posy);
-                            }else if (posx+175 == 1070){
+                            }else if (posx+173 == 1070){
                                 lblRanger.get(i).setIcon(tanjiroAttack);
-                                lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
+                                lblRanger.get(i).setBounds(posx, posy, 173, 127);
                             }
                         }else{
                             lblRanger.get(i).setIcon(tanjiroAttack);
-                            lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
+                            lblRanger.get(i).setBounds(posx, posy, 173, 127);
                         } 
                     }else if (lblRanger.get(i).getIcon().equals(GojoJalan)){
-                        
+                        //belum
+                        boolean jalan = true;
+                        for (int j = 0; j < lblEnemy.size(); j++) {
+                            int eX = lblEnemy.get(j).getLocation().x;
+                            int eY = lblEnemy.get(j).getLocation().y;
+                            if (posx+207 >= eX+71){
+                                jalan = false;
+                            }
+                        }
+                        if (jalan){
+                            if (posx+433 < 1070){
+                                lblRanger.get(i).setLocation(posx+1, posy);
+                            }else if (posx+207 == 1070){
+                                lblRanger.get(i).setIcon(GojoAttack);
+                                lblRanger.get(i).setBounds(posx-10, posy-5, 207, 121);
+                            }
+                        }else{
+                            lblRanger.get(i).setIcon(GojoAttack);
+                            lblRanger.get(i).setBounds(posx-10, posy-5, 207, 121);
+                        }
                     }
                 }
             }
@@ -414,11 +433,11 @@ public class Battle extends javax.swing.JFrame {
                         }
                     }else if (lblRanger.get(i).getIcon().equals(tanjiroAttack)){
                         int demeg = u.get(idx).getRanger()[1].getDmg();
-                        if (posx+199 == 1070){
+                        if (posx+173 == 1070){
                             towerEnemy -= demeg;
                             HpTowerEnemy.setText(Integer.toString(towerEnemy));
                         }else{
-                            if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x + 71){
+                            if (lblHpEnemy.size() >= 1 && posx+173 >= lblEnemy.get(0).getLocation().x + 71){
                                 if (!lblHpEnemy.isEmpty()){
                                     if (lblHpEnemy.get(0) <= 0){
                                         lblHpEnemy.remove(0);
@@ -443,6 +462,34 @@ public class Battle extends javax.swing.JFrame {
                         }
                     }else if (lblRanger.get(i).getIcon().equals(GojoAttack)){
                         
+                        int demeg = u.get(idx).getRanger()[1].getDmg();
+                        if (posx+207 == 1070){
+                            towerEnemy -= demeg;
+                            HpTowerEnemy.setText(Integer.toString(towerEnemy));
+                        }else{
+                            if (lblHpEnemy.size() >= 1 && posx+207 >= lblEnemy.get(0).getLocation().x + 71){
+                                if (!lblHpEnemy.isEmpty()){
+                                    if (lblHpEnemy.get(0) <= 0){
+                                        lblHpEnemy.remove(0);
+                                        remove(lblEnemy.get(0));
+                                        lblEnemy.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblRanger.get(i).setIcon(GojoJalan);
+                                        lblRanger.get(i).setBounds(posx+10, posy+5, 73, 120);
+                                        i = -1;
+                                    }else{
+                                        lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
+                                    }
+                                }else{
+                                    lblRanger.get(i).setIcon(GojoJalan);
+                                    lblRanger.get(i).setBounds(posx+10, posy+5, 73, 120);
+                                }
+                            }else{
+                                lblRanger.get(i).setIcon(GojoJalan);
+                                lblRanger.get(i).setBounds(posx+10, posy+5, 73, 120);
+                            }                            
+                        }
                     }
                 }
                 // Cek GameOver
@@ -835,6 +882,10 @@ public class Battle extends javax.swing.JFrame {
                 height = 120;
             }else if (ranger[0] instanceof Gojo){
                 troopJalan = GojoJalan;
+                x = 210;
+                y = 430;
+                width = 73;
+                height = 120;
             }
             
             // Setting
@@ -883,6 +934,10 @@ public class Battle extends javax.swing.JFrame {
                 height = 120;
             }else if (ranger[1] instanceof Gojo){
                 troopJalan = GojoJalan;
+                x = 210;
+                y = 430;
+                width = 73;
+                height = 120;
             }
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
@@ -924,8 +979,16 @@ public class Battle extends javax.swing.JFrame {
                 height = 120;
             }else if (ranger[2] instanceof Tanjiro){
                 troopJalan = tanjiroJalan;
+                x = 210;
+                y = 430;
+                width = 85;
+                height = 120;
             }else if (ranger[2] instanceof Gojo){
                 troopJalan = GojoJalan;
+                x = 210;
+                y = 430;
+                width = 73;
+                height = 120;
             }
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
