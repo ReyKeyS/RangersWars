@@ -404,7 +404,7 @@ public class Battle extends javax.swing.JFrame {
                         }
                     }else if (lblRanger.get(i).getIcon().equals(shogunAttack)){
                         int demeg = u.get(idx).getRanger()[2].getDmg();
-                        if (posx+244 == 1070-20){
+                        if (posx+244 == 1070+20){
                             towerEnemy -= demeg;
                             HpTowerEnemy.setText(Integer.toString(towerEnemy));
                         }else{
