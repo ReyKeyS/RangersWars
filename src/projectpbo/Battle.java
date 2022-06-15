@@ -289,7 +289,26 @@ public class Battle extends javax.swing.JFrame {
                             lblRanger.get(i).setBounds(posx+20, posy-75, 244, 202);
                         }
                     }else if (lblRanger.get(i).getIcon().equals(tanjiroJalan)){
-                        
+                        // Depan Enemy
+                        boolean jalan = true;
+                        for (int j = 0; j < lblEnemy.size(); j++) {
+                            int eX = lblEnemy.get(j).getLocation().x;
+                            int eY = lblEnemy.get(j).getLocation().y;
+                            if (posx+175 >= eX+71){
+                                jalan = false;
+                            }
+                        }
+                        if (jalan){
+                            if (posx+175 < 1070){
+                                lblRanger.get(i).setLocation(posx+1, posy);
+                            }else if (posx+175 == 1070){
+                                lblRanger.get(i).setIcon(tanjiroAttack);
+                                lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
+                            }
+                        }else{
+                            lblRanger.get(i).setIcon(tanjiroAttack);
+                            lblRanger.get(i).setBounds(posx-30, posy-26, 175, 160);
+                        } 
                     }else if (lblRanger.get(i).getIcon().equals(GojoJalan)){
                         
                     }
@@ -394,7 +413,34 @@ public class Battle extends javax.swing.JFrame {
                             }
                         }
                     }else if (lblRanger.get(i).getIcon().equals(tanjiroAttack)){
-                        
+                        int demeg = u.get(idx).getRanger()[1].getDmg();
+                        if (posx+199 == 1070){
+                            towerEnemy -= demeg;
+                            HpTowerEnemy.setText(Integer.toString(towerEnemy));
+                        }else{
+                            if (lblHpEnemy.size() >= 1 && posx+199 >= lblEnemy.get(0).getLocation().x + 71){
+                                if (!lblHpEnemy.isEmpty()){
+                                    if (lblHpEnemy.get(0) <= 0){
+                                        lblHpEnemy.remove(0);
+                                        remove(lblEnemy.get(0));
+                                        lblEnemy.remove(0);
+                                        revalidate();
+                                        repaint();
+                                        lblRanger.get(i).setIcon(tanjiroJalan);
+                                        lblRanger.get(i).setBounds(posx, posy, 85, 120);
+                                        i = -1;
+                                    }else{
+                                        lblHpEnemy.set(0, lblHpEnemy.get(0)-demeg);
+                                    }
+                                }else{
+                                    lblRanger.get(i).setIcon(tanjiroJalan);
+                                    lblRanger.get(i).setBounds(posx, posy, 85, 120);
+                                }
+                            }else{
+                                lblRanger.get(i).setIcon(tanjiroJalan);
+                                lblRanger.get(i).setBounds(posx, posy, 85, 120);
+                            }                            
+                        }
                     }else if (lblRanger.get(i).getIcon().equals(GojoAttack)){
                         
                     }
@@ -781,11 +827,16 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[0] instanceof Tanjiro)
+            }else if (ranger[0] instanceof Tanjiro){
                 troopJalan = tanjiroJalan;
-            else if (ranger[0] instanceof Gojo)
+                x = 210;
+                y = 430;
+                width = 85;
+                height = 120;
+            }else if (ranger[0] instanceof Gojo){
                 troopJalan = GojoJalan;
-
+            }
+            
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
             lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
@@ -824,11 +875,15 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[1] instanceof Tanjiro)
+            }else if (ranger[1] instanceof Tanjiro){
                 troopJalan = tanjiroJalan;
-            else if (ranger[1] instanceof Gojo)
+                x = 210;
+                y = 430;
+                width = 85;
+                height = 120;
+            }else if (ranger[1] instanceof Gojo){
                 troopJalan = GojoJalan;
-
+            }
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
             lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
@@ -867,11 +922,11 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[2] instanceof Tanjiro)
+            }else if (ranger[2] instanceof Tanjiro){
                 troopJalan = tanjiroJalan;
-            else if (ranger[2] instanceof Gojo)
+            }else if (ranger[2] instanceof Gojo){
                 troopJalan = GojoJalan;
-
+            }
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
             lblRanger.get(lblRanger.size()-1).setBounds(x, y, width, height);
