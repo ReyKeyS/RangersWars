@@ -281,14 +281,14 @@ public class Upgrade extends javax.swing.JFrame {
         hargaYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hargaYoimiya.setText("99999");
         hargaYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hargaYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 645, 110, -1));
+        getContentPane().add(hargaYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 648, 110, -1));
 
         lvlYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         lvlYoimiya.setForeground(new java.awt.Color(255, 255, 255));
         lvlYoimiya.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlYoimiya.setText("Level 999");
         lvlYoimiya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lvlYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 575, 110, -1));
+        getContentPane().add(lvlYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 580, 110, -1));
 
         upYoimiya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
         upYoimiya.setBorderPainted(false);
@@ -298,7 +298,7 @@ public class Upgrade extends javax.swing.JFrame {
                 upYoimiyaActionPerformed(evt);
             }
         });
-        getContentPane().add(upYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 560, -1, -1));
+        getContentPane().add(upYoimiya, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 565, -1, -1));
 
         mineralYoimiya.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         mineralYoimiya.setForeground(new java.awt.Color(255, 255, 255));
