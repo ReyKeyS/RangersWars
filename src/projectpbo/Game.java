@@ -88,6 +88,8 @@ public class Game extends javax.swing.JFrame {
 
         btTowerUp = new javax.swing.JButton();
         btUpgrade = new javax.swing.JButton();
+        idleGojo = new javax.swing.JLabel();
+        idleTanjiro = new javax.swing.JLabel();
         IdleShogun = new javax.swing.JLabel();
         IdleEris = new javax.swing.JLabel();
         IdleYoimiya = new javax.swing.JLabel();
@@ -140,6 +142,12 @@ public class Game extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btUpgrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 140, 140));
+
+        idleGojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gojo Satoru Jalan Menu.gif"))); // NOI18N
+        getContentPane().add(idleGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 255, -1, -1));
+
+        idleTanjiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tanjidor Jalan Menu.gif"))); // NOI18N
+        getContentPane().add(idleTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 255, -1, -1));
 
         IdleShogun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Raiden Shogun Jalan Menu.gif"))); // NOI18N
         getContentPane().add(IdleShogun, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 255, -1, -1));
@@ -524,6 +532,8 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton btLogout;
     private javax.swing.JButton btTowerUp;
     private javax.swing.JButton btUpgrade;
+    private javax.swing.JLabel idleGojo;
+    private javax.swing.JLabel idleTanjiro;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel merah1;
     private javax.swing.JLabel merah2;

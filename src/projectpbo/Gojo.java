@@ -11,10 +11,10 @@ import javax.swing.ImageIcon;
  *
  * @author RyanK
  */
-public class Mars extends Ranger implements Serializable{
+public class Gojo extends Ranger implements Serializable{
 
-    public Mars(String nama, int level) {
-        super(nama, level, 740, 63, 35);
+    public Gojo(String nama, int level) {
+        super(nama, level, 680, 50, 25);
     }
     
 }

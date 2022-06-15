@@ -39,13 +39,13 @@ public class Battle extends javax.swing.JFrame {
     private ImageIcon shogunJalan = new ImageIcon("src\\images\\Raiden Shogun Jalan.gif");
     private ImageIcon shogunAttack = new ImageIcon("src\\images\\Raiden Shogun Att.gif");
     
-    private ImageIcon marsBox = new ImageIcon("src\\images\\Eris box.png");
-    private ImageIcon marsJalan = new ImageIcon("src\\images\\Eris box.gif");
-    private ImageIcon marsAttack = new ImageIcon("src\\images\\Eris box.gif");
+    private ImageIcon tanjiroBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon tanjiroJalan = new ImageIcon("src\\images\\Tanjidor Jalan Ingame.gif");
+    private ImageIcon tanjiroAttack = new ImageIcon("src\\images\\Tanjidor Attack lol 100.gif");
     
-    private ImageIcon newcastleBox = new ImageIcon("src\\images\\Eris box.png");
-    private ImageIcon newcastleJalan = new ImageIcon("src\\images\\Eris box.gif");
-    private ImageIcon newcastleAttack = new ImageIcon("src\\images\\Eris box.gif");
+    private ImageIcon GojoBox = new ImageIcon("src\\images\\Eris box.png");
+    private ImageIcon GojoJalan = new ImageIcon("src\\images\\Gojo Satoru Jalan Ingame.gif");
+    private ImageIcon GojoAttack = new ImageIcon("src\\images\\Tanjidor Attack lol 100.gif");
     
     private ImageIcon pentolJalan = new ImageIcon("src\\images\\PentolJalan.gif");
     private ImageIcon pentolAttack = new ImageIcon("src\\images\\PentolAttack.gif");
@@ -189,10 +189,10 @@ public class Battle extends javax.swing.JFrame {
             Ranger1.setIcon(yoimiyaBox);
         else if (ranger[0] instanceof RaidenShogun)
             Ranger1.setIcon(shogunBox);
-        else if (ranger[0] instanceof Mars)
-            Ranger1.setIcon(marsBox);
-        else if (ranger[0] instanceof NewCastle)
-            Ranger1.setIcon(newcastleBox);
+        else if (ranger[0] instanceof Tanjiro)
+            Ranger1.setIcon(tanjiroBox);
+        else if (ranger[0] instanceof Gojo)
+            Ranger1.setIcon(GojoBox);
         
         R2Cost.setText(Integer.toString(ranger[1].getMineral()));
         if (ranger[1] instanceof Eris)
@@ -201,10 +201,10 @@ public class Battle extends javax.swing.JFrame {
             Ranger2.setIcon(yoimiyaBox);
         else if (ranger[1] instanceof RaidenShogun)
             Ranger2.setIcon(shogunBox);
-        else if (ranger[1] instanceof Mars)
-            Ranger2.setIcon(marsBox);
-        else if (ranger[1] instanceof NewCastle)
-            Ranger2.setIcon(newcastleBox);
+        else if (ranger[1] instanceof Tanjiro)
+            Ranger2.setIcon(tanjiroBox);
+        else if (ranger[1] instanceof Gojo)
+            Ranger2.setIcon(GojoBox);
         
         R3Cost.setText(Integer.toString(ranger[2].getMineral()));
         if (ranger[2] instanceof Eris)
@@ -213,10 +213,10 @@ public class Battle extends javax.swing.JFrame {
             Ranger3.setIcon(yoimiyaBox);
         else if (ranger[2] instanceof RaidenShogun)
             Ranger3.setIcon(shogunBox);
-        else if (ranger[2] instanceof Mars)
-            Ranger3.setIcon(marsBox);
-        else if (ranger[2] instanceof NewCastle)
-            Ranger3.setIcon(newcastleBox);
+        else if (ranger[2] instanceof Tanjiro)
+            Ranger3.setIcon(tanjiroBox);
+        else if (ranger[2] instanceof Gojo)
+            Ranger3.setIcon(GojoBox);
         
         // Ranger Config
         //// Jalan
@@ -288,9 +288,9 @@ public class Battle extends javax.swing.JFrame {
                             lblRanger.get(i).setIcon(shogunAttack);
                             lblRanger.get(i).setBounds(posx+20, posy-75, 244, 202);
                         }
-                    }else if (lblRanger.get(i).getIcon().equals(marsJalan)){
+                    }else if (lblRanger.get(i).getIcon().equals(tanjiroJalan)){
                         
-                    }else if (lblRanger.get(i).getIcon().equals(newcastleJalan)){
+                    }else if (lblRanger.get(i).getIcon().equals(GojoJalan)){
                         
                     }
                 }
@@ -393,9 +393,9 @@ public class Battle extends javax.swing.JFrame {
                                 lblRanger.get(i).setBounds(posx-20, posy+75, 140, 120);
                             }
                         }
-                    }else if (lblRanger.get(i).getIcon().equals(marsAttack)){
+                    }else if (lblRanger.get(i).getIcon().equals(tanjiroAttack)){
                         
-                    }else if (lblRanger.get(i).getIcon().equals(newcastleAttack)){
+                    }else if (lblRanger.get(i).getIcon().equals(GojoAttack)){
                         
                     }
                 }
@@ -781,10 +781,10 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[0] instanceof Mars)
-                troopJalan = marsJalan;
-            else if (ranger[0] instanceof NewCastle)
-                troopJalan = newcastleJalan;
+            }else if (ranger[0] instanceof Tanjiro)
+                troopJalan = tanjiroJalan;
+            else if (ranger[0] instanceof Gojo)
+                troopJalan = GojoJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
@@ -824,10 +824,10 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[1] instanceof Mars)
-                troopJalan = marsJalan;
-            else if (ranger[1] instanceof NewCastle)
-                troopJalan = newcastleJalan;
+            }else if (ranger[1] instanceof Tanjiro)
+                troopJalan = tanjiroJalan;
+            else if (ranger[1] instanceof Gojo)
+                troopJalan = GojoJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);
@@ -867,10 +867,10 @@ public class Battle extends javax.swing.JFrame {
                 y = 430;
                 width = 140;
                 height = 120;
-            }else if (ranger[2] instanceof Mars)
-                troopJalan = marsJalan;
-            else if (ranger[2] instanceof NewCastle)
-                troopJalan = newcastleJalan;
+            }else if (ranger[2] instanceof Tanjiro)
+                troopJalan = tanjiroJalan;
+            else if (ranger[2] instanceof Gojo)
+                troopJalan = GojoJalan;
 
             // Setting
             lblRanger.get(lblRanger.size()-1).setIcon(troopJalan);

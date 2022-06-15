@@ -11,10 +11,10 @@ import javax.swing.ImageIcon;
  *
  * @author RyanK
  */
-public class NewCastle extends Ranger implements Serializable{
+public class Tanjiro extends Ranger implements Serializable{
 
-    public NewCastle(String nama, int level) {
-        super(nama, level, 680, 50, 25);
+    public Tanjiro(String nama, int level) {
+        super(nama, level, 740, 63, 35);
     }
     
 }

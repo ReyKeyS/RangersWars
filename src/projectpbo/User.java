@@ -28,9 +28,9 @@ public class User implements Serializable{
         choose[1] = true;
         ranger[2] = new RaidenShogun("RaidenShogun", 1);
         choose[2] = true;
-        ranger[3] = new Mars("Mars", 1);
+        ranger[3] = new Tanjiro("Tanjiro", 1);
         choose[3] = false;
-        ranger[4] = new NewCastle("NewCastle", 1);
+        ranger[4] = new Gojo("Gojo", 1);
         choose[4] = false;
         this.tower = new Tower();
     }

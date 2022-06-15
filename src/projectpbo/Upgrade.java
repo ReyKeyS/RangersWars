@@ -27,8 +27,8 @@ public class Upgrade extends javax.swing.JFrame {
     private int costEris;
     private int costYoimiya;
     private int costShogun;
-    private int costMars;
-    private int costNewcastle;
+    private int costTanjiro;
+    private int costGojo;
     /**
      * Creates new form Upgrade
      */
@@ -75,21 +75,21 @@ public class Upgrade extends javax.swing.JFrame {
         costShogun = 5 + (levelShogun-1)*10;
         hargaShogun.setText(Integer.toString(costShogun));
         
-        hpMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getHp()));
-        dmgMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getDmg()));
-        mineralMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getMineral()));
-        int levelMars = pemain.get(idx).getRanger()[3].getLevel();
-        lvlMars.setText("Level " + Integer.toString(levelMars));
-        costMars = 5 + (levelMars-1)*10;
-        hargaMars.setText(Integer.toString(costMars));
+        hpTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getHp()));
+        dmgtTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getDmg()));
+        mineralTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getMineral()));
+        int levelTanjiro = pemain.get(idx).getRanger()[3].getLevel();
+        lvlTanjiro.setText("Level " + Integer.toString(levelTanjiro));
+        costTanjiro = 5 + (levelTanjiro-1)*10;
+        hargaTanjiro.setText(Integer.toString(costTanjiro));
         
-        hpNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
-        dmgNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getDmg()));
-        mineralNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getMineral()));
-        int levelNewcastle = pemain.get(idx).getRanger()[4].getLevel();
-        lvlNewcastle.setText("Level " + Integer.toString(levelNewcastle));
-        costNewcastle = 5 + (levelNewcastle-1)*10;
-        hargaNewcastle.setText(Integer.toString(costNewcastle));
+        hpGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
+        dmgGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getDmg()));
+        mineralGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getMineral()));
+        int levelGojo = pemain.get(idx).getRanger()[4].getLevel();
+        lvlGojo.setText("Level " + Integer.toString(levelGojo));
+        costGojo = 5 + (levelGojo-1)*10;
+        hargaGojo.setText(Integer.toString(costGojo));
         
     }
     /**
@@ -101,18 +101,18 @@ public class Upgrade extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        hargaNewcastle = new javax.swing.JLabel();
-        lvlNewcastle = new javax.swing.JLabel();
-        upNewcastle = new javax.swing.JButton();
-        mineralNewcastle = new javax.swing.JLabel();
-        dmgNewcastle = new javax.swing.JLabel();
-        hpNewcastle = new javax.swing.JLabel();
-        hargaMars = new javax.swing.JLabel();
-        lvlMars = new javax.swing.JLabel();
-        upMars = new javax.swing.JButton();
-        mineralMars = new javax.swing.JLabel();
-        dmgMars = new javax.swing.JLabel();
-        hpMars = new javax.swing.JLabel();
+        hargaGojo = new javax.swing.JLabel();
+        lvlGojo = new javax.swing.JLabel();
+        upGojo = new javax.swing.JButton();
+        mineralGojo = new javax.swing.JLabel();
+        dmgGojo = new javax.swing.JLabel();
+        hpGojo = new javax.swing.JLabel();
+        hargaTanjiro = new javax.swing.JLabel();
+        lvlTanjiro = new javax.swing.JLabel();
+        upTanjiro = new javax.swing.JButton();
+        mineralTanjiro = new javax.swing.JLabel();
+        dmgtTanjiro = new javax.swing.JLabel();
+        hpTanjiro = new javax.swing.JLabel();
         hargaShogun = new javax.swing.JLabel();
         lvlShogun = new javax.swing.JLabel();
         upShogun = new javax.swing.JButton();
@@ -141,95 +141,95 @@ public class Upgrade extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        hargaNewcastle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        hargaNewcastle.setForeground(new java.awt.Color(255, 255, 0));
-        hargaNewcastle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hargaNewcastle.setText("99999");
-        hargaNewcastle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hargaNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1092, 640, 110, -1));
+        hargaGojo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        hargaGojo.setForeground(new java.awt.Color(255, 255, 0));
+        hargaGojo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hargaGojo.setText("99999");
+        hargaGojo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hargaGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1092, 640, 110, -1));
 
-        lvlNewcastle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        lvlNewcastle.setForeground(new java.awt.Color(255, 255, 255));
-        lvlNewcastle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lvlNewcastle.setText("Level 999");
-        lvlNewcastle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lvlNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1091, 575, 110, -1));
+        lvlGojo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lvlGojo.setForeground(new java.awt.Color(255, 255, 255));
+        lvlGojo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlGojo.setText("Level 999");
+        lvlGojo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lvlGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1091, 575, 110, -1));
 
-        upNewcastle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
-        upNewcastle.setBorderPainted(false);
-        upNewcastle.setContentAreaFilled(false);
-        upNewcastle.addActionListener(new java.awt.event.ActionListener() {
+        upGojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
+        upGojo.setBorderPainted(false);
+        upGojo.setContentAreaFilled(false);
+        upGojo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upNewcastleActionPerformed(evt);
+                upGojoActionPerformed(evt);
             }
         });
-        getContentPane().add(upNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, -1, -1));
+        getContentPane().add(upGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, -1, -1));
 
-        mineralNewcastle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        mineralNewcastle.setForeground(new java.awt.Color(255, 255, 255));
-        mineralNewcastle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mineralNewcastle.setText("999");
-        mineralNewcastle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(mineralNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 510, 90, -1));
+        mineralGojo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        mineralGojo.setForeground(new java.awt.Color(255, 255, 255));
+        mineralGojo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mineralGojo.setText("999");
+        mineralGojo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(mineralGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 510, 90, -1));
 
-        dmgNewcastle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        dmgNewcastle.setForeground(new java.awt.Color(255, 255, 255));
-        dmgNewcastle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dmgNewcastle.setText("999");
-        dmgNewcastle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(dmgNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 455, 90, -1));
+        dmgGojo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgGojo.setForeground(new java.awt.Color(255, 255, 255));
+        dmgGojo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgGojo.setText("999");
+        dmgGojo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 455, 90, -1));
 
-        hpNewcastle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        hpNewcastle.setForeground(new java.awt.Color(255, 255, 255));
-        hpNewcastle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hpNewcastle.setText("999");
-        hpNewcastle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hpNewcastle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 400, 90, -1));
+        hpGojo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        hpGojo.setForeground(new java.awt.Color(255, 255, 255));
+        hpGojo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hpGojo.setText("999");
+        hpGojo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hpGojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 400, 90, -1));
 
-        hargaMars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        hargaMars.setForeground(new java.awt.Color(255, 255, 0));
-        hargaMars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hargaMars.setText("99999");
-        hargaMars.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hargaMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 640, 110, -1));
+        hargaTanjiro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        hargaTanjiro.setForeground(new java.awt.Color(255, 255, 0));
+        hargaTanjiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hargaTanjiro.setText("99999");
+        hargaTanjiro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hargaTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 640, 110, -1));
 
-        lvlMars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        lvlMars.setForeground(new java.awt.Color(255, 255, 255));
-        lvlMars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lvlMars.setText("Level 999");
-        lvlMars.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lvlMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 575, 110, -1));
+        lvlTanjiro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lvlTanjiro.setForeground(new java.awt.Color(255, 255, 255));
+        lvlTanjiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlTanjiro.setText("Level 999");
+        lvlTanjiro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lvlTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 575, 110, -1));
 
-        upMars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
-        upMars.setBorderPainted(false);
-        upMars.setContentAreaFilled(false);
-        upMars.addActionListener(new java.awt.event.ActionListener() {
+        upTanjiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tombol up.png"))); // NOI18N
+        upTanjiro.setBorderPainted(false);
+        upTanjiro.setContentAreaFilled(false);
+        upTanjiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upMarsActionPerformed(evt);
+                upTanjiroActionPerformed(evt);
             }
         });
-        getContentPane().add(upMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
+        getContentPane().add(upTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
 
-        mineralMars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        mineralMars.setForeground(new java.awt.Color(255, 255, 255));
-        mineralMars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mineralMars.setText("999");
-        mineralMars.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(mineralMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 510, 90, -1));
+        mineralTanjiro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        mineralTanjiro.setForeground(new java.awt.Color(255, 255, 255));
+        mineralTanjiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mineralTanjiro.setText("999");
+        mineralTanjiro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(mineralTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 510, 90, -1));
 
-        dmgMars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        dmgMars.setForeground(new java.awt.Color(255, 255, 255));
-        dmgMars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dmgMars.setText("999");
-        dmgMars.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(dmgMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 455, 90, -1));
+        dmgtTanjiro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        dmgtTanjiro.setForeground(new java.awt.Color(255, 255, 255));
+        dmgtTanjiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dmgtTanjiro.setText("999");
+        dmgtTanjiro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(dmgtTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 455, 90, -1));
 
-        hpMars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        hpMars.setForeground(new java.awt.Color(255, 255, 255));
-        hpMars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hpMars.setText("999");
-        hpMars.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(hpMars, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 400, 90, -1));
+        hpTanjiro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        hpTanjiro.setForeground(new java.awt.Color(255, 255, 255));
+        hpTanjiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hpTanjiro.setText("999");
+        hpTanjiro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hpTanjiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 400, 90, -1));
 
         hargaShogun.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         hargaShogun.setForeground(new java.awt.Color(255, 255, 0));
@@ -487,61 +487,61 @@ public class Upgrade extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_upShogunActionPerformed
 
-    private void upMarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upMarsActionPerformed
-        if (curGold >= costMars){
+    private void upTanjiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upTanjiroActionPerformed
+        if (curGold >= costTanjiro){
             // Kurangi Gold + Update button
-            curGold -= costMars;
+            curGold -= costTanjiro;
             pemain.get(idx).setGold(curGold);
             gold.setText(Integer.toString(curGold));
-            int levelMars = pemain.get(idx).getRanger()[3].getLevel() + 1;
-            pemain.get(idx).getRanger()[3].setLevel(levelMars);
-            lvlMars.setText("Level " + Integer.toString(levelMars));
-            costMars = 5 + (levelMars-1)*10;
-            hargaMars.setText(Integer.toString(costMars));
+            int levelTanjiro = pemain.get(idx).getRanger()[3].getLevel() + 1;
+            pemain.get(idx).getRanger()[3].setLevel(levelTanjiro);
+            lvlTanjiro.setText("Level " + Integer.toString(levelTanjiro));
+            costTanjiro = 5 + (levelTanjiro-1)*10;
+            hargaTanjiro.setText(Integer.toString(costTanjiro));
             
             // Upgrade Status
             pemain.get(idx).getRanger()[3].setHp(pemain.get(idx).getRanger()[3].getHp() + 25);
             pemain.get(idx).getRanger()[3].setDmg(pemain.get(idx).getRanger()[3].getDmg() + 5);
             pemain.get(idx).getRanger()[3].setMineral(pemain.get(idx).getRanger()[3].getMineral() + 5);
             
-            hpMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getHp()));
-            dmgMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getDmg()));
-            mineralMars.setText(Integer.toString(pemain.get(idx).getRanger()[3].getMineral()));
+            hpTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getHp()));
+            dmgtTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getDmg()));
+            mineralTanjiro.setText(Integer.toString(pemain.get(idx).getRanger()[3].getMineral()));
             // Sound Effect
             if (!kemute){
                 btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
                 btUpgrade.Clip().start();
             }
         }
-    }//GEN-LAST:event_upMarsActionPerformed
+    }//GEN-LAST:event_upTanjiroActionPerformed
 
-    private void upNewcastleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upNewcastleActionPerformed
-        if (curGold >= costNewcastle){
+    private void upGojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upGojoActionPerformed
+        if (curGold >= costGojo){
             // Kurangi Gold + Update button
-            curGold -= costNewcastle;
+            curGold -= costGojo;
             pemain.get(idx).setGold(curGold);
             gold.setText(Integer.toString(curGold));
-            int levelNewcastle = pemain.get(idx).getRanger()[4].getLevel() + 1;
-            pemain.get(idx).getRanger()[4].setLevel(levelNewcastle);
-            lvlNewcastle.setText("Level " + Integer.toString(levelNewcastle));
-            costNewcastle = 5 + (levelNewcastle-1)*10;
-            hargaNewcastle.setText(Integer.toString(costNewcastle));
+            int levelGojo = pemain.get(idx).getRanger()[4].getLevel() + 1;
+            pemain.get(idx).getRanger()[4].setLevel(levelGojo);
+            lvlGojo.setText("Level " + Integer.toString(levelGojo));
+            costGojo = 5 + (levelGojo-1)*10;
+            hargaGojo.setText(Integer.toString(costGojo));
             
             // Upgrade Status
             pemain.get(idx).getRanger()[4].setHp(pemain.get(idx).getRanger()[4].getHp() + 20);
             pemain.get(idx).getRanger()[4].setDmg(pemain.get(idx).getRanger()[4].getDmg() + 10);
             pemain.get(idx).getRanger()[4].setMineral(pemain.get(idx).getRanger()[4].getMineral() + 5);
             
-            hpNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
-            dmgNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getDmg()));
-            mineralNewcastle.setText(Integer.toString(pemain.get(idx).getRanger()[4].getMineral()));
+            hpGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getHp()));
+            dmgGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getDmg()));
+            mineralGojo.setText(Integer.toString(pemain.get(idx).getRanger()[4].getMineral()));
             // Sound Effect
             if (!kemute){
                 btUpgrade = new Music("src\\music\\SoundUpgrade.wav");
                 btUpgrade.Clip().start();
             }
         }
-    }//GEN-LAST:event_upNewcastleActionPerformed
+    }//GEN-LAST:event_upGojoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -582,35 +582,35 @@ public class Upgrade extends javax.swing.JFrame {
     private javax.swing.JButton Back;
     private javax.swing.JLabel BgUpgrade;
     private javax.swing.JLabel dmgEris;
-    private javax.swing.JLabel dmgMars;
-    private javax.swing.JLabel dmgNewcastle;
+    private javax.swing.JLabel dmgGojo;
     private javax.swing.JLabel dmgShogun;
     private javax.swing.JLabel dmgYoimiya;
+    private javax.swing.JLabel dmgtTanjiro;
     private javax.swing.JLabel gold;
     private javax.swing.JLabel hargaEris;
-    private javax.swing.JLabel hargaMars;
-    private javax.swing.JLabel hargaNewcastle;
+    private javax.swing.JLabel hargaGojo;
     private javax.swing.JLabel hargaShogun;
+    private javax.swing.JLabel hargaTanjiro;
     private javax.swing.JLabel hargaYoimiya;
     private javax.swing.JLabel hpEris;
-    private javax.swing.JLabel hpMars;
-    private javax.swing.JLabel hpNewcastle;
+    private javax.swing.JLabel hpGojo;
     private javax.swing.JLabel hpShogun;
+    private javax.swing.JLabel hpTanjiro;
     private javax.swing.JLabel hpYoimiya;
     private javax.swing.JLabel lvlEris;
-    private javax.swing.JLabel lvlMars;
-    private javax.swing.JLabel lvlNewcastle;
+    private javax.swing.JLabel lvlGojo;
     private javax.swing.JLabel lvlShogun;
+    private javax.swing.JLabel lvlTanjiro;
     private javax.swing.JLabel lvlYoimiya;
     private javax.swing.JLabel mineralEris;
-    private javax.swing.JLabel mineralMars;
-    private javax.swing.JLabel mineralNewcastle;
+    private javax.swing.JLabel mineralGojo;
     private javax.swing.JLabel mineralShogun;
+    private javax.swing.JLabel mineralTanjiro;
     private javax.swing.JLabel mineralYoimiya;
     private javax.swing.JButton upEris;
-    private javax.swing.JButton upMars;
-    private javax.swing.JButton upNewcastle;
+    private javax.swing.JButton upGojo;
     private javax.swing.JButton upShogun;
+    private javax.swing.JButton upTanjiro;
     private javax.swing.JButton upYoimiya;
     // End of variables declaration//GEN-END:variables
 }
